@@ -920,6 +920,12 @@ button {
   background: #f1f4f8;
   display: block;
   animation: float-soft 7s ease-in-out infinite;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.media-img:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 14px 24px rgba(16, 24, 40, 0.18);
 }
 
 .section-header {
