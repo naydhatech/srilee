@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0f14" />
+      <stop offset="1" stop-color="#151b24" />
+    </linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff3d81" />
+      <stop offset="1" stop-color="#6a5cff" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00d2ff" />
+      <stop offset="1" stop-color="#2fffa8" />
+    </linearGradient>
+  </defs>
+  <rect width="900" height="520" rx="28" fill="url(#bg)" />
+  <circle cx="450" cy="260" r="190" fill="none" stroke="url(#ring)" stroke-width="10" stroke-dasharray="14 10" opacity="0.7" />
+  <circle cx="450" cy="260" r="130" fill="none" stroke="url(#accent)" stroke-width="12" stroke-dasharray="10 10" opacity="0.85" />
+  <g>
+    <rect x="140" y="120" width="190" height="120" rx="18" fill="#111827" stroke="#2a3545" />
+    <rect x="580" y="130" width="190" height="120" rx="18" fill="#111827" stroke="#2a3545" />
+    <rect x="355" y="310" width="190" height="120" rx="18" fill="#111827" stroke="#2a3545" />
+    <circle cx="190" cy="175" r="24" fill="#ff3d81" />
+    <circle cx="630" cy="185" r="24" fill="#6a5cff" />
+    <circle cx="405" cy="365" r="24" fill="#00d2ff" />
+    <rect x="210" y="210" width="80" height="8" rx="4" fill="#ffd166" />
+    <rect x="650" y="220" width="80" height="8" rx="4" fill="#4ade80" />
+    <rect x="430" y="395" width="80" height="8" rx="4" fill="#fb7185" />
+  </g>
+  <text x="450" y="275" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="22" fill="#cbd5f5" letter-spacing="2">BUSINESS PERSONAS</text>
+</svg>

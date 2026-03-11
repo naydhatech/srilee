@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Srilee IoT | Sign Up</title>
+    <meta
+      name="description"
+      content="Create your Srilee IoT account to connect devices, build apps, and deploy solutions."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="signup-body">
+    <header class="signup-header">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="logo.jpeg" alt="Srilee IoT logo" />
+      </a>
+      <a class="login-link" href="#">Have an account? Log in</a>
+    </header>
+
+    <main class="signup-main">
+      <section class="signup-hero">
+        <div class="signup-hero-text">
+          <span class="section-kicker">Srilee IoT</span>
+          <h1>Your one stop shop for all things connected.</h1>
+          <ul class="feature-list">
+            <li>Manage scaling IoT devices with confidence</li>
+            <li>Build high-impact apps with developer tools</li>
+            <li>Get real-time anomaly alerts on time</li>
+            <li>Visualize data to drive sharper decisions</li>
+            <li>Unify favorite apps from silos to synergy</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="signup-card">
+        <h2>Create your account</h2>
+        <p class="signup-sub">Start free. Upgrade when you are ready to scale.</p>
+        <form class="signup-form" action="#" method="post">
+          <label>
+            Full name
+            <input type="text" name="name" placeholder="Enter your name" required />
+          </label>
+          <label>
+            Work email
+            <input type="email" name="email" placeholder="name@company.com" required />
+          </label>
+          <label>
+            Company
+            <input type="text" name="company" placeholder="Company name" />
+          </label>
+          <label>
+            Phone
+            <input type="tel" name="phone" placeholder="+1 (555) 012-0000" />
+          </label>
+          <label>
+            Primary use case
+            <select name="usecase">
+              <option>Industrial IoT</option>
+              <option>Energy management</option>
+              <option>Smart buildings</option>
+              <option>Utilities</option>
+              <option>Smart cities</option>
+            </select>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" required />
+            I agree to the Terms and Privacy Policy
+          </label>
+          <button class="primary-btn" type="submit">Create account</button>
+        </form>
+        <p class="signup-note">Already have an account? <a href="#">Log in</a></p>
+      </section>
+    </main>
+  </body>
+</html>
