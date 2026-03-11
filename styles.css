@@ -444,9 +444,17 @@ button {
 .cta .ghost-btn {
   border-color: rgba(255, 255, 255, 0.4);
   color: #fff;
+  background: transparent;
 }
 
 .cta .primary-btn {
+  box-shadow: none;
+}
+
+.cta .ghost-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #fff;
   box-shadow: none;
 }
 
