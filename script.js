@@ -66,3 +66,68 @@ revealTargets.forEach((target) => {
   target.classList.add("fade");
   observer.observe(target);
 });
+
+const acceleratorGrid = document.querySelector("#accelerators .grid-3");
+
+if (acceleratorGrid) {
+  const cards = Array.from(acceleratorGrid.querySelectorAll(".feature-card"));
+  if (cards.length > 1) {
+    acceleratorGrid.classList.add("accelerator-carousel");
+
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!prefersReduced) {
+      let intervalId = null;
+      let index = 0;
+      let step = 0;
+
+      const computeStep = () => {
+        if (!cards[0]) {
+          return;
+        }
+        const gap = parseFloat(getComputedStyle(acceleratorGrid).gap) || 0;
+        step = cards[0].offsetWidth + gap;
+      };
+
+      const scrollToIndex = () => {
+        acceleratorGrid.scrollTo({
+          left: step * index,
+          behavior: "smooth",
+        });
+      };
+
+      const startRotation = () => {
+        intervalId = setInterval(() => {
+          index = (index + 1) % cards.length;
+          scrollToIndex();
+        }, 4000);
+      };
+
+      const stopRotation = () => {
+        if (intervalId) {
+          clearInterval(intervalId);
+          intervalId = null;
+        }
+      };
+
+      computeStep();
+      scrollToIndex();
+      startRotation();
+
+      acceleratorGrid.addEventListener("mouseenter", stopRotation);
+      acceleratorGrid.addEventListener("mouseleave", startRotation);
+      window.addEventListener("resize", () => {
+        computeStep();
+        scrollToIndex();
+      });
+    }
+  }
+}
+
+const platformGrid = document.querySelector("#platform .dual-grid");
+
+if (platformGrid) {
+  const baseCards = Array.from(platformGrid.querySelectorAll(".feature-card"));
+  if (baseCards.length > 1) {
+    platformGrid.classList.add("platform-carousel");
+  }
+}
