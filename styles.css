@@ -880,7 +880,18 @@ button {
 .dual-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(260px, 1fr));
-  gap: 26px;
+  gap: 30px;
+}
+
+.platform-carousel {
+  display: flex;
+  gap: 24px;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.platform-carousel .feature-card {
+  flex: 0 0 calc((100% - 24px) / 2);
 }
 
 .dual-card {
@@ -1022,6 +1033,17 @@ button {
   padding: 20px;
   box-shadow: 0 8px 16px rgba(18, 23, 32, 0.05);
   transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.accelerator-carousel {
+  display: flex;
+  gap: 24px;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.accelerator-carousel .feature-card {
+  flex: 0 0 calc((100% - 48px) / 3);
 }
 
 .fade {
@@ -1548,6 +1570,14 @@ button {
   .dual-grid {
     grid-template-columns: 1fr;
   }
+
+  .platform-carousel .feature-card {
+    flex: 0 0 100%;
+  }
+
+  .accelerator-carousel .feature-card {
+    flex: 0 0 calc((100% - 24px) / 2);
+  }
 }
 
 @media (max-width: 720px) {
@@ -1576,8 +1606,26 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .accelerator-carousel {
+    gap: 16px;
+  }
+
+  .accelerator-carousel .feature-card {
+    flex: 0 0 100%;
+  }
+
   .personas-media {
     height: 180px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #platform .media-img {
+    height: 210px;
+  }
+
+  #accelerators .media-img {
+    height: 220px;
   }
 }
 
