@@ -131,3 +131,71 @@ if (platformGrid) {
     platformGrid.classList.add("platform-carousel");
   }
 }
+
+const homeHeroRotator = document.querySelector(".home-page .hero-image-rotator");
+
+if (homeHeroRotator) {
+  const track = homeHeroRotator.querySelector(".hero-image-track");
+  const slides = track ? Array.from(track.querySelectorAll("img")) : [];
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (slides.length > 1 && !prefersReduced) {
+    let current = 0;
+    let intervalId = null;
+    let pause = false;
+    let observer = null;
+
+    const setActive = (index) => {
+      if (!track) {
+        return;
+      }
+      track.style.transform = `translateX(-${index * 100}%)`;
+    };
+
+    const advance = () => {
+      current = (current + 1) % slides.length;
+      setActive(current);
+    };
+
+    const startRotation = () => {
+      intervalId = window.setInterval(() => {
+        if (!pause) {
+          advance();
+        }
+      }, 3500);
+    };
+
+    const stopRotation = () => {
+      if (intervalId) {
+        window.clearInterval(intervalId);
+        intervalId = null;
+      }
+    };
+
+    observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          pause = !entry.isIntersecting;
+        });
+      },
+      { threshold: 0.25 }
+    );
+
+    setActive(current);
+    observer.observe(homeHeroRotator);
+    startRotation();
+
+    homeHeroRotator.addEventListener("mouseenter", () => {
+      pause = true;
+    });
+
+    homeHeroRotator.addEventListener("mouseleave", () => {
+      pause = false;
+    });
+
+    window.addEventListener("beforeunload", () => {
+      stopRotation();
+      observer.disconnect();
+    });
+  }
+}

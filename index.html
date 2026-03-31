@@ -17,7 +17,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="iot-theme">
+  <body class="iot-theme home-page">
     <header class="site-header">
       <nav class="nav">
         <a class="brand" href="#">
@@ -28,12 +28,12 @@
           <a href="industrial-automation.html">Automation</a>
           <a href="manufacturing.html">Manufacturing</a>
           <a href="industrial-services.html">Industrial service</a>
-          <a href="career.html">Career</a>
+          <a href="renewable-automation.html">Renewable</a>
           <a href="contact.html">Contact us</a>
         </div>
         <div class="nav-actions">
           <button class="ghost-btn">Talk to an expert</button>
-          <a class="primary-btn" href="contact.html">Sign up</a>
+          <a class="primary-btn" href="demo.html">Demo</a>
           <button class="menu-btn" id="menuBtn" aria-label="Open menu">
             <span></span><span></span><span></span>
           </button>
@@ -51,11 +51,17 @@
             industries to unlock new revenue and operational outcomes.
           </p>
           <div class="cta-row">
-            <a class="primary-btn" href="contact.html">Sign up</a>
+            <a class="primary-btn" href="demo.html">Demo</a>
           </div>
         </div>
         <div class="hero-visual">
-          <img class="hero-card" src="images/hero.png" alt="Srilee IoT overview" />
+          <div class="hero-image-rotator" aria-label="Srilee IoT showcase">
+            <div class="hero-image-track">
+              <img src="images/hero.png" alt="Srilee IoT overview" />
+              <img src="images/industrial.png" alt="Industrial IoT dashboard overview" />
+              <img src="images/energy.png" alt="Energy management overview" />
+            </div>
+          </div>
           <div class="hero-card iot-dashboard">
             <div class="card-header">
               <span>IoT command center</span>
@@ -92,17 +98,6 @@
         <div class="hero-glow"></div>
       </section>
 
-      <section class="logos trusted">
-        <p>Trusted by</p>
-        <div class="logo-row">
-          <span>Vantage Steel</span>
-          <span>Everwell Energy</span>
-          <span>MetroFleet</span>
-          <span>Skyline Facilities</span>
-          <span>AgriPulse</span>
-          <span>Orion Utilities</span>
-        </div>
-      </section>
 
       <section class="section" id="platform">
         <div class="section-header">
@@ -163,32 +158,46 @@
       </section>
 
       <section class="section" id="accelerators">
-        <div class="section-header">
-          <p class="section-kicker">Solution accelerators</p>
-          <h2>Leverage or customize pre-built solutions to fit your needs</h2>
-          <p>
-            Ready-to-deploy frameworks and recipes that accelerate vertical IoT
-            initiatives, cutting time, cost, and risk.
-          </p>
+        <div class="section-header section-header-spread">
+          <div>
+            <p class="section-kicker">Solution accelerators</p>
+            <h2>Leverage or customize pre-built solutions to fit your needs</h2>
+            <p>
+              Ready-to-deploy frameworks and recipes that accelerate vertical IoT initiatives,
+              cutting time, cost, and risk.
+            </p>
+          </div>
         </div>
         <div class="grid-3">
           <article class="feature-card with-media">
             <img class="media-img" src="images/industrial.png" alt="Industrial IoT dashboard preview" />
-            <h3>Industrial IoT</h3>
-            <p>Monitor machines in real time to improve OEE and reduce downtime.</p>
-            <button class="text-btn">Explore solution</button>
+            <h3>IoT</h3>
+            <p>Monitor assets in real time to improve visibility, control, and uptime.</p>
+            <a class="text-btn" href="iot.html">Explore solution</a>
           </article>
           <article class="feature-card with-media">
-            <img class="media-img" src="images/energy.png" alt="Energy management preview" />
-            <h3>Energy management</h3>
-            <p>Plan and manage energy consumption with complete visibility and control.</p>
-            <button class="text-btn">Explore solution</button>
+            <img class="media-img" src="images/industrial-automation-1.jpeg" alt="Industrial automation preview" />
+            <h3>Automation</h3>
+            <p>Streamline operations with PLC, SCADA, HMI, and drive integration.</p>
+            <a class="text-btn" href="industrial-automation.html">Explore solution</a>
           </article>
           <article class="feature-card with-media">
-            <img class="media-img" src="images/buildings.png" alt="Smart buildings preview" />
-            <h3>Smart buildings</h3>
-            <p>Unify assets, tenants, energy, and facilities in one system.</p>
-            <button class="text-btn">Explore solution</button>
+            <img class="media-img" src="images/manufacturing-1.jpeg" alt="Manufacturing preview" />
+            <h3>Manufacturing</h3>
+            <p>Build reliable panels and control systems for industrial applications.</p>
+            <a class="text-btn" href="manufacturing.html">Explore solution</a>
+          </article>
+          <article class="feature-card with-media">
+            <img class="media-img" src="images/industrial-services-1.jpeg" alt="Industrial service preview" />
+            <h3>Industrial service</h3>
+            <p>Deliver engineering, commissioning, and support for complex projects.</p>
+            <a class="text-btn" href="industrial-services.html">Explore solution</a>
+          </article>
+           <article class="feature-card with-media">
+            <img class="media-img" src="images/energy.png" alt="Renewable automation preview" />
+            <h3>Renewable</h3>
+            <p>Use SCADA and automation to monitor and optimize renewable plants.</p>
+            <a class="text-btn" href="renewable-automation.html">Explore solution</a>
           </article>
         </div>
       </section>
@@ -405,7 +414,7 @@
           <h2>Get started with your transformation</h2>
         </div>
         <div class="cta-row">
-          <a class="primary-btn" href="contact.html">Sign up</a>
+          <a class="primary-btn" href="demo.html">Demo</a>
         </div>
       </section>
     </main>
@@ -425,17 +434,16 @@
         </div>
         <div>
           <h4>Industries</h4>
-          <a href="manufacturing.html">Manufacturing</a>
+          <a href="#industries">Manufacturing</a>
           <a href="#industries">Buildings</a>
           <a href="#industries">Utilities</a>
           <a href="#industries">Smart cities</a>
         </div>
         <div>
           <h4>Get in touch</h4>
-          <p>sales@srilee.com</p>
-          <p>+91 (967) 697-4984</p>
-          <p>+91 (868) 848-1394</p>
-          <p>Flat No: 3201, SLV Pearl, Road No 1, Matrusrinagar, Miyapur, Hyderabad, 500049</p>        </div>
+          <p>hello@srilee.com</p>
+          <p>+1 (555) 012-9067</p>
+        </div>
       </div>
       <p class="copyright">(c) 2026 Srilee Pvt Ltd., All rights reserved.</p>
     </footer>
