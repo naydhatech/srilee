@@ -1702,7 +1702,10 @@ button {
   flex-wrap: wrap;
 }
 
-.renewable-page .page-hero {
+.renewable-page .page-hero,
+.automation-page .page-hero,
+.manufacturing-page .page-hero,
+.services-page .page-hero {
   display: grid;
   grid-template-columns: minmax(320px, 1.05fr) minmax(280px, 0.95fr);
   gap: 36px;
@@ -1710,11 +1713,44 @@ button {
   align-items: center;
 }
 
-.renewable-page .page-hero-copy {
+.renewable-page .page-hero-copy,
+.automation-page .page-hero-copy,
+.manufacturing-page .page-hero-copy,
+.services-page .page-hero-copy {
   max-width: 620px;
 }
 
-.renewable-page .page-hero-visual {
+.renewable-page .page-hero-copy h1,
+.automation-page .page-hero-copy h1,
+.manufacturing-page .page-hero-copy h1,
+.services-page .page-hero-copy h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(2.2rem, 3.2vw, 3.5rem);
+  line-height: 1.18;
+  margin-bottom: 18px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.renewable-page .page-hero-copy > p:not(.section-kicker),
+.automation-page .page-hero-copy > p:not(.section-kicker),
+.manufacturing-page .page-hero-copy > p:not(.section-kicker),
+.services-page .page-hero-copy > p:not(.section-kicker) {
+  color: var(--muted);
+  max-width: 560px;
+}
+
+.renewable-page .page-hero-copy .chip-grid,
+.automation-page .page-hero-copy .chip-grid,
+.manufacturing-page .page-hero-copy .chip-grid,
+.services-page .page-hero-copy .chip-grid {
+  margin-top: 22px;
+}
+
+.renewable-page .page-hero-visual,
+.automation-page .page-hero-visual,
+.manufacturing-page .page-hero-visual,
+.services-page .page-hero-visual {
   position: relative;
   display: grid;
   justify-items: center;
@@ -1723,11 +1759,17 @@ button {
   gap: 0;
 }
 
-.renewable-page .renewable-stack {
+.renewable-page .renewable-stack,
+.automation-page .renewable-stack,
+.manufacturing-page .renewable-stack,
+.services-page .renewable-stack {
   width: 100%;
 }
 
-.renewable-page .renewable-stack img {
+.renewable-page .renewable-stack img,
+.automation-page .renewable-stack img,
+.manufacturing-page .renewable-stack img,
+.services-page .renewable-stack img {
   display: block;
   width: min(100%, 440px);
   height: auto;
@@ -1736,18 +1778,58 @@ button {
   box-shadow: var(--shadow);
 }
 
-.renewable-page .stack-top {
+.renewable-page .stack-top,
+.automation-page .stack-top,
+.manufacturing-page .stack-top,
+.services-page .stack-top {
   max-width: 440px;
   margin-right: 72px;
 }
 
-.renewable-page .stack-bottom {
+.renewable-page .stack-bottom,
+.automation-page .stack-bottom,
+.manufacturing-page .stack-bottom,
+.services-page .stack-bottom {
   max-width: 360px;
   margin-top: -72px;
   margin-left: 88px;
 }
 
-.renewable-page .page-hero-panel {
+.automation-page .stack-top {
+  margin-right: 42px;
+  transform: rotate(-1deg);
+}
+
+.automation-page .stack-bottom {
+  margin-top: -54px;
+  margin-left: 104px;
+  transform: rotate(1.5deg);
+}
+
+.manufacturing-page .stack-top {
+  margin-right: 96px;
+  transform: rotate(2deg);
+}
+
+.manufacturing-page .stack-bottom {
+  margin-top: -96px;
+  margin-left: 58px;
+  transform: rotate(-1deg);
+}
+
+.services-page .stack-top {
+  margin-right: 72px;
+}
+
+.services-page .stack-bottom {
+  margin-top: -62px;
+  margin-left: 118px;
+}
+
+.renewable-page .page-hero-panel,
+.automation-page .page-hero-panel,
+.manufacturing-page .page-hero-panel,
+.services-page .page-hero-panel {
   position: absolute;
   left: 20px;
   bottom: 16px;
@@ -1762,13 +1844,37 @@ button {
   backdrop-filter: blur(10px);
 }
 
-.renewable-page .page-hero-panel strong {
+.automation-page .page-hero-panel {
+  left: auto;
+  right: 12px;
+  bottom: 10px;
+}
+
+.manufacturing-page .page-hero-panel {
+  left: 50%;
+  bottom: 6px;
+  transform: translateX(-50%);
+}
+
+.services-page .page-hero-panel {
+  left: 24px;
+  top: 18px;
+  bottom: auto;
+}
+
+.renewable-page .page-hero-panel strong,
+.automation-page .page-hero-panel strong,
+.manufacturing-page .page-hero-panel strong,
+.services-page .page-hero-panel strong {
   font-family: "Poppins", sans-serif;
   font-size: 0.95rem;
   color: var(--ink);
 }
 
-.renewable-page .page-hero-panel span {
+.renewable-page .page-hero-panel span,
+.automation-page .page-hero-panel span,
+.manufacturing-page .page-hero-panel span,
+.services-page .page-hero-panel span {
   color: var(--muted);
   font-size: 0.88rem;
 }
@@ -2006,23 +2112,47 @@ button {
     grid-template-columns: 1fr;
   }
 
-  .renewable-page .page-hero {
+  .renewable-page .page-hero,
+  .automation-page .page-hero,
+  .manufacturing-page .page-hero,
+  .services-page .page-hero {
     grid-template-columns: 1fr;
     padding: 56px 5vw 44px;
   }
 
-  .renewable-page .page-hero-visual {
+  .renewable-page .page-hero-visual,
+  .automation-page .page-hero-visual,
+  .manufacturing-page .page-hero-visual,
+  .services-page .page-hero-visual {
     min-height: auto;
     margin-top: 6px;
   }
 
-  .renewable-page .stack-top {
+  .renewable-page .stack-top,
+  .automation-page .stack-top,
+  .manufacturing-page .stack-top,
+  .services-page .stack-top {
     margin-right: 44px;
+    transform: none;
   }
 
-  .renewable-page .stack-bottom {
+  .renewable-page .stack-bottom,
+  .automation-page .stack-bottom,
+  .manufacturing-page .stack-bottom,
+  .services-page .stack-bottom {
     margin-top: -56px;
     margin-left: 56px;
+    transform: none;
+  }
+
+  .automation-page .page-hero-panel,
+  .manufacturing-page .page-hero-panel,
+  .services-page .page-hero-panel {
+    left: 14px;
+    bottom: 14px;
+    right: auto;
+    top: auto;
+    transform: none;
   }
 }
 
@@ -2065,28 +2195,53 @@ button {
     padding: 70px 5vw 54px;
   }
 
-  .renewable-page .page-hero {
+  .renewable-page .page-hero,
+  .automation-page .page-hero,
+  .manufacturing-page .page-hero,
+  .services-page .page-hero {
     padding: 48px 5vw 38px;
   }
 
-  .renewable-page .renewable-stack img {
+  .renewable-page .renewable-stack img,
+  .automation-page .renewable-stack img,
+  .manufacturing-page .renewable-stack img,
+  .services-page .renewable-stack img {
     width: 100%;
     max-width: 100%;
   }
 
-  .renewable-page .stack-top {
+  .renewable-page .stack-top,
+  .automation-page .stack-top,
+  .manufacturing-page .stack-top,
+  .services-page .stack-top {
     margin-right: 0;
+    transform: none;
   }
 
-  .renewable-page .stack-bottom {
+  .renewable-page .stack-bottom,
+  .automation-page .stack-bottom,
+  .manufacturing-page .stack-bottom,
+  .services-page .stack-bottom {
     margin-top: -40px;
     margin-left: 0;
   }
 
-  .renewable-page .page-hero-panel {
+  .automation-page .stack-top,
+  .manufacturing-page .stack-top,
+  .services-page .stack-top {
+    margin-right: 0;
+  }
+
+  .renewable-page .page-hero-panel,
+  .automation-page .page-hero-panel,
+  .manufacturing-page .page-hero-panel,
+  .services-page .page-hero-panel {
     position: relative;
     left: auto;
+    right: auto;
+    top: auto;
     bottom: auto;
+    transform: none;
     margin-top: 12px;
     width: 100%;
   }
