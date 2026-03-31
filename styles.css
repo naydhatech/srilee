@@ -1060,6 +1060,40 @@ button {
   flex: 0 0 calc((100% - 48px) / 3);
 }
 
+#accelerators .grid-3 {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+}
+
+#accelerators .feature-card.with-media {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 18px;
+  min-width: 0;
+}
+
+#accelerators .media-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border-radius: 16px;
+}
+
+#accelerators .feature-card h3 {
+  font-size: 1rem;
+}
+
+#accelerators .feature-card p {
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+#accelerators .feature-card .text-btn {
+  font-size: 0.92rem;
+}
+
 .fade {
   opacity: 0;
   transform: translateY(16px);
@@ -1796,25 +1830,25 @@ button {
 }
 
 .automation-page .stack-top {
-  margin-right: 42px;
-  transform: rotate(-1deg);
+  margin-right: 72px;
+  transform: none;
 }
 
 .automation-page .stack-bottom {
-  margin-top: -54px;
-  margin-left: 104px;
-  transform: rotate(1.5deg);
+  margin-top: -72px;
+  margin-left: 88px;
+  transform: none;
 }
 
 .manufacturing-page .stack-top {
-  margin-right: 96px;
-  transform: rotate(2deg);
+  margin-right: 72px;
+  transform: none;
 }
 
 .manufacturing-page .stack-bottom {
-  margin-top: -96px;
-  margin-left: 58px;
-  transform: rotate(-1deg);
+  margin-top: -72px;
+  margin-left: 88px;
+  transform: none;
 }
 
 .services-page .stack-top {
@@ -1822,8 +1856,8 @@ button {
 }
 
 .services-page .stack-bottom {
-  margin-top: -62px;
-  margin-left: 118px;
+  margin-top: -72px;
+  margin-left: 88px;
 }
 
 .renewable-page .page-hero-panel,
@@ -1845,21 +1879,19 @@ button {
 }
 
 .automation-page .page-hero-panel {
-  left: auto;
-  right: 12px;
-  bottom: 10px;
+  left: 20px;
+  bottom: 16px;
 }
 
 .manufacturing-page .page-hero-panel {
-  left: 50%;
-  bottom: 6px;
-  transform: translateX(-50%);
+  left: 20px;
+  bottom: 16px;
+  transform: none;
 }
 
 .services-page .page-hero-panel {
-  left: 24px;
-  top: 18px;
-  bottom: auto;
+  left: 20px;
+  bottom: 16px;
 }
 
 .renewable-page .page-hero-panel strong,
@@ -2160,9 +2192,11 @@ button {
   #platform .media-img {
     height: 210px;
   }
+}
 
-  #accelerators .media-img {
-    height: 220px;
+@media (max-width: 640px) {
+  #accelerators .grid-3 {
+    grid-template-columns: 1fr;
   }
 }
 
