@@ -21,7 +21,7 @@
     <header class="site-header">
       <nav class="nav">
         <a class="brand" href="#">
-          <img class="brand-logo" src="logo.jpeg" alt="Srilee IoT logo" />
+          <img class="brand-logo" src="logo.png" alt="Srilee IoT logo" />
         </a>
         <div class="nav-links" id="navLinks">
           <a href="iot.html">IoT</a>
@@ -108,14 +108,14 @@
             <span class="tag">IoT Platform</span>
             <h3>For developers to build and deploy</h3>
             <p>Secure low-code environment to build cross-domain IoT apps with powerful capabilities.</p>
-            <button class="text-btn">Explore platform</button>
+            <a class="text-btn" href="iot.html">Explore platform</a>
             <img class="media-img" src="images/personas.png" alt="IoT platform preview" />
           </article>
           <article class="feature-card dual-card with-media">
             <span class="tag">IoT Solutions</span>
             <h3>For enterprises to plug and play</h3>
             <p>Ready-to-use solutions and accelerators that you can adopt immediately or tailor.</p>
-            <button class="text-btn">Explore solutions</button>
+            <a class="text-btn" href="iot.html">Explore solutions</a>
             <img class="media-img" src="images/use-cases.png" alt="IoT solutions preview" />
           </article>
         </div>
@@ -138,7 +138,7 @@
               <li>Commands and controls</li>
               <li>Developer portal</li>
             </ul>
-            <button class="text-btn">Explore features</button>
+            <a class="text-btn" href="iot.html">Explore features</a>
           </div>
           <div class="stack-cards">
             <div class="stack-card">
@@ -275,17 +275,29 @@
         </div>
       </section>
 
-      <section class="section alt" id="personas">
-        <div class="personas-grid">
-          <img class="personas-media" src="images/personas.png" alt="Business personas" />
-          <img class="personas-media" src="images/use-cases.png" alt="Potential use cases" />
-        </div>
-        <div class="section-header">
+      <section class="section alt personas-section" id="personas">
+        <div class="section-header personas-header">
           <h2>Business verticals and potential use cases</h2>
           <p>Srilee IoT supports a wide range of verticals.</p>
         </div>
-        <div class="grid-2">
-          <article class="feature-card">
+        <div class="personas-visual-grid">
+          <figure class="personas-visual-card">
+            <img class="personas-media" src="images/personas.png" alt="Business personas" />
+            <figcaption>
+              <span class="personas-label">Business personas</span>
+              <strong>Built for leaders, operators, and implementation partners</strong>
+            </figcaption>
+          </figure>
+          <figure class="personas-visual-card">
+            <img class="personas-media" src="images/use-cases.png" alt="Potential use cases" />
+            <figcaption>
+              <span class="personas-label">Potential use cases</span>
+              <strong>Clear IoT experiences across work, home, and everyday life</strong>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="grid-2 personas-details-grid">
+          <article class="feature-card personas-card">
             <h3>Business verticals</h3>
             <div class="tag-row">
               <span>Manufacturing</span>
@@ -298,7 +310,7 @@
               <span>Healthcare</span>
             </div>
           </article>
-          <article class="feature-card">
+          <article class="feature-card personas-card">
             <h3>Business personas</h3>
             <p class="section-kicker">Empowering everyone to innovate</p>
             <div class="tag-row">
@@ -337,74 +349,110 @@
           <h2>What's in Srilee IoT?</h2>
           <p>Robust, reliable, and secure by default.</p>
         </div>
-        <div class="whats-tabs">
-          <span class="tab active">Robust</span>
-          <span class="tab">Reliable</span>
-          <span class="tab">Secure</span>
+        <div class="whats-tabs" role="tablist" aria-label="Srilee IoT features">
+          <button class="tab active" type="button" data-tab-index="0" aria-pressed="true">Robust</button>
+          <button class="tab" type="button" data-tab-index="1" aria-pressed="false">Reliable</button>
+          <button class="tab" type="button" data-tab-index="2" aria-pressed="false">Secure</button>
         </div>
-        <div class="grid-3">
-          <article class="feature-card">
-            <h3>Robust</h3>
-            <p>Build IoT applications in weeks with smooth device integration and fast insights.</p>
-            <div class="kpi-list">
-              <div class="kpi-item">
-                <span class="kpi-label">Deployment</span>
-                <span class="kpi-value">Under 30 minutes</span>
-                <span class="kpi-note">Rapid initial setup</span>
-              </div>
-              <div class="kpi-item">
-                <span class="kpi-label">Insights</span>
-                <span class="kpi-value">Under 10 seconds</span>
-                <span class="kpi-note">Faster decisions</span>
-              </div>
-              <div class="kpi-item">
-                <span class="kpi-label">Features</span>
-                <span class="kpi-value">30+ modules</span>
-                <span class="kpi-note">Scale as needed</span>
+        <div class="whats-panels">
+          <article class="feature-card whats-panel active" data-tab-panel="0">
+            <div class="whats-panel-copy">
+              <h3>Robust</h3>
+              <p>Launch quickly with smooth device integration, automation, and fast insights.</p>
+              <div class="kpi-list">
+                <div class="kpi-item">
+                  <span class="kpi-label">Setup</span>
+                  <span class="kpi-value">30-minute deployment</span>
+                  <span class="kpi-note">Rapid initial configuration</span>
+                </div>
+                <div class="kpi-item">
+                  <span class="kpi-label">Insights</span>
+                  <span class="kpi-value">&lt; 10 seconds</span>
+                  <span class="kpi-note">Faster decisions</span>
+                </div>
+                <div class="kpi-item">
+                  <span class="kpi-label">Modules</span>
+                  <span class="kpi-value">30+ modules</span>
+                  <span class="kpi-note">Scale as needed</span>
+                </div>
               </div>
             </div>
+            <aside class="whats-aside">
+              <p class="whats-aside-kicker">Best for</p>
+              <h4>Quick rollouts that need a stable platform from day one</h4>
+              <ul class="whats-aside-list">
+                <li>Fast onboarding and device connection</li>
+                <li>Automation-ready workflows</li>
+                <li>Immediate visibility for operators</li>
+              </ul>
+              <div class="whats-aside-note">Designed to move from setup to insight without extra friction.</div>
+            </aside>
           </article>
-          <article class="feature-card">
-            <h3>Reliable</h3>
-            <p>Validated hardware and resilient connections designed to reduce risk.</p>
-            <div class="kpi-list">
-              <div class="kpi-item">
-                <span class="kpi-label">Devices and gateways</span>
-                <span class="kpi-value">50+ supported devices</span>
-                <span class="kpi-note">Flexible integration</span>
-              </div>
-              <div class="kpi-item">
-                <span class="kpi-label">Message handling</span>
-                <span class="kpi-value">10M messages/day</span>
-                <span class="kpi-note">High-volume ingestion</span>
-              </div>
-              <div class="kpi-item">
-                <span class="kpi-label">Ingest and process</span>
-                <span class="kpi-value">2B+ datapoints</span>
-                <span class="kpi-note">Real-time visibility</span>
+          <article class="feature-card whats-panel" data-tab-panel="1">
+            <div class="whats-panel-copy">
+              <h3>Reliable</h3>
+              <p>Keep operations steady with validated hardware and resilient data flow.</p>
+              <div class="kpi-list">
+                <div class="kpi-item">
+                  <span class="kpi-label">Devices</span>
+                  <span class="kpi-value">50+ supported devices</span>
+                  <span class="kpi-note">Flexible integration</span>
+                </div>
+                <div class="kpi-item">
+                  <span class="kpi-label">Throughput</span>
+                  <span class="kpi-value">10M messages/day</span>
+                  <span class="kpi-note">High-volume ingestion</span>
+                </div>
+                <div class="kpi-item">
+                  <span class="kpi-label">Visibility</span>
+                  <span class="kpi-value">2B+ datapoints</span>
+                  <span class="kpi-note">Real-time visibility</span>
+                </div>
               </div>
             </div>
+            <aside class="whats-aside">
+              <p class="whats-aside-kicker">Best for</p>
+              <h4>Operations that need steady performance at scale</h4>
+              <ul class="whats-aside-list">
+                <li>Validated hardware and gateway support</li>
+                <li>Resilient connectivity for critical workflows</li>
+                <li>High-volume data handling without lag</li>
+              </ul>
+              <div class="whats-aside-note">Built to reduce risk while keeping daily operations smooth.</div>
+            </aside>
           </article>
-          <article class="feature-card">
-            <h3>Secure</h3>
-            <p>Protect the confidentiality, integrity, and availability of IoT data.</p>
-            <div class="kpi-list">
-              <div class="kpi-item">
-                <span class="kpi-label">Verification</span>
-                <span class="kpi-value">Multi-factor access</span>
-                <span class="kpi-note">Layered identity checks</span>
-              </div>
-              <div class="kpi-item">
-                <span class="kpi-label">Compliance</span>
-                <span class="kpi-value">GDPR aligned</span>
-                <span class="kpi-note">Data privacy standards</span>
-              </div>
-              <div class="kpi-item">
-                <span class="kpi-label">Certifications</span>
-                <span class="kpi-value">ISO-ready</span>
-                <span class="kpi-note">Security posture</span>
+          <article class="feature-card whats-panel" data-tab-panel="2">
+            <div class="whats-panel-copy">
+              <h3>Secure</h3>
+              <p>Protect access and data with layered controls and privacy-first safeguards.</p>
+              <div class="kpi-list">
+                <div class="kpi-item">
+                  <span class="kpi-label">Access</span>
+                  <span class="kpi-value">Multi-factor access</span>
+                  <span class="kpi-note">Layered identity checks</span>
+                </div>
+                <div class="kpi-item">
+                  <span class="kpi-label">Compliance</span>
+                  <span class="kpi-value">GDPR aligned</span>
+                  <span class="kpi-note">Data privacy standards</span>
+                </div>
+                <div class="kpi-item">
+                  <span class="kpi-label">Certification</span>
+                  <span class="kpi-value">ISO-ready</span>
+                  <span class="kpi-note">Security posture</span>
+                </div>
               </div>
             </div>
+            <aside class="whats-aside">
+              <p class="whats-aside-kicker">Best for</p>
+              <h4>Deployments where governance and trust matter most</h4>
+              <ul class="whats-aside-list">
+                <li>Identity and access controls</li>
+                <li>Privacy-minded data handling</li>
+                <li>Audit-friendly operational posture</li>
+              </ul>
+              <div class="whats-aside-note">Security is built in, so the platform stays ready for enterprise use.</div>
+            </aside>
           </article>
         </div>
       </section>

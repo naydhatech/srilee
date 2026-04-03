@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="840" viewBox="0 0 1200 840">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#eef4ff"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="navy" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1f2a44"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="soft" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#dbeafe"/>
+      <stop offset="1" stop-color="#f8fbff"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#1e3a8a" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="840" rx="36" fill="url(#bg)"/>
+  <circle cx="288" cy="152" r="108" fill="#dbeafe"/>
+  <circle cx="900" cy="134" r="138" fill="#eff6ff"/>
+  <circle cx="1028" cy="602" r="124" fill="#dbeafe"/>
+  <path d="M118 612C180 454 298 352 460 342c116-8 198 26 282 98 80 70 164 120 322 126-52 128-166 180-304 182-186 2-392-56-642-136z" fill="#f7fbff"/>
+
+  <g filter="url(#shadow)">
+    <rect x="130" y="180" width="250" height="430" rx="34" fill="#ffffff" stroke="#d7e2f2"/>
+    <rect x="172" y="222" width="166" height="78" rx="22" fill="#dbeafe"/>
+    <rect x="180" y="336" width="150" height="16" rx="8" fill="#bfdbfe"/>
+    <rect x="180" y="370" width="118" height="16" rx="8" fill="#e5eefc"/>
+    <rect x="180" y="404" width="138" height="16" rx="8" fill="#e5eefc"/>
+    <rect x="180" y="438" width="96" height="16" rx="8" fill="#bfdbfe"/>
+    <circle cx="272" cy="256" r="26" fill="url(#blue)"/>
+    <path d="M258 256l10 12 20-26" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="450" y="128" width="300" height="520" rx="38" fill="#ffffff" stroke="#d7e2f2"/>
+    <rect x="496" y="168" width="208" height="22" rx="11" fill="#bfdbfe"/>
+    <rect x="496" y="210" width="174" height="16" rx="8" fill="#dbeafe"/>
+    <rect x="496" y="246" width="236" height="180" rx="26" fill="url(#soft)"/>
+    <circle cx="612" cy="350" r="58" fill="#dbeafe"/>
+    <circle cx="612" cy="350" r="36" fill="#3b82f6"/>
+    <path d="M592 350h40M612 330v40" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+    <rect x="516" y="462" width="206" height="16" rx="8" fill="#e5eefc"/>
+    <rect x="516" y="496" width="158" height="16" rx="8" fill="#bfdbfe"/>
+    <rect x="516" y="530" width="190" height="16" rx="8" fill="#e5eefc"/>
+    <rect x="516" y="564" width="126" height="16" rx="8" fill="#bfdbfe"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="804" y="198" width="260" height="396" rx="34" fill="#ffffff" stroke="#d7e2f2"/>
+    <rect x="844" y="238" width="184" height="80" rx="22" fill="#dbeafe"/>
+    <rect x="844" y="350" width="148" height="16" rx="8" fill="#bfdbfe"/>
+    <rect x="844" y="386" width="178" height="16" rx="8" fill="#e5eefc"/>
+    <rect x="844" y="422" width="128" height="16" rx="8" fill="#e5eefc"/>
+    <circle cx="966" cy="278" r="26" fill="url(#navy)"/>
+    <path d="M956 278h20M966 268v20" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <g fill="none" stroke-linecap="round">
+    <path d="M322 146c42 0 68 24 92 68" stroke="#93c5fd" stroke-width="8" stroke-dasharray="14 12"/>
+    <path d="M733 182c44 14 70 38 88 74" stroke="#60a5fa" stroke-width="8" stroke-dasharray="14 12"/>
+    <path d="M964 184c-28 34-54 58-94 76" stroke="#93c5fd" stroke-width="8" stroke-dasharray="14 12"/>
+  </g>
+
+  <text x="600" y="760" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="34" font-weight="700" fill="#1f2a44">Business personas</text>
+  <text x="600" y="802" text-anchor="middle" font-family="Mulish, Arial, sans-serif" font-size="20" fill="#5b6b84">Leaders, operators, and implementation partners</text>
+</svg>
