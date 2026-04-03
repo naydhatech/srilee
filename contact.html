@@ -48,7 +48,7 @@
           <h2>Contact us</h2>
           <p>Tell us about your needs and we will get back within one business day.</p>
         </div>
-        <form class="contact-form" action="#" method="post">
+        <form class="contact-form" id="contactForm" action="/api/contact" method="post">
           <div class="contact-grid">
             <input type="text" name="name" placeholder="Full name" required />
             <input type="email" name="email" placeholder="Work email" required />
@@ -57,6 +57,7 @@
           </div>
           <textarea name="message" rows="5" placeholder="How can we help?"></textarea>
           <button class="primary-btn" type="submit">Send message</button>
+          <p class="contact-status" id="contactStatus" aria-live="polite"></p>
         </form>
       </section>
     </main>

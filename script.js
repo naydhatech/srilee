@@ -2,10 +2,69 @@ const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 const navAnchors = document.querySelectorAll("#navLinks a");
 const navItems = document.querySelectorAll(".nav-item.has-mega");
+const contactForm = document.getElementById("contactForm");
+const contactStatus = document.getElementById("contactStatus");
+const companyEmail = "sales@srilee.com";
 
 if (menuBtn && navLinks) {
   menuBtn.addEventListener("click", () => {
     navLinks.classList.toggle("open");
+  });
+}
+
+if (contactForm) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const payload = Object.fromEntries(formData.entries());
+
+    if (contactStatus) {
+      contactStatus.textContent = "Sending your message...";
+      contactStatus.classList.remove("is-error", "is-success");
+    }
+
+    fetch(contactForm.action, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to send message");
+        }
+        return response.json();
+      })
+      .then(() => {
+        contactForm.reset();
+        if (contactStatus) {
+          contactStatus.textContent = "Message sent successfully. We will get back to you soon.";
+          contactStatus.classList.add("is-success");
+        }
+      })
+      .catch(() => {
+        const mailSubject = encodeURIComponent("Contact form inquiry from website visitor");
+        const mailBody = encodeURIComponent(
+          [
+            `Name: ${(payload.name || "").toString().trim() || "Not provided"}`,
+            `Email: ${(payload.email || "").toString().trim() || "Not provided"}`,
+            `Phone: ${(payload.phone || "").toString().trim() || "Not provided"}`,
+            `Company: ${(payload.company || "").toString().trim() || "Not provided"}`,
+            "",
+            "Message:",
+            (payload.message || "").toString().trim() || "Not provided",
+          ].join("\n")
+        );
+
+        if (contactStatus) {
+          contactStatus.textContent = "Something went wrong. Opening your email app instead.";
+          contactStatus.classList.add("is-error");
+        }
+
+        window.location.href = `mailto:${companyEmail}?subject=${mailSubject}&body=${mailBody}`;
+      });
   });
 }
 
