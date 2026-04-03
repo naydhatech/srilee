@@ -2342,10 +2342,14 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
   color: #fff;
   box-shadow: 0 14px 28px rgba(15, 23, 42, 0.25);
   z-index: 50;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .floating-btn:hover {
@@ -2355,7 +2359,12 @@ button {
 
 .whatsapp-float {
   bottom: 24px;
-  background: radial-gradient(circle at top left, #47f07d, #25d366 65%, #1aa552);
+  background: radial-gradient(circle at top left, #63e58f, #25d366 70%, #1f9f5f);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 12px 22px rgba(37, 211, 102, 0.22);
+  filter: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .linkedin-float {
