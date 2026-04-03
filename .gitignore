@@ -1,0 +1,9 @@
+node_modules/
+.wrangler/
+.wranglerignore
+.env
+.env.*
+meil/
+*.tmp
+*.docx
+
