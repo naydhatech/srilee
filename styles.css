@@ -527,6 +527,43 @@ button {
   overflow: visible;
 }
 
+.hero.hero-marquee {
+  display: block;
+  padding: 68px 0 52px;
+  overflow: hidden;
+}
+
+.hero-marquee-viewport {
+  overflow: hidden;
+}
+
+.hero-marquee-track {
+  display: flex;
+  width: max-content;
+  transition: transform 0.75s ease;
+  will-change: transform;
+}
+
+.hero-slide {
+  flex: 0 0 100vw;
+  width: 100vw;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: minmax(320px, 1.1fr) minmax(300px, 0.9fr);
+  gap: 40px;
+  padding: 0 6vw;
+  align-items: start;
+}
+
+.hero-slide .hero-content {
+  padding-top: 0;
+}
+
+.hero-slide .hero-visual {
+  display: grid;
+  gap: 16px;
+}
+
 .hero-iot {
   background: radial-gradient(circle at top left, rgba(232, 69, 45, 0.18), rgba(15, 23, 36, 0) 50%),
     radial-gradient(circle at 60% 10%, rgba(66, 153, 225, 0.2), rgba(15, 23, 36, 0) 55%),
@@ -653,7 +690,7 @@ button {
 }
 
 .home-page .hero-visual {
-  overflow: hidden;
+  overflow: visible;
 }
 
 .home-page .hero-image-rotator {
@@ -684,6 +721,99 @@ button {
 
 .home-page .hero-card {
   max-width: 100%;
+}
+
+.marquee-shell,
+.marquee-summary {
+  opacity: 1;
+  transform: none;
+  animation: none;
+  width: 100%;
+  max-width: 100%;
+}
+
+.marquee-shell {
+  display: grid;
+  gap: 16px;
+  overflow: hidden;
+  padding: 22px;
+  background: rgba(12, 18, 28, 0.92);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.marquee-header {
+  margin-bottom: 0;
+}
+
+.menu-marquee {
+  overflow: hidden;
+  position: relative;
+  border-radius: 18px;
+}
+
+.menu-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 0;
+  animation: marquee-scroll 24s linear infinite;
+  will-change: transform;
+}
+
+.menu-marquee-group {
+  display: flex;
+  gap: 16px;
+  flex: 0 0 auto;
+}
+
+.menu-marquee-item {
+  width: clamp(200px, 26vw, 240px);
+  min-height: 168px;
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04)),
+    rgba(255, 255, 255, 0.03);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.18);
+  color: #f5f7fb;
+  display: grid;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+.menu-marquee-item strong {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.15;
+}
+
+.menu-marquee-item p {
+  color: rgba(245, 247, 251, 0.72);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.menu-index {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(245, 247, 251, 0.9);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.menu-marquee-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.24);
+}
+
+.marquee-summary {
+  background: rgba(12, 18, 28, 0.86);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 .hero-image {
@@ -3254,6 +3384,15 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .hero.hero-marquee {
+    padding: 58px 0 44px;
+  }
+
+  .hero-slide {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
   .dual-grid {
     grid-template-columns: 1fr;
   }
@@ -3293,6 +3432,14 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .hero.hero-marquee {
+    padding: 46px 0 38px;
+  }
+
+  .hero-slide {
+    padding: 0 5vw;
+  }
+
   .hero-card {
     order: -1;
   }
@@ -3303,6 +3450,23 @@ button {
 
   .home-page .hero-image-rotator {
     height: 220px;
+  }
+
+  .marquee-shell {
+    padding: 18px;
+  }
+
+  .menu-marquee-item {
+    width: 190px;
+    min-height: 154px;
+  }
+
+  .menu-marquee-track {
+    gap: 0;
+  }
+
+  .menu-marquee-group {
+    gap: 12px;
   }
 
   .stat-grid {
@@ -3449,6 +3613,10 @@ button {
     padding: 56px 5vw 44px;
   }
 
+  .hero.hero-marquee {
+    padding: 40px 0 34px;
+  }
+
   .hero-content h1 {
     font-size: clamp(1.8rem, 7vw, 2.35rem);
   }
@@ -3531,6 +3699,10 @@ button {
     transform: none;
     margin-top: 12px;
     width: 100%;
+  }
+
+  .marquee-summary .stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .manufacturing-low-voltage-grid {
@@ -5528,8 +5700,8 @@ body.automation-page main {
   position: relative;
   display: grid;
   grid-template-columns: minmax(320px, 1.05fr) minmax(320px, 0.95fr);
-  gap: 44px;
-  padding: 72px 6vw 56px;
+  gap: 32px;
+  padding: 64px 6vw 44px;
   align-items: center;
   overflow: hidden;
   background: #fff;
@@ -5552,7 +5724,7 @@ body.automation-page main {
 }
 
 .automation-page .hero-left {
-  max-width: 640px;
+  max-width: 560px;
 }
 
 .automation-page .hero-label,
@@ -5560,10 +5732,10 @@ body.automation-page main {
 .automation-page .tech-label {
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-size: 0.74rem;
+  font-size: 0.68rem;
   font-weight: 800;
   color: #6a7281;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .automation-page .hero h1,
@@ -5574,9 +5746,9 @@ body.automation-page main {
 }
 
 .automation-page .hero h1 {
-  font-size: clamp(2.5rem, 4vw, 4.2rem);
-  line-height: 1.02;
-  margin-bottom: 18px;
+  font-size: clamp(1.95rem, 3.2vw, 3.35rem);
+  line-height: 1.04;
+  margin-bottom: 14px;
   font-weight: 700;
   color: var(--ink);
 }
@@ -5597,9 +5769,10 @@ body.automation-page main {
 }
 
 .automation-page .hero-desc {
-  max-width: 560px;
-  font-size: 1rem;
-  margin-bottom: 22px;
+  max-width: 520px;
+  font-size: 0.93rem;
+  line-height: 1.7;
+  margin-bottom: 18px;
 }
 
 .automation-page .hero-badges {
@@ -5624,9 +5797,10 @@ body.automation-page main {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 14px;
+  padding: 8px 12px;
   border-radius: 999px;
   font-weight: 700;
+  font-size: 0.9rem;
   color: var(--ink);
 }
 
@@ -5642,10 +5816,11 @@ body.automation-page main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  padding: 0 18px;
+  min-height: 44px;
+  padding: 0 16px;
   border-radius: 14px;
   font-weight: 700;
+  font-size: 0.94rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease,
     border-color 0.2s ease;
 }
@@ -5673,78 +5848,102 @@ body.automation-page main {
   position: relative;
   display: grid;
   justify-items: end;
-  align-items: center;
+  align-items: start;
 }
 
 .automation-page .hero-mosaic {
   position: relative;
-  width: min(100%, 520px);
-  min-height: 420px;
+  width: min(100%, 540px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: 1.15fr 0.85fr;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 18px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
+    radial-gradient(circle at 20% 0%, rgba(255, 255, 255, 0.05), transparent 35%),
+    #ffffff;
+  box-shadow: 0 18px 36px rgba(12, 20, 32, 0.1);
+  overflow: hidden;
+}
+
+.automation-page .hero-mosaic::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(15, 19, 26, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 19, 26, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  opacity: 0.22;
 }
 
 .automation-page .hero-mosaic img {
+  position: relative;
+  z-index: 1;
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 22px;
-  box-shadow: 0 20px 40px rgba(12, 20, 32, 0.14);
+  border-radius: 12px;
+  box-shadow: 0 10px 22px rgba(12, 20, 32, 0.12);
 }
 
 .automation-page .hero-mosaic .img-main {
-  width: 68%;
-  height: 320px;
+  grid-column: 1 / -1;
+  min-height: 210px;
 }
 
 .automation-page .hero-mosaic img:nth-child(2) {
-  position: absolute;
-  left: 22%;
-  top: 88px;
-  width: 52%;
-  height: 200px;
+  grid-column: 1 / 2;
+  min-height: 160px;
 }
 
 .automation-page .hero-mosaic img:nth-child(3) {
-  position: absolute;
-  right: 0;
-  bottom: 10px;
-  width: 46%;
-  height: 190px;
+  grid-column: 2 / 3;
+  min-height: 160px;
 }
 
 .automation-page .mosaic-badge {
   position: absolute;
-  left: 0;
-  bottom: 18px;
+  left: -12px;
+  bottom: -12px;
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 14px 16px;
-  border-radius: 18px;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: #12161d;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.24);
   backdrop-filter: blur(10px);
+  z-index: 2;
 }
 
 .automation-page .mosaic-badge .icon {
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: rgba(232, 69, 45, 0.1);
-  font-size: 1.15rem;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 1rem;
+  color: #ff8a4c;
 }
 
 .automation-page .mosaic-badge .stat {
   font-family: "Poppins", sans-serif;
-  font-size: 1.3rem;
+  font-size: 0.98rem;
   font-weight: 700;
-  color: var(--ink);
+  color: #fff;
   line-height: 1;
 }
 
 .automation-page .mosaic-badge .lbl {
-  color: var(--muted);
-  font-size: 0.86rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.72rem;
 }
 
 .automation-page .stats-strip,
@@ -5807,19 +6006,20 @@ body.automation-page main {
 }
 
 .automation-page .section {
-  padding: 78px 6vw;
+  padding: 68px 6vw;
 }
 
 .automation-page .section-title {
-  font-size: clamp(1.9rem, 3vw, 3rem);
-  line-height: 1.12;
-  margin-bottom: 12px;
+  font-size: clamp(1.55rem, 2.4vw, 2.45rem);
+  line-height: 1.14;
+  margin-bottom: 10px;
   color: var(--ink);
 }
 
 .automation-page .section-sub {
   max-width: 760px;
-  font-size: 1rem;
+  font-size: 0.93rem;
+  line-height: 1.68;
 }
 
 .automation-page .solutions-grid {
@@ -5882,7 +6082,7 @@ body.automation-page main {
 }
 
 .automation-page .sol-card h3 {
-  font-size: 1.08rem;
+  font-size: 0.98rem;
 }
 
 .automation-page .sol-card p {
@@ -5894,7 +6094,7 @@ body.automation-page main {
   gap: 8px;
   padding-left: 18px;
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
 }
 
 .automation-page .process-section {
@@ -5984,11 +6184,12 @@ body.automation-page main {
 
 .automation-page .step-body h4 {
   margin-bottom: 8px;
-  font-size: 1rem;
+  font-size: 0.96rem;
 }
 
 .automation-page .step-body p {
   color: var(--muted);
+  font-size: 0.9rem;
   margin: 0;
 }
 
@@ -6019,7 +6220,12 @@ body.automation-page main {
 }
 
 .automation-page .ind-body h4 {
-  font-size: 1.02rem;
+  font-size: 0.98rem;
+}
+
+.automation-page .ind-body p {
+  font-size: 0.88rem;
+  line-height: 1.65;
 }
 
 .automation-page .why-grid {
@@ -6041,7 +6247,7 @@ body.automation-page main {
 }
 
 .automation-page .why-card h4 {
-  font-size: 1rem;
+  font-size: 0.96rem;
 }
 
 .automation-page .testimonials-section {
@@ -6091,12 +6297,12 @@ body.automation-page main {
 }
 
 .automation-page .testi-name {
-  font-size: 0.98rem;
+  font-size: 0.94rem;
 }
 
 .automation-page .testi-role {
   color: var(--muted);
-  font-size: 0.86rem;
+  font-size: 0.8rem;
 }
 
 .automation-page .cta-section {
@@ -6118,7 +6324,7 @@ body.automation-page main {
 }
 
 .automation-page .cta-left h2 {
-  font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+  font-size: clamp(1.5rem, 2.3vw, 2rem);
   line-height: 1.1;
   color: var(--ink);
 }
@@ -6176,7 +6382,7 @@ body.automation-page main {
   }
 
   .automation-page .hero-mosaic {
-    width: min(100%, 640px);
+    width: min(100%, 620px);
   }
 
   .automation-page .stats-inner,
@@ -6225,29 +6431,33 @@ body.automation-page main {
   }
 
   .automation-page .hero {
-    padding-top: 52px;
-    padding-bottom: 42px;
+    padding-top: 46px;
+    padding-bottom: 34px;
   }
 
   .automation-page .hero-mosaic {
-    min-height: 340px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    min-height: unset;
   }
 
   .automation-page .hero-mosaic .img-main {
-    height: 250px;
+    min-height: 220px;
   }
 
   .automation-page .hero-mosaic img:nth-child(2) {
-    top: 74px;
+    min-height: 180px;
   }
 
   .automation-page .hero-mosaic img:nth-child(3) {
-    bottom: 0;
+    min-height: 180px;
   }
 
   .automation-page .mosaic-badge {
     position: static;
-    margin-top: 14px;
+    left: auto;
+    bottom: auto;
+    margin-top: 12px;
   }
 
   .automation-page .stats-inner,
@@ -6288,6 +6498,16 @@ body.automation-page main {
   .automation-page .fade-up-3 {
     animation: none;
     opacity: 1;
+    transform: none;
+  }
+
+  .hero-marquee-track {
+    transform: none;
+    transition: none;
+  }
+
+  .menu-marquee-track {
+    animation: none;
     transform: none;
   }
 }
