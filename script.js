@@ -126,6 +126,32 @@ revealTargets.forEach((target) => {
   observer.observe(target);
 });
 
+const whatsTabs = document.querySelector(".whats-tabs");
+
+if (whatsTabs) {
+  const tabButtons = Array.from(whatsTabs.querySelectorAll(".tab"));
+  const tabPanels = Array.from(document.querySelectorAll(".whats-panel"));
+
+  const setActiveTab = (index) => {
+    tabButtons.forEach((button, buttonIndex) => {
+      const isActive = buttonIndex === index;
+      button.classList.toggle("active", isActive);
+      button.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+
+    tabPanels.forEach((panel, panelIndex) => {
+      panel.classList.toggle("active", panelIndex === index);
+    });
+  };
+
+  const initialIndex = Math.max(0, tabButtons.findIndex((button) => button.classList.contains("active")));
+  setActiveTab(initialIndex >= 0 ? initialIndex : 0);
+
+  tabButtons.forEach((button, index) => {
+    button.addEventListener("click", () => setActiveTab(index));
+  });
+}
+
 const acceleratorGrid = document.querySelector("#accelerators .grid-3");
 
 if (acceleratorGrid) {
