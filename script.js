@@ -78,6 +78,149 @@ navAnchors.forEach((anchor) => {
 
 document.documentElement.style.scrollBehavior = "smooth";
 
+const homeCounters = Array.from(document.querySelectorAll(".home-main .count, .home-main .live-val[data-count]"));
+const homeReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const animateCounter = (node) => {
+  if (!node || node.dataset.countAnimated === "true") {
+    return;
+  }
+
+  node.dataset.countAnimated = "true";
+  const target = Number.parseFloat(node.dataset.count || node.textContent || "0");
+  const suffix = node.dataset.suffix || "";
+  const decimals = `${target}`.includes(".") ? `${target}`.split(".")[1].length : 0;
+
+  if (!Number.isFinite(target) || homeReducedMotion) {
+    node.textContent = `${target.toFixed(decimals)}${suffix}`;
+    return;
+  }
+
+  const start = window.performance.now();
+  const duration = 1200;
+
+  const tick = (now) => {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const value = target * eased;
+    node.textContent = `${value.toFixed(decimals)}${suffix}`;
+    if (progress < 1) {
+      window.requestAnimationFrame(tick);
+    }
+  };
+
+  window.requestAnimationFrame(tick);
+};
+
+homeCounters
+  .filter((node) => node.closest(".hero-live"))
+  .forEach((node, index) => window.setTimeout(() => animateCounter(node), 180 + index * 90));
+
+const homeCounterTargets = homeCounters.filter((node) => node.closest(".numbers-strip"));
+
+if (homeCounterTargets.length) {
+  if (homeReducedMotion || !("IntersectionObserver" in window)) {
+    homeCounterTargets.forEach(animateCounter);
+  } else {
+    const homeCounterObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.35 }
+    );
+
+    homeCounterTargets.forEach((node) => homeCounterObserver.observe(node));
+  }
+}
+
+const renewableHomeTabs = {
+  hydro: {
+    image: "images/energy.png",
+    chips: ["Governor control", "AVR / excitation", "Gate automation", "Hydro SCADA"],
+    title: "Hydro Power Automation",
+    intro: "Control turbine speed, excitation, gates, alarms, and station-level SCADA with a compact, reliable architecture.",
+    cards: [
+      ["Governor Control", "Speed regulation, droop, isochronous mode, and load sharing."],
+      ["AVR & Excitation", "Voltage and reactive power control for generator performance."],
+      ["Protection", "Overspeed, differential, earth fault, and reverse power logic."],
+      ["SCADA & HMI", "Alarm logging, historian data, and remote VPN visibility."],
+    ],
+  },
+  solar: {
+    image: "images/industrial.png",
+    chips: ["Plant SCADA", "PPC control", "Weather station", "Remote O&M"],
+    title: "Solar Plant SCADA",
+    intro: "Monitor string data, inverters, alarms, and performance with clear plant and portfolio visibility.",
+    cards: [
+      ["String Monitoring", "Detect underperformance and faults early."],
+      ["Power Plant Controller", "Active power, reactive power, and ramp-rate control."],
+      ["Remote Diagnostics", "Resolve issues quickly without a site visit."],
+      ["Analytics & Reports", "Track PR, CUF, yield, and losses with automated reporting."],
+    ],
+  },
+};
+
+const renTabs = document.getElementById("renTabs");
+const renFeatBody = document.getElementById("renFeatBody");
+const renImg = document.getElementById("renImg");
+const renArchChips = document.getElementById("renArchChips");
+
+const renderRenewableTab = (tabName) => {
+  const data = renewableHomeTabs[tabName] || renewableHomeTabs.hydro;
+  if (renImg) {
+    renImg.style.opacity = "0";
+    window.setTimeout(() => {
+      renImg.src = data.image;
+      renImg.style.opacity = "1";
+    }, 160);
+  }
+
+  if (renArchChips) {
+    renArchChips.innerHTML = data.chips.map((chip) => `<span class="ren-chip">${chip}</span>`).join("");
+  }
+
+  if (renFeatBody) {
+    renFeatBody.innerHTML = `
+      <div class="feature-card reveal">
+        <p class="section-kicker">Renewable automation</p>
+        <h3>${data.title}</h3>
+        <p>${data.intro}</p>
+        <div class="grid-2" style="margin-top:16px">
+          ${data.cards
+            .map(
+              ([title, desc]) => `
+              <div class="feature-card" style="padding:16px">
+                <h4 style="margin-bottom:8px">${title}</h4>
+                <p>${desc}</p>
+              </div>`
+            )
+            .join("")}
+        </div>
+      </div>`;
+  }
+
+  renTabs?.querySelectorAll(".ren-tab").forEach((button) => {
+    const active = button.dataset.tab === tabName;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-pressed", active ? "true" : "false");
+  });
+};
+
+renTabs?.querySelectorAll(".ren-tab").forEach((button) => {
+  button.addEventListener("click", () => renderRenewableTab(button.dataset.tab || "hydro"));
+});
+
+if (renTabs) {
+  renderRenewableTab(renTabs.querySelector(".ren-tab[data-active='hydro']")?.dataset.tab || "hydro");
+}
+
 window.toggleHsys = (header) => {
   const card = header?.closest(".hsys");
   if (!card) return;
@@ -210,12 +353,12 @@ if (renewableRoot) {
   ];
 
   const platformCards = [
-    ["01", "h", "Multi-Plant Monitoring", "Monitor all solar and hydro assets from a central dashboard.", ["Portfolio view", "Site comparison", "Fleet alarms"]],
-    ["02", "s", "Performance Analytics", "Track PR, CUF, availability, specific yield, and losses.", ["PR tracking", "Loss waterfall", "Benchmarking"]],
-    ["03", "g", "Remote Monitoring & Diagnostics", "Keep 24/7 cloud-based remote access with live alarms.", ["Cloud SCADA", "Mobile alerts", "VPN access"]],
-    ["04", "h", "Data Historian & Reporting", "Store long-term process data and generate reports.", ["OSIsoft PI", "Ignition Historian", "Custom reports"]],
-    ["05", "s", "Alarm Management", "Prioritise alarms with filtering, suppression, and escalation.", ["ISA-18.2 alarms", "SMS/email alerts", "Escalation rules"]],
-    ["06", "g", "Cyber Security", "IEC 62351 and NERC CIP-aligned security with audit logging.", ["IEC 62351", "RBAC", "Audit log"]],
+    ["", "h", "Multi-Plant Monitoring", "Monitor all solar and hydro assets from a central dashboard.", ["Portfolio view", "Site comparison", "Fleet alarms"]],
+    ["", "s", "Performance Analytics", "Track PR, CUF, availability, specific yield, and losses.", ["PR tracking", "Loss waterfall", "Benchmarking"]],
+    ["", "g", "Remote Monitoring & Diagnostics", "Keep 24/7 cloud-based remote access with live alarms.", ["Cloud SCADA", "Mobile alerts", "VPN access"]],
+    ["", "h", "Data Historian & Reporting", "Store long-term process data and generate reports.", ["OSIsoft PI", "Ignition Historian", "Custom reports"]],
+    ["", "s", "Alarm Management", "Prioritise alarms with filtering, suppression, and escalation.", ["ISA-18.2 alarms", "SMS/email alerts", "Escalation rules"]],
+    ["", "g", "Cyber Security", "IEC 62351 and NERC CIP-aligned security with audit logging.", ["IEC 62351", "RBAC", "Audit log"]],
   ];
 
   const techCards = [
@@ -262,7 +405,6 @@ if (renewableRoot) {
     ].map(([value, label, tone]) => `<div class="stat reveal"><div class="stat-n ${tone}">${value}</div><div class="stat-l">${label}</div></div>`).join("")}</div>
 
     <section class="section hydro-section" id="hydro">
-      <div class="s-label h">01 - Hydro Power Plant Automation</div>
       <h2 class="s-title">Complete Automation for<br/>Hydro Power Plants</h2>
       <p class="s-desc">From governor controls and excitation systems to turbine protection, gate automation, and full SCADA integration.</p>
       <div class="hydro-grid">
@@ -280,7 +422,6 @@ if (renewableRoot) {
     <div class="divider"></div>
 
     <section class="section solar-section" id="solar">
-      <div class="s-label s">02 - Solar Power Plant SCADA</div>
       <h2 class="s-title">Solar SCADA with<br/>Advanced Plant Intelligence</h2>
       <p class="s-desc">String to plant-level monitoring, real-time performance analytics, PPC for grid compliance, remote diagnostics, and multi-site visibility.</p>
       <div class="solar-tab-nav" id="solarTabs">${Object.entries(renewableSolarTabs).map(([key, tab], index) => `<button class="stab${index === 0 ? " active" : ""}" data-tab="${key}">${tab.title}</button>`).join("")}</div>
@@ -294,7 +435,6 @@ if (renewableRoot) {
     <div class="divider"></div>
 
     <section class="section ppc-section">
-      <div class="s-label g">03 - Power Plant Controller</div>
       <h2 class="s-title">PPC - Active Power,<br/>Reactive Power &amp; Grid Compliance</h2>
       <div class="ppc-grid">
         <div class="ppc-content reveal">
@@ -311,7 +451,6 @@ if (renewableRoot) {
     <div class="divider"></div>
 
     <section class="section hybrid-section">
-      <div class="s-label g">04 - Hybrid Plant Automation</div>
       <h2 class="s-title">Solar + Hydro + BESS<br/>Hybrid Plants</h2>
       <p class="s-desc">Unified energy management and control for hybrid renewable plants - coordinating multiple generation sources and storage for optimal dispatch.</p>
       <div class="hybrid-layout">
@@ -323,7 +462,6 @@ if (renewableRoot) {
     <div class="divider"></div>
 
     <section class="section platform-section">
-      <div class="s-label h">05 - Integrated SCADA Platform</div>
       <h2 class="s-title">One Platform. All<br/>Renewable Assets.</h2>
       <p class="s-desc">Centralised monitoring and control across solar farms, hydro plants, and hybrid assets on a single, scalable SCADA and IoT platform.</p>
       <div class="platform-grid">${platformCards.map(([num, tone, title, desc, chips]) => `<div class="plat-card ${tone === "s" ? "solar-card-v" : ""} reveal"><div class="plat-num ${tone}">${num}</div><div class="plat-icon" style="background:${tone === "s" ? "rgba(234,179,8,.1);border:1px solid rgba(234,179,8,.2)" : tone === "g" ? "rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2)" : "rgba(14,165,233,.1);border:1px solid rgba(14,165,233,.2)"}"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="${tone === "s" ? "#eab308" : tone === "g" ? "#10b981" : "#0ea5e9"}">${num === "01" ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>' : num === "02" ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>' : num === "03" ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/>' : num === "04" ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>' : num === "05" ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>' : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>'}</svg></div><div class="plat-title">${title}</div><div class="plat-desc">${desc}</div><div class="plat-chips">${chips.map((chip) => `<span class="pc-${tone}">${chip}</span>`).join("")}</div></div>`).join("")}</div>
@@ -411,7 +549,7 @@ const observer = new IntersectionObserver(
 );
 
 const revealTargets = document.querySelectorAll(
-  ".feature-card, .resource-card, .price-card, .section, .logos, .cta, .reveal"
+  ".feature-card, .resource-card, .price-card, .section, .logos, .cta, .reveal, .hero-left, .hero-right, .hero-live .live-item, .marquee-strip, .bento-card, .ns-item, .iot-feat, .acard, .mfg-card, .svc-card, .vert-card, .pillar, .why-card, .persona-card, .cta-sec"
 );
 
 revealTargets.forEach((target) => {
