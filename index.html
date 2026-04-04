@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="styles.css"/>
+<link rel="stylesheet" href="assets/css/styles.css"/>
 <style>
 
 :root {
@@ -578,19 +578,19 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 <header class="site-header">
   <div class="nav" id="nav">
     <a class="brand" href="index.html">
-      <img class="brand-logo" src="logo.png" alt="Srilee IoT logo" />
+      <img class="brand-logo" src="assets/images/logo.png" alt="Srilee IoT logo" />
     </a>
     <div class="nav-links" id="navLinks">
       <a class="active" href="index.html">Home</a>
-      <a href="iot.html">IoT</a>
-      <a href="industrial-automation.html">Automation</a>
-      <a href="manufacturing.html">Manufacturing</a>
-      <a href="industrial-services.html">Industrial service</a>
-      <a href="renewable-automation.html">Renewable</a>
+      <a href="pages/iot.html">IoT</a>
+      <a href="pages/industrial-automation.html">Automation</a>
+      <a href="pages/manufacturing.html">Manufacturing</a>
+      <a href="pages/industrial-services.html">Industrial service</a>
+      <a href="pages/renewable-automation.html">Renewable</a>
     </div>
     <div class="nav-actions">
-      <a class="ghost-btn" href="contact.html">Talk to an expert</a>
-      <a class="primary-btn" href="demo.html">Demo</a>
+      <a class="ghost-btn" href="pages/contact.html">Talk to an expert</a>
+      <a class="primary-btn" href="pages/demo.html">Demo</a>
       <button class="menu-btn" id="menuBtn" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
@@ -611,7 +611,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
     </h1>
     <p class="hero-desc">One platform connecting assets, automating operations, and powering intelligent control across industrial, manufacturing, and renewable energy environments   from field sensor to boardroom dashboard.</p>
     <div class="hero-cta">
-      <a href="contact.html" class="btn btn-solid btn-hero">Get a Demo</a>
+      <a href="pages/contact.html" class="btn btn-solid btn-hero">Get a Demo</a>
       <a href="#solutions" class="btn btn-outline btn-hero">Explore Solutions</a>
     </div>
     <div class="hero-live">
@@ -637,19 +637,19 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 
   <div class="hero-right">
     <div class="himg tall">
-      <img src="images/hero.png" alt="IoT Platform"
+      <img src="assets/images/hero.png" alt="IoT Platform"
         onerror="this.parentElement.innerHTML='<div class=\'ph-img\'><svg width=\'44\' height=\'44\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1\' d=\'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z\'/></svg><span>IoT Dashboard</span></div>'"/>
       <div class="himg-tint" style="background:linear-gradient(135deg,rgba(59,130,246,.08),transparent)"></div>
       <div class="himg-label">IoT COMMAND CENTER</div>
     </div>
     <div class="himg">
-      <img src="images/industrial.png" alt="Automation"
+      <img src="assets/images/industrial.png" alt="Automation"
         onerror="this.parentElement.innerHTML='<div class=\'ph-img\'><span>Industrial Automation</span></div>'"/>
       <div class="himg-tint" style="background:linear-gradient(135deg,rgba(249,115,22,.08),transparent)"></div>
       <div class="himg-label">AUTOMATION</div>
     </div>
     <div class="himg">
-      <img src="images/energy.png" alt="Renewable"
+      <img src="assets/images/energy.png" alt="Renewable"
         onerror="this.parentElement.innerHTML='<div class=\'ph-img\'><span>Renewable SCADA</span></div>'"/>
       <div class="himg-tint" style="background:linear-gradient(135deg,rgba(16,185,129,.08),transparent)"></div>
       <div class="himg-label">RENEWABLE SCADA</div>
@@ -697,7 +697,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
     <!-- IoT â€“ large -->
     <div class="bento-card bc-iot">
       <div class="bc-img">
-        <img src="images/hero.png" alt="IoT"
+        <img src="assets/images/hero.png" alt="IoT"
           onerror="this.parentElement.innerHTML='<div class=\'ph-img\'><svg width=\'48\' height=\'48\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1\' d=\'M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0\'/></svg><span>IoT Platform Dashboard</span></div>'"/>
         <div class="bc-grad"></div>
         <div class="bc-accent" style="background:linear-gradient(135deg,rgba(59,130,246,.3),transparent)"></div>
@@ -713,14 +713,14 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
           <span class="bc-tag" style="background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);color:#93c5fd">AI Analytics</span>
           <span class="bc-tag" style="background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);color:#93c5fd">Remote Control</span>
         </div>
-        <a href="iot.html" class="bc-link" style="color:var(--blue2);margin-top:14px;display:inline-flex">Explore platform</a>
+        <a href="pages/iot.html" class="bc-link" style="color:var(--blue2);margin-top:14px;display:inline-flex">Explore platform</a>
       </div>
     </div>
 
     <!-- Automation -->
     <div class="bento-card bc-auto">
       <div class="bc-img" style="min-height:120px">
-        <img src="images/industrial-automation-1.jpeg" alt="Automation"
+        <img src="assets/images/industrial-automation-1.jpeg" alt="Automation"
           onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'min-height:120px\'><span>Industrial Automation</span></div>'"/>
         <div class="bc-grad"></div>
         <div class="bc-accent" style="background:linear-gradient(135deg,rgba(249,115,22,.25),transparent)"></div>
@@ -731,14 +731,14 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
         </div>
         <div class="bc-title">Industrial Automation</div>
         <div class="bc-desc">PLC, SCADA, HMI &amp; DCS to IEC 61131-3   for process, power, and utilities.</div>
-        <a href="industrial-automation.html" class="bc-link" style="color:var(--orange);margin-top:10px;display:inline-flex">Explore</a>
+        <a href="pages/industrial-automation.html" class="bc-link" style="color:var(--orange);margin-top:10px;display:inline-flex">Explore</a>
       </div>
     </div>
 
     <!-- Manufacturing -->
     <div class="bento-card bc-mfg">
       <div class="bc-img" style="min-height:120px">
-        <img src="images/manufacturing-1.jpeg" alt="Manufacturing"
+        <img src="assets/images/manufacturing-1.jpeg" alt="Manufacturing"
           onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'min-height:120px\'><span>Panel Manufacturing</span></div>'"/>
         <div class="bc-grad"></div>
         <div class="bc-accent" style="background:linear-gradient(135deg,rgba(139,92,246,.25),transparent)"></div>
@@ -749,14 +749,14 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
         </div>
         <div class="bc-title">Panel Manufacturing</div>
         <div class="bc-desc">IEC-certified panels   PLC, HMI, VFD, MCC, Solar SMBs, Marshalling boxes. FAT tested.</div>
-        <a href="manufacturing.html" class="bc-link" style="color:#a78bfa;margin-top:10px;display:inline-flex">Explore</a>
+        <a href="pages/manufacturing.html" class="bc-link" style="color:#a78bfa;margin-top:10px;display:inline-flex">Explore</a>
       </div>
     </div>
 
     <!-- Services -->
     <div class="bento-card bc-svc">
       <div class="bc-img" style="min-height:120px">
-        <img src="images/industrial-services-1.jpeg" alt="Services"
+        <img src="assets/images/industrial-services-1.jpeg" alt="Services"
           onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'min-height:120px\'><span>Industrial Services</span></div>'"/>
         <div class="bc-grad"></div>
         <div class="bc-accent" style="background:linear-gradient(135deg,rgba(16,185,129,.25),transparent)"></div>
@@ -767,14 +767,14 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
         </div>
         <div class="bc-title">Industrial Services</div>
         <div class="bc-desc">Engineering, commissioning, remote support &amp; AMC   concept to handover.</div>
-        <a href="industrial-services.html" class="bc-link" style="color:var(--green);margin-top:10px;display:inline-flex">Explore</a>
+        <a href="pages/industrial-services.html" class="bc-link" style="color:var(--green);margin-top:10px;display:inline-flex">Explore</a>
       </div>
     </div>
 
     <!-- Renewable -->
     <div class="bento-card bc-ren">
       <div class="bc-img" style="min-height:120px">
-        <img src="images/energy.png" alt="Renewable"
+        <img src="assets/images/energy.png" alt="Renewable"
           onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'min-height:120px\'><span>Renewable SCADA</span></div>'"/>
         <div class="bc-grad"></div>
         <div class="bc-accent" style="background:linear-gradient(135deg,rgba(34,211,238,.25),transparent)"></div>
@@ -785,7 +785,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
         </div>
         <div class="bc-title">Renewable SCADA</div>
         <div class="bc-desc">Hydro governor, solar PPC, gate automation, hybrid EMS   IEC 60870 compliant.</div>
-        <a href="renewable-automation.html" class="bc-link" style="color:var(--cyan);margin-top:10px;display:inline-flex">Explore</a>
+        <a href="pages/renewable-automation.html" class="bc-link" style="color:var(--cyan);margin-top:10px;display:inline-flex">Explore</a>
       </div>
     </div>
 
@@ -822,11 +822,11 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
       <h2 class="sh">Connect Every Asset.<br/>Act on Every Signal.</h2>
       <p class="sd">A low-code IoT platform that connects any device, builds custom applications, and surfaces real-time intelligence for any industry, any scale.</p>
     </div>
-    <a href="iot.html" class="btn btn-outline rr" style="align-self:flex-end">Explore platform â†’</a>
+    <a href="pages/iot.html" class="btn btn-outline rr" style="align-self:flex-end">Explore platform â†’</a>
   </div>
   <div class="iot-layout">
     <div class="iot-screen rl">
-      <img src="images/hero.png" alt="IoT Dashboard"
+      <img src="assets/images/hero.png" alt="IoT Dashboard"
         style="width:100%;max-height:440px;object-fit:cover;display:block"
         onerror="this.parentElement.innerHTML+='<div class=\'iot-screen-ph\'><svg width=\'52\' height=\'52\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1\' d=\'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z\'/></svg><span style=\'font-family:JetBrains Mono,monospace;font-size:11px;opacity:.4\'>IoT Platform Dashboard</span></div>'"/>
       <!-- floating metric badges -->
@@ -878,12 +878,12 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
       <h2 class="sh">PLC. SCADA. HMI.<br/>Built for the Real World.</h2>
       <p class="sd">Seamless control system design and integration for process industries, power plants, and utilities   every deliverable to IEC 61131-3 and ISA 101 standards.</p>
     </div>
-    <a href="industrial-automation.html" class="btn btn-outline rr" style="align-self:flex-end">View automation â†’</a>
+    <a href="pages/industrial-automation.html" class="btn btn-outline rr" style="align-self:flex-end">View automation â†’</a>
   </div>
   <div class="auto-layout">
     <div class="img-stack rl">
       <div class="img-main">
-        <img src="images/industrial.png" alt="Control room"
+        <img src="assets/images/industrial.png" alt="Control room"
           onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:100%\'><span>Control Room SCADA</span></div>'"/>
       </div>
       <div class="img-pip">
@@ -930,7 +930,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
       <h2 class="sh">Precision Panels.<br/>Every Single Time.</h2>
       <p class="sd">Custom-engineered LV switchgear, automation panels, and field enclosures   designed, fabricated, wired, and factory acceptance tested to IEC 61439 in our facility.</p>
     </div>
-    <a href="manufacturing.html" class="btn btn-outline rr" style="align-self:flex-end">View all panels â†’</a>
+    <a href="pages/manufacturing.html" class="btn btn-outline rr" style="align-self:flex-end">View all panels â†’</a>
   </div>
   <div class="mfg-showcase">
     <div class="mfg-grid">
@@ -1078,7 +1078,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
       <h2 class="sh">End-to-End Engineering<br/>&amp; Field Support</h2>
       <p class="sd">Project engineering, detail design, commissioning, 24/7 remote support, training, and annual maintenance   one team for your entire project lifecycle.</p>
     </div>
-    <a href="industrial-services.html" class="btn btn-outline rr" style="align-self:flex-end">All services</a>
+    <a href="pages/industrial-services.html" class="btn btn-outline rr" style="align-self:flex-end">All services</a>
   </div>
   <div class="svc-layout">
     <div class="svc-grid rl">
@@ -1091,7 +1091,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
     </div>
     <div class="svc-visual rr">
       <div class="svc-img">
-        <img src="images/industrial-services-2.jpeg" alt="Engineering team"
+        <img src="assets/images/industrial-services-2.jpeg" alt="Engineering team"
           onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:320px\'><span>Engineering Team On-Site</span></div>'"/>
       </div>
       <!-- AMC tiers -->
@@ -1130,7 +1130,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
   </div>
   <div class="ren-layout">
     <div class="ren-vis rl" id="renVis">
-      <img id="renImg" src="images/energy.png" alt="Renewable plant"
+      <img id="renImg" src="assets/images/energy.png" alt="Renewable plant"
         style="width:100%;height:100%;object-fit:cover;transition:opacity .4s"
         onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:520px\'><span>Renewable Plant</span></div>'"/>
       <div class="ren-arch-overlay" id="renArchOverlay">
@@ -1277,8 +1277,8 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
   <div class="cta-title r">Start Your<br/><span class="grad">Digital Transformation</span></div>
   <p class="cta-desc r">Whether you're building a greenfield plant, upgrading legacy systems, or looking for smarter remote monitoring   we're ready to help you design the right solution.</p>
   <div class="cta-acts r">
-    <a href="contact.html" class="btn btn-solid">Get a Demo</a>
-    <a href="contact.html" class="btn btn-outline">Talk to an expert</a>
+    <a href="pages/contact.html" class="btn btn-solid">Get a Demo</a>
+    <a href="pages/contact.html" class="btn btn-outline">Talk to an expert</a>
   </div>
 </section>
 
@@ -1291,18 +1291,18 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
     </div>
     <div>
       <h4>Platform</h4>
-      <a href="iot.html">IoT platform</a>
-      <a href="industrial-automation.html">Automation</a>
-      <a href="manufacturing.html">Manufacturing</a>
-      <a href="industrial-services.html">Industrial services</a>
-      <a href="renewable-automation.html">Renewable</a>
+      <a href="pages/iot.html">IoT platform</a>
+      <a href="pages/industrial-automation.html">Automation</a>
+      <a href="pages/manufacturing.html">Manufacturing</a>
+      <a href="pages/industrial-services.html">Industrial services</a>
+      <a href="pages/renewable-automation.html">Renewable</a>
     </div>
     <div>
       <h4>Services</h4>
-      <a href="industrial-automation.html">Automation</a>
-      <a href="industrial-services.html">Industrial services</a>
-      <a href="manufacturing.html">Manufacturing</a>
-      <a href="renewable-automation-scada.html">Renewable automation</a>
+      <a href="pages/industrial-automation.html">Automation</a>
+      <a href="pages/industrial-services.html">Industrial services</a>
+      <a href="pages/manufacturing.html">Manufacturing</a>
+      <a href="pages/renewable-automation-scada.html">Renewable automation</a>
     </div>
     <div>
       <h4>Get in touch</h4>
@@ -1421,7 +1421,7 @@ document.querySelectorAll('.numbers-strip').forEach(el=>countObs.observe(el));
 /* â”€â”€ RENEWABLE TABS â”€â”€ */
 const renData = {
   hydro:{
-    img: 'images/energy.png',
+    img: 'assets/images/energy.png',
     archColor: 'rgba(34,211,238,.15)',
     archBorder: 'rgba(34,211,238,.3)',
     archText: '#22d3ee',
@@ -1508,3 +1508,8 @@ sections.forEach(s=>scrollSpy.observe(s));
 </script>
 </body>
 </html>
+
+
+
+
+
