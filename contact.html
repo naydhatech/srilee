@@ -6,7 +6,7 @@
     <title>Contact Us | Srilee IoT</title>
     <meta
       name="description"
-      content="Get in touch with Srilee IoT for product questions, demos, and support."
+      content="Get in touch with Srilee IoT for demos, project discussions, product questions, and support."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,7 +17,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="iot-theme">
+  <body class="iot-theme contact-page">
     <header class="site-header">
       <nav class="nav">
         <a class="brand" href="index.html">
@@ -30,11 +30,10 @@
           <a href="manufacturing.html">Manufacturing</a>
           <a href="industrial-services.html">Industrial service</a>
           <a href="renewable-automation.html">Renewable</a>
-          <a href="contact.html" class="active">Contact us</a>
         </div>
         <div class="nav-actions">
           <a class="ghost-btn" href="contact.html">Talk to an expert</a>
-          <a class="primary-btn" href="contact.html">Demo</a>
+          <a class="primary-btn" href="demo.html">Demo</a>
           <button class="menu-btn" id="menuBtn" aria-label="Open menu">
             <span></span><span></span><span></span>
           </button>
@@ -43,22 +42,57 @@
     </header>
 
     <main>
-      <section class="section contact-section" id="contact">
-        <div class="section-header">
-          <h2>Contact us</h2>
-          <p>Tell us about your needs and we will get back within one business day.</p>
-        </div>
-        <form class="contact-form" id="contactForm" action="/api/contact" method="post">
-          <div class="contact-grid">
-            <input type="text" name="name" placeholder="Full name" required />
-            <input type="email" name="email" placeholder="Work email" required />
-            <input type="tel" name="phone" placeholder="Phone (optional)" />
-            <input type="text" name="company" placeholder="Company" />
+      <section class="page-hero contact-page-hero">
+        <div class="page-hero-copy">
+          <p class="section-kicker">Contact & demo</p>
+          <h1>Tell us what you are building and we will shape the right next step.</h1>
+          <p>
+            Whether you want a guided demo, a project discussion, or ongoing support, our team can
+            help you map the right industrial IoT and automation path.
+          </p>
+          <div class="chip-grid">
+            <span>Request a live demo</span>
+            <span>Discuss your use case</span>
+            <span>Get integration guidance</span>
+            <span>Talk to our engineers</span>
           </div>
-          <textarea name="message" rows="5" placeholder="How can we help?"></textarea>
-          <button class="primary-btn" type="submit">Send message</button>
-          <p class="contact-status" id="contactStatus" aria-live="polite"></p>
-        </form>
+          <article class="feature-card contact-hero-card">
+            <h3>Why teams reach out</h3>
+            <ul class="feature-list">
+              <li>See the platform in a demo tailored to your workflow</li>
+              <li>Review architecture, deployment, and rollout options</li>
+              <li>Get support for engineering, commissioning, and maintenance</li>
+              <li>Explore solutions across IoT, automation, manufacturing, and renewable systems</li>
+            </ul>
+          </article>
+        </div>
+        <div class="page-hero-visual contact-hero-visual">
+          <article class="feature-card contact-form-card">
+            <div class="section-header contact-form-header">
+              <h2>Send a message</h2>
+              <p>Tell us about your project, demo needs, or support request and we will respond within one business day.</p>
+            </div>
+            <form class="contact-form" id="contactForm" action="/api/contact" method="post">
+              <div class="contact-grid">
+                <input type="text" name="name" placeholder="Full name" required />
+                <input type="email" name="email" placeholder="Work email" required />
+                <input type="tel" name="phone" placeholder="Phone (optional)" />
+                <input type="text" name="company" placeholder="Company" />
+                <select name="topic" aria-label="Reason for contact">
+                  <option value="">I want to discuss</option>
+                  <option>Requesting a demo</option>
+                  <option>Project enquiry</option>
+                  <option>Support or service</option>
+                  <option>Partnership or consulting</option>
+                </select>
+                <input type="text" name="timeline" placeholder="Project timeline or urgency" />
+              </div>
+              <textarea name="message" rows="6" placeholder="Share your goals, current setup, and what you want help with."></textarea>
+              <button class="primary-btn" type="submit">Send message</button>
+              <p class="contact-status" id="contactStatus" aria-live="polite"></p>
+            </form>
+          </article>
+        </div>
       </section>
     </main>
 
@@ -66,7 +100,7 @@
       <div class="footer-grid">
         <div>
           <h3>Srilee IoT</h3>
-          <p>Connect assets, automate operations, and build apps on one IoT platform.</p>
+          <p>Industrial automation, IoT, manufacturing, and renewable solutions for connected operations and support.</p>
         </div>
         <div>
           <h4>Platform</h4>
@@ -83,11 +117,48 @@
           <a href="index.html#industries">Smart cities</a>
         </div>
         <div>
-          <h4>Get in touch</h4>
-          <p>sales@srilee.com</p>
-          <p>+91 (967) 697-4984</p>
-          <p>+91 (868) 848-1394</p>
-          <p>Flat No: 3201, SLV Pearl, Road No 1, Matrusrinagar, Miyapur, Hyderabad, 500049</p>
+          <h4>Services</h4>
+          <a href="industrial-automation.html">Automation</a>
+          <a href="industrial-services.html">Industrial services</a>
+          <a href="manufacturing.html">Manufacturing</a>
+          <a href="renewable-automation-scada.html">Renewable automation</a>
+        </div>
+        <div>
+          <h4>GET IN TOUCH</h4>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path d="m4 7 8 6 8-6" />
+                </svg>
+              </span>
+              <a class="footer-contact-link" href="mailto:sales@srilee.com">sales@srilee.com</a>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8.2 5.2 10.7 4l1.8 4.1-1.7 1.7c1.1 2.1 2.6 3.6 4.7 4.7l1.7-1.7 4.1 1.8-1.2 2.5c-.4.9-1.2 1.4-2.2 1.4C10.2 18.5 5.5 13.8 5.5 7.8c0-1 .5-1.8 1.4-2.2z" />
+                </svg>
+              </span>
+              <div class="footer-contact-lines">
+                <a class="footer-contact-link" href="tel:+919676974984">+91 (967) 697-4984</a>
+                <a class="footer-contact-link" href="tel:+918688481394">+91 (868) 848-1394</a>
+              </div>
+            </div>
+            <div class="footer-contact-item footer-address-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 21s6-5.2 6-10a6 6 0 1 0-12 0c0 4.8 6 10 6 10z" />
+                  <circle cx="12" cy="11" r="2.2" />
+                </svg>
+              </span>
+              <address class="footer-address">
+                Flat No: 3201, SLV Pearl, Road No 1,<br />
+                Matrusrinagar, Miyapur, Hyderabad, 500049
+              </address>
+            </div>
+          </div>
         </div>
       </div>
       <p class="copyright">(c) 2026 Srilee Pvt Ltd., All rights reserved.</p>

@@ -1194,6 +1194,79 @@ button {
   background: var(--bg-alt);
 }
 
+.contact-page .page-hero {
+  display: grid;
+  grid-template-columns: minmax(320px, 1.05fr) minmax(280px, 0.95fr);
+  gap: 36px;
+  padding: 68px 6vw 52px;
+  align-items: start;
+}
+
+.contact-page .page-hero-copy {
+  max-width: 620px;
+}
+
+.contact-page .page-hero-copy h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(2rem, 2.9vw, 3rem);
+  line-height: 1.18;
+  margin-bottom: 18px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.contact-page .page-hero-copy > p:not(.section-kicker) {
+  color: var(--muted);
+  max-width: 560px;
+}
+
+.contact-page .page-hero-copy .chip-grid {
+  margin-top: 22px;
+}
+
+.contact-page .page-hero-visual {
+  display: grid;
+  gap: 16px;
+  align-items: start;
+  min-height: auto;
+  align-content: start;
+}
+
+.contact-page .contact-hero-card {
+  display: grid;
+  gap: 10px;
+  background: linear-gradient(180deg, #ffffff, #f8fbff);
+  margin-top: 4px;
+}
+
+.contact-page .contact-hero-card h3 {
+  font-size: 1.05rem;
+}
+
+.contact-page .contact-hero-panel {
+  position: static;
+  width: min(100%, 320px);
+  justify-self: end;
+  margin-top: 6px;
+}
+
+.contact-page .contact-form-card {
+  display: grid;
+  gap: 16px;
+}
+
+.contact-page .contact-form-card .section-header {
+  margin-bottom: 0;
+}
+
+.contact-page .contact-form-card .contact-form {
+  max-width: none;
+}
+
+.contact-page .contact-form-card .contact-direct-list {
+  padding-top: 4px;
+}
+
 .contact-form {
   display: grid;
   gap: 14px;
@@ -1207,7 +1280,8 @@ button {
 }
 
 .contact-form input,
-.contact-form textarea {
+.contact-form textarea,
+.contact-form select {
   width: 100%;
   padding: 12px 14px;
   border-radius: 8px;
@@ -1219,6 +1293,10 @@ button {
 
 .contact-form textarea {
   resize: vertical;
+}
+
+.contact-form select {
+  appearance: none;
 }
 
 .contact-form button {
@@ -1238,6 +1316,17 @@ button {
 
 .contact-status.is-error {
   color: #b42318;
+}
+
+.contact-direct-list {
+  display: grid;
+  gap: 14px;
+}
+
+.contact-note {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 4px;
 }
 
 .grid-3 {
@@ -2502,12 +2591,85 @@ button {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 30px;
   margin-bottom: 24px;
+  align-items: start;
+}
+
+.footer-grid > div:first-child {
+  max-width: 340px;
+}
+
+.footer-grid > div:first-child p {
+  max-width: 320px;
+  line-height: 1.7;
+}
+
+.footer h4 {
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.86rem;
+  color: #7b8da5;
 }
 
 .footer a {
   display: block;
   margin-top: 6px;
   color: #b8c0cc;
+}
+
+.footer-contact-list {
+  display: grid;
+  gap: 14px;
+}
+
+.footer-contact-item {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 12px;
+  align-items: start;
+  color: #e6e9ee;
+}
+
+.footer-contact-icon {
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  color: #7b8da5;
+  margin-top: 2px;
+}
+
+.footer-contact-icon svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.footer-contact-lines {
+  display: grid;
+  gap: 6px;
+}
+
+.footer-contact-item a {
+  display: inline;
+  margin-top: 0;
+  color: inherit;
+}
+
+.footer-contact-item a:hover {
+  color: #ffffff;
+}
+
+.footer-address {
+  margin: 0;
+  font-style: normal;
+  line-height: 1.58;
+  color: inherit;
 }
 
 .whatsapp-link {
@@ -3560,7 +3722,8 @@ button {
   .renewable-page .page-hero,
   .automation-page .page-hero,
   .manufacturing-page .page-hero,
-  .services-page .page-hero {
+  .services-page .page-hero,
+  .contact-page .page-hero {
     grid-template-columns: 1fr;
     padding: 56px 5vw 44px;
   }
@@ -3568,7 +3731,8 @@ button {
   .renewable-page .page-hero-visual,
   .automation-page .page-hero-visual,
   .manufacturing-page .page-hero-visual,
-  .services-page .page-hero-visual {
+  .services-page .page-hero-visual,
+  .contact-page .page-hero-visual {
     min-height: auto;
     margin-top: 6px;
   }
@@ -3588,6 +3752,11 @@ button {
     margin-top: -56px;
     margin-left: 56px;
     transform: none;
+  }
+
+  .contact-page .contact-hero-panel {
+    width: 100%;
+    justify-self: stretch;
   }
 
   .automation-page .page-hero-panel,
@@ -5838,7 +6007,7 @@ body.automation-page main {
   display: grid;
   grid-template-columns: minmax(320px, 1.05fr) minmax(320px, 0.95fr);
   gap: 32px;
-  padding: 64px 6vw 44px;
+  padding: 36px 6vw 12px;
   align-items: center;
   overflow: hidden;
   background: #fff;
@@ -5909,14 +6078,14 @@ body.automation-page main {
   max-width: 520px;
   font-size: 0.93rem;
   line-height: 1.7;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
 }
 
 .automation-page .hero-badges {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 24px;
+  margin-bottom: 10px;
 }
 
 .automation-page .badge,
@@ -5945,7 +6114,7 @@ body.automation-page main {
 .automation-page .cta-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 8px;
 }
 
 .automation-page .cta-orange,
@@ -6120,7 +6289,7 @@ body.automation-page main {
 }
 
 .automation-page .tech-strip {
-  padding-top: 36px;
+  padding-top: 0;
 }
 
 .automation-page .tech-label {
@@ -6143,13 +6312,17 @@ body.automation-page main {
 }
 
 .automation-page .section {
-  padding: 68px 6vw;
+  padding: 32px 6vw;
+}
+
+.automation-page .section-header {
+  margin-bottom: 14px;
 }
 
 .automation-page .section-title {
   font-size: clamp(1.55rem, 2.4vw, 2.45rem);
   line-height: 1.14;
-  margin-bottom: 10px;
+  margin-bottom: 4px;
   color: var(--ink);
 }
 
@@ -6163,14 +6336,14 @@ body.automation-page main {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
-  margin-top: 34px;
+  margin-top: 12px;
 }
 
 .automation-page .sol-card {
   position: relative;
   display: grid;
-  gap: 12px;
-  padding: 18px;
+  gap: 6px;
+  padding: 12px;
   border-radius: 22px;
   background: #fff;
   border: 1px solid var(--line);
@@ -6241,12 +6414,12 @@ body.automation-page main {
 .automation-page .process-grid {
   display: grid;
   grid-template-columns: minmax(300px, 0.88fr) minmax(360px, 1.12fr);
-  gap: 36px;
+  gap: 12px;
   align-items: start;
 }
 
 .automation-page .process-grid > div:last-child {
-  padding-top: 6px;
+  padding-top: 0;
 }
 
 .automation-page .process-section .section-title,
@@ -6292,14 +6465,14 @@ body.automation-page main {
 
 .automation-page .steps {
   display: grid;
-  gap: 12px;
+  gap: 6px;
 }
 
 .automation-page .step {
   display: grid;
   grid-template-columns: 68px 1fr;
-  gap: 14px;
-  padding: 16px;
+  gap: 8px;
+  padding: 10px;
   border-radius: 18px;
   border: 1px solid var(--line);
   background: #fff;
@@ -6320,7 +6493,7 @@ body.automation-page main {
 }
 
 .automation-page .step-body h4 {
-  margin-bottom: 8px;
+  margin-bottom: 3px;
   font-size: 0.96rem;
 }
 
@@ -6334,7 +6507,7 @@ body.automation-page main {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
-  margin-top: 34px;
+  margin-top: 12px;
 }
 
 .automation-page .ind-card {
@@ -6352,8 +6525,8 @@ body.automation-page main {
 
 .automation-page .ind-body {
   display: grid;
-  gap: 10px;
-  padding: 18px;
+  gap: 4px;
+  padding: 12px;
 }
 
 .automation-page .ind-body h4 {
@@ -6369,13 +6542,13 @@ body.automation-page main {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
-  margin-top: 34px;
+  margin-top: 12px;
 }
 
 .automation-page .why-card {
   display: grid;
-  gap: 10px;
-  padding: 20px;
+  gap: 4px;
+  padding: 12px;
   border-radius: 20px;
   background: #fff;
   border: 1px solid var(--line);
@@ -6395,13 +6568,13 @@ body.automation-page main {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
-  margin-top: 34px;
+  margin-top: 12px;
 }
 
 .automation-page .testi-card {
   display: grid;
-  gap: 14px;
-  padding: 22px;
+  gap: 8px;
+  padding: 12px;
   border-radius: 20px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -6445,9 +6618,9 @@ body.automation-page main {
 .automation-page .cta-section {
   display: grid;
   grid-template-columns: minmax(300px, 1fr) minmax(280px, 0.9fr);
-  gap: 24px;
+  gap: 12px;
   align-items: stretch;
-  padding: 28px;
+  padding: 14px;
   border-radius: 28px;
   background: linear-gradient(180deg, #fff 0%, #fbfcfe 100%);
   border: 1px solid var(--line);
@@ -6568,8 +6741,17 @@ body.automation-page main {
   }
 
   .automation-page .hero {
-    padding-top: 46px;
-    padding-bottom: 34px;
+    padding-top: 26px;
+    padding-bottom: 10px;
+  }
+
+  .automation-page .section {
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+
+  .automation-page .tech-strip {
+    padding-top: 0;
   }
 
   .automation-page .hero-mosaic {
@@ -6625,7 +6807,7 @@ body.automation-page main {
   }
 
   .automation-page .cta-section {
-    padding: 20px;
+    padding: 12px;
   }
 }
 
