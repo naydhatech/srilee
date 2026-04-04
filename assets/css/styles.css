@@ -2618,8 +2618,13 @@ button {
 
 .footer {
   padding: 54px 6vw 32px;
-  background: #0b0f14;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(7, 10, 15, 0.92), rgba(7, 10, 15, 0.96)),
+    url("../images/industrial-services-6.png") center/cover no-repeat;
   color: #e6e9ee;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footer-grid {
@@ -2789,7 +2794,7 @@ button {
 
 .copyright {
   color: #8a94a3;
-  border-top: 1px solid #1a1f27;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding-top: 18px;
   font-size: 0.9rem;
 }
