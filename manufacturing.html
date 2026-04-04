@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -30,11 +30,10 @@
           <a class="active" href="manufacturing.html">Manufacturing</a>
           <a href="industrial-services.html">Industrial service</a>
           <a href="renewable-automation.html">Renewable</a>
-          <a href="contact.html">Contact us</a>
         </div>
         <div class="nav-actions">
           <a class="ghost-btn" href="contact.html">Talk to an expert</a>
-          <a class="primary-btn" href="signup.html">Demo</a>
+          <a class="primary-btn" href="demo.html">Demo</a>
           <button class="menu-btn" id="menuBtn" aria-label="Open menu">
             <span></span><span></span><span></span>
           </button>
@@ -43,198 +42,337 @@
     </header>
 
     <main>
-      <section class="page-hero manufacturing-page">
-        <div class="page-hero-copy">
-          <p class="section-kicker">Manufacturing</p>
-          <h1>Powering industries with precision and reliability.</h1>
-          <p>
-            We design and manufacture high-performance low voltage panels and automation and
-            instrumentation panels tailored to modern industrial needs. Our solutions deliver safety,
-            efficiency, and seamless control across diverse environments with strict quality and
-            compliance.
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-noise"></div>
+        <div class="hero-left">
+          <div class="chip">Manufacturing</div>
+          <h1 class="hero-title">Powering Industries<br />with <em>Precision</em><br />&amp; Reliability</h1>
+          <p class="hero-desc">
+            We design and manufacture high-performance control panels, automation assemblies, and
+            instrumentation enclosures - engineered for the harshest industrial environments and
+            built to international standards.
           </p>
-          <div class="chip-grid">
-            <span>Panel design</span>
-            <span>Quality testing</span>
-            <span>Custom builds</span>
-            <span>Site commissioning</span>
+          <div class="hero-tags">
+            <span class="htag">Control Panels</span>
+            <span class="htag">PLC Panels</span>
+            <span class="htag">HMI Stations</span>
+            <span class="htag">VFD Panels</span>
+            <span class="htag">Solar SMBs</span>
+            <span class="htag">Junction Boxes</span>
+          </div>
+          <div class="hero-acts">
+            <a href="contact.html" class="btn btn-primary">Request a quote</a>
+            <a href="#products" class="btn btn-ghost">View products ↓</a>
           </div>
         </div>
-        <div class="page-hero-visual renewable-stack">
-          <img class="stack-top" src="images/buildings.png" alt="Low voltage panel manufacturing" />
-          <img class="stack-bottom" src="images/industrial.png" alt="Automation panel assembly" />
-          <div class="page-hero-panel">
-            <strong>Manufacturing focus</strong>
-            <span>Low voltage panels</span>
-            <span>Instrumentation panels</span>
-            <span>Compliance testing</span>
+        <div class="hero-right">
+          <div class="hi tall">
+            <img
+              src="images/buildings.png"
+              alt="Panel manufacturing"
+              onerror="this.parentElement.innerHTML='<div class=\'ph\'><svg width=\'44\' height=\'44\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1\' d=\'M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18\'/></svg><span class=\'ph-lbl\'>Panel Manufacturing Floor</span></div>'"
+            />
+          </div>
+          <div class="hi">
+            <img
+              src="images/industrial.png"
+              alt="Assembly"
+              onerror="this.parentElement.innerHTML='<div class=\'ph\'><svg width=\'36\' height=\'36\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1\' d=\'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z\'/><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1\' d=\'M15 12a3 3 0 11-6 0 3 3 0 016 0z\'/></svg><span class=\'ph-lbl\'>Assembly &amp; Wiring</span></div>'"
+            />
+          </div>
+          <div class="hi">
+            <img
+              src="images/hero.png"
+              alt="Testing"
+              onerror="this.parentElement.innerHTML='<div class=\'ph\'><svg width=\'36\' height=\'36\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1\' d=\'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z\'/></svg><span class=\'ph-lbl\'>FAT Testing</span></div>'"
+            />
           </div>
         </div>
       </section>
 
-      <section class="section alt manufacturing-low-voltage">
-        <div class="section-header">
-          <h2>Low voltage panels</h2>
-          <p>Smart power distribution solutions for industrial and commercial applications.</p>
-        </div>
-        <div class="grid-2 manufacturing-low-voltage-grid">
-          <article class="feature-card manufacturing-panel-card">
-            <h3>Key offerings</h3>
-            <ul class="feature-list">
-              <li>Power Control Center (PCC) panels</li>
-              <li>Motor Control Center (MCC) panels</li>
-              <li>Distribution boards (DB)</li>
-              <li>APFC panels</li>
-              <li>Synchronization panels</li>
-            </ul>
-          </article>
-          <article class="feature-card manufacturing-panel-card">
-            <h3>Features</h3>
-            <ul class="feature-list">
-              <li>Robust design with high-quality components</li>
-              <li>Modular and scalable architecture</li>
-              <li>High fault withstand capacity</li>
-              <li>Advanced protection and monitoring</li>
-              <li>Compliance with IEC standards</li>
-            </ul>
-          </article>
-          <article class="feature-card manufacturing-panel-card">
-            <h3>Applications</h3>
-            <ul class="feature-list">
-              <li>Manufacturing plants</li>
-              <li>Process industries</li>
-              <li>Commercial buildings</li>
-              <li>Utilities and infrastructure</li>
-            </ul>
-          </article>
-          <article class="feature-card with-media manufacturing-spotlight">
-            <span class="card-eyebrow">Live monitoring</span>
-            <img class="media-img" src="images/hero.png" alt="Power distribution monitoring" />
-            <p>Reliable power distribution and protection for critical operations.</p>
-          </article>
-        </div>
-      </section>
+      <div class="stats">
+        <div class="stat reveal"><div class="stat-n">500+</div><div class="stat-l">Panels manufactured</div></div>
+        <div class="stat reveal"><div class="stat-n">IEC</div><div class="stat-l">61439 compliant</div></div>
+        <div class="stat reveal"><div class="stat-n">15+</div><div class="stat-l">Years of expertise</div></div>
+        <div class="stat reveal"><div class="stat-n">100%</div><div class="stat-l">Factory acceptance tested</div></div>
+        <div class="stat reveal"><div class="stat-n">24/7</div><div class="stat-l">After-sales support</div></div>
+      </div>
 
-      <section class="section">
-        <div class="section-header">
-          <h2>Automation and instrumentation panels</h2>
-          <p>Intelligent control for real-time monitoring and optimization.</p>
+      <section id="products">
+        <div class="products-intro">
+          <div>
+            <div class='s-label'>01 - Product Range</div>
+            <h2 class='s-title'>Engineered Panels &amp;<br />Enclosures</h2>
+          </div>
+          <p class="s-desc">
+            From high-current LV switchgear to compact junction boxes - every product is engineered
+            for the application, tested to standard, and built to last.
+          </p>
         </div>
-        <div class="grid-2">
-          <article class="feature-card">
-            <h3>Solutions we provide</h3>
-            <ul class="feature-list">
-              <li>PLC control panels</li>
-              <li>SCADA panels</li>
-              <li>HMI-based control systems</li>
-              <li>RTU panels</li>
-              <li>VFD and drive panels</li>
-            </ul>
-          </article>
-          <article class="feature-card">
-            <h3>Features</h3>
-            <ul class="feature-list">
-              <li>Seamless integration with PLC, SCADA, and HMI systems</li>
-              <li>High-speed data communication</li>
-              <li>User-friendly interfaces</li>
-              <li>Remote monitoring capabilities</li>
-              <li>Custom-built to process requirements</li>
-            </ul>
-          </article>
-          <article class="feature-card">
-            <h3>Applications</h3>
-            <ul class="feature-list">
-              <li>Oil and gas</li>
-              <li>Water and wastewater</li>
-              <li>Power plants</li>
-              <li>Food and beverage</li>
-              <li>Pharmaceuticals</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="section alt">
-        <div class="section-header">
-          <h2>Our manufacturing capabilities</h2>
-          <p>Structured, quality-driven manufacturing process for reliable outcomes.</p>
-        </div>
-        <div class="grid-3 manufacturing-capabilities-grid">
-          <article class="feature-card manufacturing-capability-card">
-            <h3>Capabilities include</h3>
-            <ul class="feature-list">
-              <li>Design and engineering (AutoCAD, EPLAN)</li>
-              <li>Panel fabrication and assembly</li>
-              <li>Busbar design and implementation</li>
-              <li>Wiring and cable management</li>
-              <li>Factory acceptance testing (FAT)</li>
-              <li>On-site installation and commissioning</li>
-            </ul>
-          </article>
-          <article class="feature-card manufacturing-capability-card manufacturing-quality-card">
-            <h3>Quality focus</h3>
-            <p>Strict quality control and testing ensure every panel meets international standards.</p>
-            <ul class="capability-checklist">
-              <li>Incoming material inspection</li>
-              <li>Wiring and torque verification</li>
-              <li>Panel function and safety testing</li>
-              <li>Final documentation and handover</li>
-            </ul>
-          </article>
-          <article class="feature-card manufacturing-capability-card manufacturing-process-card">
-            <h3>Delivery workflow</h3>
-            <p>Every project follows a structured, quality-controlled delivery path from concept to handover.</p>
-            <div class="capability-flow">
-              <span>Design review</span>
-              <span>Fabrication</span>
-              <span>Assembly</span>
-              <span>Testing and dispatch</span>
+        <div class="product-grid">
+          <div class="product-card reveal">
+            <div class="pc-img">
+              <div class="pc-badge">Automation</div>
+              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80" alt="PLC Control Panel" onerror="this.parentElement.innerHTML='<div class=\'pc-img-ph\'><svg width=\'40\' height=\'40\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1\' d=\'M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18\'/></svg><span>PLC Control Panel<br/>[Add product photo]</span></div><div class=\'pc-badge\'>Automation</div>'" />
             </div>
-          </article>
+            <div class="pc-body">
+              <div class="pc-title">PLC Control Panels</div>
+              <div class="pc-desc">Fully engineered PLC enclosures with CPU, I/O modules, communication cards, and power supplies - wired, tested, and FAT-ready.</div>
+              <div class="pc-specs">
+                <div class="pc-spec">Siemens S7-300/400/1200/1500, Allen Bradley, Schneider</div>
+                <div class="pc-spec">DIN rail mounted, cable ducts, gland plates</div>
+                <div class="pc-spec">Profibus, Profinet, Modbus, EtherNet/IP</div>
+                <div class="pc-spec">IP54/IP65 enclosures, stainless steel option</div>
+                <div class="pc-spec">Loop diagrams, as-built drawings included</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card reveal">
+            <div class="pc-img">
+              <div class="pc-badge">HMI</div>
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="HMI Panel" onerror="this.parentElement.innerHTML='<div class=\'pc-img-ph\'><svg width=\'40\' height=\'40\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1\' d=\'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z\'/></svg><span>HMI Operator Station<br/>[Add product photo]</span></div><div class=\'pc-badge\'>HMI</div>'" />
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">HMI Operator Panels</div>
+              <div class="pc-desc">Operator interface stations with touchscreen HMI, industrial PC or panel-mount displays for process visualization and control.</div>
+              <div class="pc-specs">
+                <div class="pc-spec">Siemens, Weintek, Pro-face, Intouch HMI integration</div>
+                <div class="pc-spec">7&quot; to 21&quot; touchscreen display options</div>
+                <div class="pc-spec">Pendant-mounted, console, or panel-door fit</div>
+                <div class="pc-spec">Alarm annunciators and LED indication</div>
+                <div class="pc-spec">SCADA thin-client and web HMI support</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card reveal">
+            <div class="pc-img">
+              <div class="pc-badge">Drive</div>
+              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="VFD Drive Panel" onerror="this.parentElement.innerHTML='<div class=\'pc-img-ph\'><svg width=\'40\' height=\'40\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1\' d=\'M13 10V3L4 14h7v7l9-11h-7z\'/></svg><span>VFD Drive Panel<br/>[Add product photo]</span></div><div class=\'pc-badge\'>Drive</div>'" />
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">VFD Drive Panels</div>
+              <div class="pc-desc">Variable frequency drive enclosures for motor speed control with bypass, isolation, and protection - single and multi-drive configurations.</div>
+              <div class="pc-specs">
+                <div class="pc-spec">ABB, Siemens, Danfoss, Schneider drives</div>
+                <div class="pc-spec">0.37 kW to 500 kW drive capacity</div>
+                <div class="pc-spec">DOL/Star-Delta bypass arrangements</div>
+                <div class="pc-spec">Input/output reactors, EMC filters</div>
+                <div class="pc-spec">Remote speed reference and fieldbus integration</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card reveal">
+            <div class="pc-img">
+              <div class="pc-badge">LV Power</div>
+              <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=600&q=80" alt="MCC Panel" onerror="this.parentElement.innerHTML='<div class=\'pc-img-ph\'><svg width=\'40\' height=\'40\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1\' d=\'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10\'/></svg><span>MCC / PCC Panel<br/>[Add product photo]</span></div><div class=\'pc-badge\'>LV Power</div>'" />
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">MCC &amp; PCC Panels</div>
+              <div class="pc-desc">Motor Control Centers and Power Control Centers for industrial and utility applications - fixed and draw-out designs to IEC 61439.</div>
+              <div class="pc-specs">
+                <div class="pc-spec">Up to 6300A busbar rating</div>
+                <div class="pc-spec">Fixed, plug-in, draw-out module types</div>
+                <div class="pc-spec">MCCB, ACB, contactor/overload combinations</div>
+                <div class="pc-spec">Power monitoring with multifunction meters</div>
+                <div class="pc-spec">APFC integrated panels available</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card reveal">
+            <div class="pc-img">
+              <div class="pc-badge">Solar</div>
+              <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=600&q=80" alt="Solar SMB" onerror="this.parentElement.innerHTML='<div class=\'pc-img-ph\'><svg width=\'40\' height=\'40\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1\' d=\'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z\'/></svg><span>Solar String Monitoring Box<br/>[Add product photo]</span></div><div class=\'pc-badge\'>Solar</div>'" />
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Solar String Monitoring Boxes (SMB)</div>
+              <div class="pc-desc">DC string combiner boxes with per-string fuse protection, surge arrester, isolation switch, and optional string-level monitoring.</div>
+              <div class="pc-specs">
+                <div class="pc-spec">4 to 24 string inputs, configurable</div>
+                <div class="pc-spec">DC fuse holders, surge protection SPD class II</div>
+                <div class="pc-spec">Optional string current monitoring (IoT-enabled)</div>
+                <div class="pc-spec">Polarity reversal protection, arc fault detection</div>
+                <div class="pc-spec">IP65 outdoor / weatherproof enclosure</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card reveal">
+            <div class="pc-img">
+              <div class="pc-badge">Field</div>
+              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80" alt="Marshalling Box" onerror="this.parentElement.innerHTML='<div class=\'pc-img-ph\'><svg width=\'40\' height=\'40\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1\' d=\'M4 6h16M4 10h16M4 14h16M4 18h16\'/></svg><span>Marshalling / Junction Box<br/>[Add product photo]</span></div><div class=\'pc-badge\'>Field</div>'" />
+            </div>
+            <div class="pc-body">
+              <div class="pc-title">Marshalling &amp; Junction Boxes</div>
+              <div class="pc-desc">Field-mounted signal marshalling enclosures and junction boxes for instrument cable termination, looping, and signal routing.</div>
+              <div class="pc-specs">
+                <div class="pc-spec">DIN rail terminal blocks: Phoenix, Weidmuller, Wago</div>
+                <div class="pc-spec">IS (intrinsically safe) and Ex-rated zones available</div>
+                <div class="pc-spec">Cable gland plates, shroud protection</div>
+                <div class="pc-spec">Signal types: AI, AO, DI, DO, thermocouple, RTD</div>
+                <div class="pc-spec">Stainless steel and GRP options for harsh environments</div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="section manufacturing-why">
-        <div class="section-header">
-          <h2>Why choose us</h2>
+      <div class="divider"></div>
+
+      <section>
+        <h2 class="s-title">Smart Power Distribution<br />for Critical Operations</h2>
+        <p class="s-desc">PCC, MCC, APFC, synchronisation and distribution boards - built with quality components, modular architecture, and advanced protection.</p>
+        <div class="detail-layout">
+          <div class="detail-img-wrap reveal">
+            <div class="dim dim-main">
+              <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=900&q=80" alt="LV panel" onerror="this.parentElement.innerHTML='<div class=\'ph\' style=\'height:420px\'><svg class=\'ph-icon\' width=\'56\' height=\'56\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1\' d=\'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10\'/></svg><span class=\'ph-lbl\'>MCC / PCC Panel Interior<br/>[Replace with product photo]</span></div>'" />
+            </div>
+            <div class="dim dim-sub">
+              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80" alt="Panel wiring" onerror="this.parentElement.innerHTML='<div class=\'ph\' style=\'height:220px\'><svg class=\'ph-icon\' width=\'40\' height=\'40\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1\' d=\'M4 6h16M4 10h16M4 14h16M4 18h16\'/></svg><span class=\'ph-lbl\'>Panel Wiring Detail<br/>[Add wiring photo]</span></div>'" />
+            </div>
+          </div>
+          <div class="reveal">
+            <div class="feat-list">
+              <div class="feat-item">
+                <div class="fi-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#f97316"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg></div>
+                <div><div class="fi-title">Power Control Centers (PCC)</div><div class="fi-desc">Incomer with ACB, metering, and outgoing MCCB feeders for main plant power distribution up to 6300A.</div></div>
+              </div>
+              <div class="feat-item">
+                <div class="fi-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#f97316"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zm0 8a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zm12 0a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" /></svg></div>
+                <div><div class="fi-title">Motor Control Centers (MCC)</div><div class="fi-desc">Fixed and draw-out type MCCs with contactor/overload starters, soft starters, and VFD outgoing feeders.</div></div>
+              </div>
+              <div class="feat-item">
+                <div class="fi-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#f97316"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg></div>
+                <div><div class="fi-title">APFC Panels</div><div class="fi-desc">Automatic Power Factor Correction panels with capacitor banks, harmonic filters, and detuning reactors.</div></div>
+              </div>
+              <div class="feat-item">
+                <div class="fi-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#f97316"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" /></svg></div>
+                <div><div class="fi-title">Synchronisation Panels</div><div class="fi-desc">Auto/manual synchronisation panels for DG-DG and DG-mains paralleling with protection relays.</div></div>
+              </div>
+              <div class="feat-item">
+                <div class="fi-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#f97316"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg></div>
+                <div><div class="fi-title">Protection &amp; Monitoring</div><div class="fi-desc">Multi-function protection relays, power quality meters, and integrated IoT-enabled energy monitoring.</div></div>
+              </div>
+            </div>
+            <div class="spec-tags">
+              <span class="stag hi-tag">IEC 61439</span>
+              <span class="stag hi-tag">IP54 / IP65</span>
+              <span class="stag hi-tag">Up to 6300A</span>
+              <span class="stag">Form 2b / 3b / 4b</span>
+              <span class="stag">CRCA / SS enclosures</span>
+              <span class="stag">Short-circuit tested</span>
+            </div>
+          </div>
         </div>
-        <div class="why-grid manufacturing-why-grid">
-          <article class="why-item manufacturing-why-item">
-            <span class="why-tag">Expertise</span>
-            <h3>Industry expertise</h3>
-            <p>Proven experience in delivering low voltage and control panel projects for industrial environments.</p>
-          </article>
-          <article class="why-item manufacturing-why-item">
-            <span class="why-tag">Tailored</span>
-            <h3>Custom engineered solutions</h3>
-            <p>Every panel is designed around the application, site conditions, and operational requirements.</p>
-          </article>
-          <article class="why-item manufacturing-why-item">
-            <span class="why-tag">Quality</span>
-            <h3>Strict quality control</h3>
-            <p>We follow disciplined inspection and testing steps to support reliable performance and compliance.</p>
-          </article>
-          <article class="why-item manufacturing-why-item">
-            <span class="why-tag">Delivery</span>
-            <h3>On-time delivery</h3>
-            <p>Structured planning and project coordination help us meet agreed timelines with confidence.</p>
-          </article>
-          <article class="why-item manufacturing-why-item">
-            <span class="why-tag">Support</span>
-            <h3>After-sales support</h3>
-            <p>We stay involved after handover with support that helps keep systems running smoothly.</p>
-          </article>
+      </section>
+
+      <div class="divider"></div>
+
+      <section class="ap-section">
+        <h2 class="s-title">Intelligent Control<br />for Real-Time Operations</h2>
+        <p class="s-desc">PLC, SCADA, HMI, and RTU panels built with seamless integration, high-speed communication, and user-friendly interfaces - custom-built to your process.</p>
+        <div class="ap-grid">
+          <div class="ap-cards reveal">
+            <div class="ap-card">
+              <div class="ap-card-top">
+                <div class="ap-card-icon" style="background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.2)"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#3b82f6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" /></svg></div>
+                <div class="ap-card-title">PLC Control Panels</div>
+              </div>
+              <div class="ap-card-desc">Fully assembled and wired PLC panels with CPU, I/O racks, power supplies, and communication modules - factory tested against client P&amp;IDs and loop diagrams.</div>
+              <div class="ap-card-chips"><span class="achip achip-blue">Siemens S7</span><span class="achip achip-blue">Allen Bradley</span><span class="achip achip-blue">Schneider M340</span><span class="achip achip-blue">ABB AC500</span></div>
+            </div>
+
+            <div class="ap-card">
+              <div class="ap-card-top">
+                <div class="ap-card-icon" style="background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.2)"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#f97316"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg></div>
+                <div class="ap-card-title">HMI Operator Stations</div>
+              </div>
+              <div class="ap-card-desc">Console and panel-mounted HMI stations for process operators - designed to ISA 101 standards for situational awareness, alarm management, and control.</div>
+              <div class="ap-card-chips"><span class="achip achip-orange">Siemens Comfort</span><span class="achip achip-orange">Weintek</span><span class="achip achip-orange">Pro-face</span><span class="achip achip-orange">InduSoft</span></div>
+            </div>
+
+            <div class="ap-card">
+              <div class="ap-card-top">
+                <div class="ap-card-icon" style="background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.2)"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#22c55e"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg></div>
+                <div class="ap-card-title">VFD &amp; Soft Starter Panels</div>
+              </div>
+              <div class="ap-card-desc">Single and multi-drive enclosures with bypass, braking resistors, input/output reactors, and EMC filters - optimised for pump, fan, compressor, and conveyor drives.</div>
+              <div class="ap-card-chips"><span class="achip achip-green">ABB ACS</span><span class="achip achip-green">Siemens SINAMICS</span><span class="achip achip-green">Danfoss FC</span><span class="achip achip-green">WEG CFW</span></div>
+            </div>
+
+            <div class="ap-card">
+              <div class="ap-card-top">
+                <div class="ap-card-icon" style="background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.2)"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#3b82f6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" /></svg></div>
+                <div class="ap-card-title">RTU &amp; SCADA Panels</div>
+              </div>
+              <div class="ap-card-desc">Remote Terminal Units and SCADA server enclosures for substation and plant-level data acquisition - with secure communication and redundant power.</div>
+              <div class="ap-card-chips"><span class="achip achip-blue">IEC 60870-5-101/104</span><span class="achip achip-blue">DNP3</span><span class="achip achip-blue">Modbus TCP</span></div>
+            </div>
+          </div>
+          <div class="ap-visual reveal">
+            <div class="ap-img-main"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&q=80" alt="Automation panel" onerror="this.parentElement.innerHTML='<div class=\'ph\' style=\'height:340px\'><svg width=\'52\' height=\'52\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1\' d=\'M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18\'/></svg><span class=\'ph-lbl\'>PLC / Automation Panel<br/>[Replace with product photo]</span></div>'" /></div>
+            <div class="ap-img-row">
+              <div class="ap-img-sm"><img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&q=80" alt="HMI station" onerror="this.parentElement.innerHTML='<div class=\'ph\' style=\'height:160px\'><svg width=\'32\' height=\'32\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1\' d=\'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z\'/></svg><span class=\'ph-lbl\'>HMI Station</span></div>'" /></div>
+              <div class="ap-img-sm"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&q=80" alt="VFD drives" onerror="this.parentElement.innerHTML='<div class=\'ph\' style=\'height:160px\'><svg width=\'32\' height=\'32\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1\' d=\'M13 10V3L4 14h7v7l9-11h-7z\'/></svg><span class=\'ph-lbl\'>VFD Drive Panel</span></div>'" /></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <section>
+        <h2 class="s-title">DC Combiners, Field Boxes<br />&amp; Enclosures</h2>
+        <p class="s-desc">From solar string combiner boxes to field-mounted marshalling cabinets and junction boxes - built weather-tight and certified for outdoor industrial use.</p>
+        <div class="solar-grid">
+          <div class="solar-card reveal"><div class="sc-img"><img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=400&q=80" alt="Solar SMB" onerror="this.parentElement.innerHTML='<div class=\'sc-ph\'><svg width=\'32\' height=\'32\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1\' d=\'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z\'/></svg><span>Solar SMB</span></div>'" /></div><div class="sc-body"><div class="sc-title">Solar String Monitoring Box (SMB)</div><div class="sc-desc">4-24 string DC combiners with fuse protection, SPD, isolation switch, and optional IoT string monitoring. IP65 outdoor rated.</div></div></div>
+          <div class="solar-card reveal"><div class="sc-img"><img src="https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?w=400&q=80" alt="AC Junction Box" onerror="this.parentElement.innerHTML='<div class=\'sc-ph\'><svg width=\'32\' height=\'32\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1\' d=\'M4 6h16M4 10h16M4 14h16M4 18h16\'/></svg><span>AC JB</span></div>'" /></div><div class="sc-body"><div class="sc-title">AC Junction Boxes</div><div class="sc-desc">Plant-side AC combiner and junction boxes with MCBs, terminal blocks, and surge protection for 415V distribution in solar/hydro plants.</div></div></div>
+          <div class="solar-card reveal"><div class="sc-img"><img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=400&q=80" alt="Marshalling cabinet" onerror="this.parentElement.innerHTML='<div class=\'sc-ph\'><svg width=\'32\' height=\'32\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1\' d=\'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10\'/></svg><span>Marshalling Cabinet</span></div>'" /></div><div class="sc-body"><div class="sc-title">Marshalling Cabinets</div><div class="sc-desc">Field-to-control room signal marshalling enclosures with labelled terminal blocks, cable entries, and full documentation for instrument loop traceability.</div></div></div>
+          <div class="solar-card reveal"><div class="sc-img"><img src="https://images.unsplash.com/photo-1623177628701-3b5e88440d23?w=400&q=80" alt="Junction box" onerror="this.parentElement.innerHTML='<div class=\'sc-ph\'><svg width=\'32\' height=\'32\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1\' d=\'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4\'/></svg><span>Field Junction Box</span></div>'" /></div><div class="sc-body"><div class="sc-title">Field Junction Boxes</div><div class="sc-desc">Multi-cable instrument junction boxes for field instruments, flow transmitters, and sensor clusters. GRP or stainless steel, IS-rated options.</div></div></div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <section>
+        <h2 class="s-title">Quality-Driven from Design<br />to Dispatch</h2>
+        <p class="s-desc">Every panel follows a structured, documented process - from engineering drawings through factory acceptance testing to site commissioning support.</p>
+        <div class="process-steps">
+          <div class="ps reveal"><div class="ps-dot"><span class="ps-num"></span><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg></div><div class="ps-title">Engineering Design</div><div class="ps-desc">AutoCAD / EPLAN schematics, GA layouts, BOM</div></div>
+          <div class="ps reveal"><div class="ps-dot"><span class="ps-num"></span><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg></div><div class="ps-title">Design Review</div><div class="ps-desc">Client approval, IFC drawings, material procurement</div></div>
+          <div class="ps reveal"><div class="ps-dot"><span class="ps-num"></span><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg></div><div class="ps-title">Fabrication</div><div class="ps-desc">Enclosure cutting, busbar fitting, DIN rails</div></div>
+          <div class="ps reveal"><div class="ps-dot"><span class="ps-num"></span><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" /></svg></div><div class="ps-title">Wiring &amp; Assembly</div><div class="ps-desc">Wiring, ferrule marking, cable duct, torque checks</div></div>
+          <div class="ps reveal"><div class="ps-dot"><span class="ps-num"></span><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg></div><div class="ps-title">FAT Testing</div><div class="ps-desc">Functional, dielectric, insulation, and loop tests</div></div>
+          <div class="ps reveal"><div class="ps-dot"><span class="ps-num"></span><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg></div><div class="ps-title">Dispatch &amp; Commissioning</div><div class="ps-desc">Packed, shipped, site installation and SAT support</div></div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <section class="why-section">
+        <div class="s-label">Why Srilee Manufacturing</div>
+        <h2 class="s-title">Built on Precision,<br />Backed by Experience</h2>
+        <p class="s-desc">Quality materials, disciplined processes, and engineering expertise - delivered on time to your site.</p>
+        <div class="why-grid">
+          <div class="wcard reveal"><div class="wc-big"></div><div class="wc-icon" style="background:rgba(249,115,22,.1)"><svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#f97316"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg></div><div class="wc-title">IEC-Compliant Engineering</div><div class="wc-desc">Every panel is designed, fabricated, and tested to IEC 61439, IEC 60204, and relevant project standards - with full documentation package.</div></div>
+          <div class="wcard reveal"><div class="wc-big"></div><div class="wc-icon" style="background:rgba(59,130,246,.1)"><svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#3b82f6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zm0 8a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zm12 0a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" /></svg></div><div class="wc-title">Custom-Engineered Every Time</div><div class="wc-desc">No standard catalogues - every panel is designed around your P&amp;IDs, load lists, site conditions, and operational requirements.</div></div>
+          <div class="wcard reveal"><div class="wc-big"></div><div class="wc-icon" style="background:rgba(34,197,94,.1)"><svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#22c55e"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div><div class="wc-title">On-Time Delivery</div><div class="wc-desc">Structured project scheduling with milestone tracking - from BOM release to FAT to dispatch - with no surprises at handover.</div></div>
+          <div class="wcard reveal"><div class="wc-big"></div><div class="wc-icon" style="background:rgba(249,115,22,.1)"><svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#f97316"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" /></svg></div><div class="wc-title">100% Factory Acceptance Tested</div><div class="wc-desc">Every panel goes through dielectric, insulation, functional loop, and protection tests before dispatch - with test reports included.</div></div>
+          <div class="wcard reveal"><div class="wc-big"></div><div class="wc-icon" style="background:rgba(59,130,246,.1)"><svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#3b82f6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg></div><div class="wc-title">End-to-End Integration</div><div class="wc-desc">Hardware manufacturing backed by our automation and engineering team - so software, wiring, and commissioning are all from one source.</div></div>
+          <div class="wcard reveal"><div class="wc-big"></div><div class="wc-icon" style="background:rgba(34,197,94,.1)"><svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#22c55e"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" /></svg></div><div class="wc-title">After-Sales Support</div><div class="wc-desc">Site commissioning, spares supply, and AMC options available - we stay with you after the panel leaves our factory.</div></div>
         </div>
       </section>
 
       <section class="cta">
-        <div>
-          <h2>Build smarter systems together</h2>
-          <p>Looking for reliable panel manufacturing solutions? We are ready to help.</p>
-        </div>
-        <div class="cta-row">
-          <a class="primary-btn" href="contact.html">Contact us</a>
-          <a class="ghost-btn" href="signup.html">Get started</a>
+        <div class="cta-bg"></div>
+        <div class="cta-title">Build <em>Smarter</em><br />Systems Together</div>
+        <p class="cta-desc">Share your specifications and we will engineer the right panels for your plant - from concept to commissioning, quality guaranteed.</p>
+        <div class="cta-acts">
+          <a href="contact.html" class="btn btn-primary btn-lg">Request a quote</a>
         </div>
       </section>
     </main>
@@ -243,7 +381,7 @@
       <div class="footer-grid">
         <div>
           <h3>Srilee IoT</h3>
-          <p>Connect assets, automate operations, and build apps on one IoT platform.</p>
+          <p>Industrial automation, IoT, manufacturing, and renewable solutions for connected operations and support.</p>
         </div>
         <div>
           <h4>Platform</h4>
@@ -253,10 +391,48 @@
           <a href="manufacturing.html">Manufacturing</a>
         </div>
         <div>
-          <h4>Get in touch</h4>
-          <p>sales@srilee.com</p>
-          <p>+91 (967) 697-4984</p>
-          <p>+91 (868) 848-1394</p>
+          <h4>Services</h4>
+          <a href="industrial-automation.html">Automation</a>
+          <a href="industrial-services.html">Industrial services</a>
+          <a href="manufacturing.html">Manufacturing</a>
+          <a href="renewable-automation-scada.html">Renewable automation</a>
+        </div>
+        <div>
+          <h4>GET IN TOUCH</h4>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path d="m4 7 8 6 8-6" />
+                </svg>
+              </span>
+              <a class="footer-contact-link" href="mailto:sales@srilee.com">sales@srilee.com</a>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8.2 5.2 10.7 4l1.8 4.1-1.7 1.7c1.1 2.1 2.6 3.6 4.7 4.7l1.7-1.7 4.1 1.8-1.2 2.5c-.4.9-1.2 1.4-2.2 1.4C10.2 18.5 5.5 13.8 5.5 7.8c0-1 .5-1.8 1.4-2.2z" />
+                </svg>
+              </span>
+              <div class="footer-contact-lines">
+                <a class="footer-contact-link" href="tel:+919676974984">+91 (967) 697-4984</a>
+                <a class="footer-contact-link" href="tel:+918688481394">+91 (868) 848-1394</a>
+              </div>
+            </div>
+            <div class="footer-contact-item footer-address-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 21s6-5.2 6-10a6 6 0 1 0-12 0c0 4.8 6 10 6 10z" />
+                  <circle cx="12" cy="11" r="2.2" />
+                </svg>
+              </span>
+              <address class="footer-address">
+                Flat No: 3201, SLV Pearl, Road No 1,<br />
+                Matrusrinagar, Miyapur, Hyderabad, 500049
+              </address>
+            </div>
+          </div>
         </div>
       </div>
       <p class="copyright">(c) 2026 Srilee Pvt Ltd., All rights reserved.</p>
@@ -265,3 +441,5 @@
     <script src="script.js"></script>
   </body>
 </html>
+
+
