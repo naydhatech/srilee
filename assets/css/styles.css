@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --bg: #f8fafc;
   --bg-alt: #eef2f6;
   --ink: #0b1220;
@@ -49,6 +49,10 @@ body.iot-theme .section.alt {
 
 body.iot-theme .site-header {
   background: rgba(255, 255, 255, 0.94);
+}
+
+body.contact-page {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
 }
 
 a {
@@ -1204,6 +1208,8 @@ button {
   gap: 36px;
   padding: 68px 6vw 52px;
   align-items: start;
+  max-width: 1380px;
+  margin: 0 auto;
 }
 
 .contact-page .page-hero-copy {
@@ -1234,6 +1240,7 @@ button {
   align-items: start;
   min-height: auto;
   align-content: start;
+  width: 100%;
 }
 
 .contact-page .contact-hero-card {
@@ -1241,6 +1248,8 @@ button {
   gap: 10px;
   background: linear-gradient(180deg, #ffffff, #f8fbff);
   margin-top: 4px;
+  border-radius: 18px;
+  box-shadow: 0 14px 28px rgba(18, 23, 32, 0.06);
 }
 
 .contact-page .contact-hero-card h3 {
@@ -1257,14 +1266,21 @@ button {
 .contact-page .contact-form-card {
   display: grid;
   gap: 16px;
+  padding: 24px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+  border: 1px solid rgba(219, 226, 234, 0.95);
+  box-shadow: 0 18px 32px rgba(18, 23, 32, 0.08);
 }
 
 .contact-page .contact-form-card .section-header {
   margin-bottom: 0;
+  max-width: 100%;
 }
 
 .contact-page .contact-form-card .contact-form {
   max-width: none;
+  width: 100%;
 }
 
 .contact-page .contact-form-card .contact-direct-list {
@@ -1295,8 +1311,17 @@ button {
   font: inherit;
 }
 
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  outline: none;
+  border-color: rgba(91, 141, 239, 0.85);
+  box-shadow: 0 0 0 4px rgba(91, 141, 239, 0.12);
+}
+
 .contact-form textarea {
   resize: vertical;
+  min-height: 160px;
 }
 
 .contact-form select {
@@ -1305,6 +1330,7 @@ button {
 
 .contact-form button {
   justify-self: start;
+  min-width: 170px;
 }
 
 .contact-status {
@@ -1454,10 +1480,14 @@ button {
 }
 
 .feature-list li::before {
-  content: "•";
+  content: "";
   position: absolute;
   left: 0;
-  color: var(--accent);
+  top: 0.78em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
 }
 
 .manufacturing-low-voltage .section-header {
@@ -3650,7 +3680,7 @@ button {
     height: 160px;
     background:
       linear-gradient(rgba(12, 18, 28, 0.22), rgba(12, 18, 28, 0.22)),
-      url("images/hero.png") center/cover no-repeat,
+      url("../images/hero.png") center/cover no-repeat,
       rgba(12, 18, 28, 0.92);
   }
 
@@ -3884,7 +3914,7 @@ button {
     height: 150px;
     background:
       linear-gradient(rgba(12, 18, 28, 0.22), rgba(12, 18, 28, 0.22)),
-      url("images/hero.png") center/cover no-repeat,
+      url("../images/hero.png") center/cover no-repeat,
       rgba(12, 18, 28, 0.92);
   }
 
@@ -10759,3 +10789,8 @@ body.home-page main {
     font-size: clamp(2.2rem, 12vw, 3.4rem);
   }
 }
+
+
+
+
+

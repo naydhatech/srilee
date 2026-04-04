@@ -1,10 +1,15 @@
-const menuBtn = document.getElementById("menuBtn");
+﻿const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 const navAnchors = document.querySelectorAll("#navLinks a");
 const navItems = document.querySelectorAll(".nav-item.has-mega");
 const contactForm = document.getElementById("contactForm");
 const contactStatus = document.getElementById("contactStatus");
 const companyEmail = "sales@srilee.com";
+const assetBase = window.location.pathname.includes("/pages/") ? "../assets/images/" : "assets/images/";
+const assetPath = (file) => `${assetBase}${file}`;
+const contactEndpoint = contactForm?.dataset.endpoint?.trim() || contactForm?.action?.trim() || "";
+const isGoogleAppsScriptEndpoint = (value) =>
+  /^https:\/\/script\.google\.com\/macros\/s\/[^/]+\/exec/i.test(value || "");
 
 if (menuBtn && navLinks) {
   menuBtn.addEventListener("click", () => {
@@ -13,58 +18,72 @@ if (menuBtn && navLinks) {
 }
 
 if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
+  contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const formData = new FormData(contactForm);
     const payload = Object.fromEntries(formData.entries());
+    const endpointIsConfigured =
+      contactEndpoint && !contactEndpoint.includes("PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE");
 
     if (contactStatus) {
       contactStatus.textContent = "Sending your message...";
       contactStatus.classList.remove("is-error", "is-success");
     }
 
-    fetch(contactForm.action, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    })
-      .then((response) => {
+    try {
+      if (!endpointIsConfigured) {
+        throw new Error("Missing endpoint");
+      }
+
+      if (isGoogleAppsScriptEndpoint(contactEndpoint)) {
+        await fetch(contactEndpoint, {
+          method: "POST",
+          mode: "no-cors",
+          body: formData,
+        });
+      } else {
+        const response = await fetch(contactEndpoint, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        });
+
         if (!response.ok) {
           throw new Error("Failed to send message");
         }
-        return response.json();
-      })
-      .then(() => {
-        contactForm.reset();
-        if (contactStatus) {
-          contactStatus.textContent = "Message sent successfully. We will get back to you soon.";
-          contactStatus.classList.add("is-success");
-        }
-      })
-      .catch(() => {
-        const mailSubject = encodeURIComponent("Contact form inquiry from website visitor");
-        const mailBody = encodeURIComponent(
-          [
-            `Name: ${(payload.name || "").toString().trim() || "Not provided"}`,
-            `Email: ${(payload.email || "").toString().trim() || "Not provided"}`,
-            `Phone: ${(payload.phone || "").toString().trim() || "Not provided"}`,
-            `Company: ${(payload.company || "").toString().trim() || "Not provided"}`,
-            "",
-            "Message:",
-            (payload.message || "").toString().trim() || "Not provided",
-          ].join("\n")
-        );
 
-        if (contactStatus) {
-          contactStatus.textContent = "Something went wrong. Opening your email app instead.";
-          contactStatus.classList.add("is-error");
-        }
+        await response.json().catch(() => null);
+      }
 
-        window.location.href = `mailto:${companyEmail}?subject=${mailSubject}&body=${mailBody}`;
-      });
+      contactForm.reset();
+      if (contactStatus) {
+        contactStatus.textContent = "Message sent successfully. We will get back to you soon.";
+        contactStatus.classList.add("is-success");
+      }
+    } catch (error) {
+      const mailSubject = encodeURIComponent("Contact form inquiry from website visitor");
+      const mailBody = encodeURIComponent(
+        [
+          `Name: ${(payload.name || "").toString().trim() || "Not provided"}`,
+          `Email: ${(payload.email || "").toString().trim() || "Not provided"}`,
+          `Phone: ${(payload.phone || "").toString().trim() || "Not provided"}`,
+          `Company: ${(payload.company || "").toString().trim() || "Not provided"}`,
+          "",
+          "Message:",
+          (payload.message || "").toString().trim() || "Not provided",
+        ].join("\n")
+      );
+
+      if (contactStatus) {
+        contactStatus.textContent = "Something went wrong. Opening your email app instead.";
+        contactStatus.classList.add("is-error");
+      }
+
+      window.location.href = `mailto:${companyEmail}?subject=${mailSubject}&body=${mailBody}`;
+    }
   });
 }
 
@@ -142,7 +161,7 @@ if (homeCounterTargets.length) {
 
 const renewableHomeTabs = {
   hydro: {
-    image: "images/energy.png",
+    image: assetPath("energy.png"),
     chips: ["Governor control", "AVR / excitation", "Gate automation", "Hydro SCADA"],
     title: "Hydro Power Automation",
     intro: "Control turbine speed, excitation, gates, alarms, and station-level SCADA with a compact, reliable architecture.",
@@ -154,7 +173,7 @@ const renewableHomeTabs = {
     ],
   },
   solar: {
-    image: "images/industrial.png",
+    image: assetPath("industrial.png"),
     chips: ["Plant SCADA", "PPC control", "Weather station", "Remote O&M"],
     title: "Solar Plant SCADA",
     intro: "Monitor string data, inverters, alarms, and performance with clear plant and portfolio visibility.",
@@ -391,8 +410,8 @@ if (renewableRoot) {
         <div class="hero-acts"><a href="contact.html" class="btn btn-hydro">Discuss your project</a><a href="#hydro" class="btn btn-ghost">Explore solutions ?</a></div>
       </div>
       <div class="hero-right">
-        <div class="hi tall hydro-tint"><img src="images/energy.png" alt="Hydro plant" /></div>
-        <div class="hi solar-tint"><img src="images/industrial.png" alt="Solar farm" /></div>
+        <div class="hi tall hydro-tint"><img src="${assetPath("energy.png")}" alt="Hydro plant" /></div>
+        <div class="hi solar-tint"><img src="${assetPath("industrial.png")}" alt="Solar farm" /></div>
         <div class="hi"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&q=80" alt="SCADA monitoring" /></div>
       </div>
     </section>
@@ -415,7 +434,7 @@ if (renewableRoot) {
             <div class="hv-sm"><img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&q=80" alt="Gate control" /></div>
           </div>
         </div>
-        <div class="hydro-systems reveal">${hydroSystemData.map(([title, desc, chips], index) => `<div class="hsys${index === 0 ? " open" : ""}"><div class="hsys-header" onclick="toggleHsys(this)"><div class="hsys-icon"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#0ea5e9">${index === 0 ? '<circle cx="12" cy="12" r="3"/>' : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>'}</svg></div><div class="hsys-title">${title}</div><div class="hsys-arrow">�</div></div><div class="hsys-body"><div class="hsys-desc">${desc}</div><div class="hsys-chips">${renderChips(chips, "hchip")}</div></div></div>`).join("")}</div>
+        <div class="hydro-systems reveal">${hydroSystemData.map(([title, desc, chips], index) => `<div class="hsys${index === 0 ? " open" : ""}"><div class="hsys-header" onclick="toggleHsys(this)"><div class="hsys-icon"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#0ea5e9">${index === 0 ? '<circle cx="12" cy="12" r="3"/>' : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>'}</svg></div><div class="hsys-title">${title}</div><div class="hsys-arrow">ï¿½</div></div><div class="hsys-body"><div class="hsys-desc">${desc}</div><div class="hsys-chips">${renderChips(chips, "hchip")}</div></div></div>`).join("")}</div>
       </div>
     </section>
 
@@ -731,9 +750,9 @@ if (homeHeroTrack) {
       href: "demo.html",
       header: "IoT command center",
       images: [
-        { src: "images/hero.png", alt: "Srilee IoT overview" },
-        { src: "images/industrial.png", alt: "Industrial IoT dashboard overview" },
-        { src: "images/energy.png", alt: "Energy management overview" },
+        { src: assetPath("hero.png"), alt: "Srilee IoT overview" },
+        { src: assetPath("industrial.png"), alt: "Industrial IoT dashboard overview" },
+        { src: assetPath("energy.png"), alt: "Energy management overview" },
       ],
       stats: [
         ["98.7%", "asset uptime"],
@@ -751,9 +770,9 @@ if (homeHeroTrack) {
       href: "industrial-automation.html",
       header: "Automation overview",
       images: [
-        { src: "images/industrial.png", alt: "Automation dashboard overview" },
-        { src: "images/hero.png", alt: "Automation operations overview" },
-        { src: "images/energy.png", alt: "Automation monitoring overview" },
+        { src: assetPath("industrial.png"), alt: "Automation dashboard overview" },
+        { src: assetPath("hero.png"), alt: "Automation operations overview" },
+        { src: assetPath("energy.png"), alt: "Automation monitoring overview" },
       ],
       stats: [
         ["64%", "faster cycles"],
@@ -771,9 +790,9 @@ if (homeHeroTrack) {
       href: "manufacturing.html",
       header: "Manufacturing view",
       images: [
-        { src: "images/manufacturing-1.jpeg", alt: "Manufacturing preview" },
-        { src: "images/manufacturing-2.jpeg", alt: "Manufacturing operations preview" },
-        { src: "images/manufacturing-3.jpeg", alt: "Manufacturing plant preview" },
+        { src: assetPath("manufacturing-1.jpeg"), alt: "Manufacturing preview" },
+        { src: assetPath("manufacturing-2.jpeg"), alt: "Manufacturing operations preview" },
+        { src: assetPath("manufacturing-3.jpeg"), alt: "Manufacturing plant preview" },
       ],
       stats: [
         ["92%", "line efficiency"],
@@ -791,9 +810,9 @@ if (homeHeroTrack) {
       href: "industrial-services.html",
       header: "Service operations",
       images: [
-        { src: "images/industrial-services-1.jpeg", alt: "Industrial services preview" },
-        { src: "images/industrial-services-2.jpeg", alt: "Industrial services operations preview" },
-        { src: "images/industrial-services-3.png", alt: "Industrial services engineering preview" },
+        { src: assetPath("industrial-services-1.jpeg"), alt: "Industrial services preview" },
+        { src: assetPath("industrial-services-2.jpeg"), alt: "Industrial services operations preview" },
+        { src: assetPath("industrial-services-3.png"), alt: "Industrial services engineering preview" },
       ],
       stats: [
         ["36", "site visits"],
@@ -811,9 +830,9 @@ if (homeHeroTrack) {
       href: "renewable-automation.html",
       header: "Renewable monitoring",
       images: [
-        { src: "images/energy.png", alt: "Renewable automation preview" },
-        { src: "images/industrial.png", alt: "Renewable monitoring preview" },
-        { src: "images/hero.png", alt: "Renewable operations preview" },
+        { src: assetPath("energy.png"), alt: "Renewable automation preview" },
+        { src: assetPath("industrial.png"), alt: "Renewable monitoring preview" },
+        { src: assetPath("hero.png"), alt: "Renewable operations preview" },
       ],
       stats: [
         ["154.5", "kWh per module"],
@@ -992,4 +1011,6 @@ if (homeHeroTrack) {
     homeHeroTrack.style.transform = "translateX(0)";
   }
 }
+
+
 

@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Contact Us | Srilee IoT</title>
+    <title>Request a Demo | Srilee IoT</title>
     <meta
       name="description"
-      content="Get in touch with Srilee IoT for demos, project discussions, product questions, and support."
+      content="Request a demo of Srilee IoT to see connected operations, automation, and analytics in action."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,17 +14,16 @@
       href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
   </head>
-  <body class="iot-theme contact-page">
+  <body class="signup-body iot-theme">
     <header class="site-header">
       <nav class="nav">
-        <a class="brand" href="index.html">
-          <img class="brand-logo" src="logo.png" alt="Srilee IoT logo" />
+        <a class="brand" href="../index.html">
+          <img class="brand-logo" src="../assets/images/logo.png" alt="Srilee IoT logo" />
         </a>
         <div class="nav-links" id="navLinks">
-          <a href="index.html">Home</a>
           <a href="iot.html">IoT</a>
           <a href="industrial-automation.html">Automation</a>
           <a href="manufacturing.html">Manufacturing</a>
@@ -41,58 +40,58 @@
       </nav>
     </header>
 
-    <main>
-      <section class="page-hero contact-page-hero">
-        <div class="page-hero-copy">
-          <p class="section-kicker">Contact & demo</p>
-          <h1>Tell us what you are building and we will shape the right next step.</h1>
-          <p>
-            Whether you want a guided demo, a project discussion, or ongoing support, our team can
-            help you map the right industrial IoT and automation path.
-          </p>
-          <div class="chip-grid">
-            <span>Request a live demo</span>
-            <span>Discuss your use case</span>
-            <span>Get integration guidance</span>
-            <span>Talk to our engineers</span>
-          </div>
-          <article class="feature-card contact-hero-card">
-            <h3>Why teams reach out</h3>
-            <ul class="feature-list">
-              <li>See the platform in a demo tailored to your workflow</li>
-              <li>Review architecture, deployment, and rollout options</li>
-              <li>Get support for engineering, commissioning, and maintenance</li>
-              <li>Explore solutions across IoT, automation, manufacturing, and renewable systems</li>
-            </ul>
-          </article>
+    <main class="signup-main">
+      <section class="signup-hero">
+        <div class="signup-hero-text">
+          <span class="section-kicker">Srilee IoT Demo</span>
+          <h1>See the platform in action before you decide.</h1>
+          <ul class="feature-list">
+            <li>Walk through live dashboards and device controls</li>
+            <li>Review the right solution for your industry</li>
+            <li>Discuss integration, deployment, and scale plans</li>
+            <li>Explore automation, analytics, and remote monitoring</li>
+            <li>Get answers from the team that builds the platform</li>
+          </ul>
         </div>
-        <div class="page-hero-visual contact-hero-visual">
-          <article class="feature-card contact-form-card">
-            <div class="section-header contact-form-header">
-              <h2>Send a message</h2>
-              <p>Tell us about your project, demo needs, or support request and we will respond within one business day.</p>
-            </div>
-            <form class="contact-form" id="contactForm" action="/api/contact" method="post">
-              <div class="contact-grid">
-                <input type="text" name="name" placeholder="Full name" required />
-                <input type="email" name="email" placeholder="Work email" required />
-                <input type="tel" name="phone" placeholder="Phone (optional)" />
-                <input type="text" name="company" placeholder="Company" />
-                <select name="topic" aria-label="Reason for contact">
-                  <option value="">I want to discuss</option>
-                  <option>Requesting a demo</option>
-                  <option>Project enquiry</option>
-                  <option>Support or service</option>
-                  <option>Partnership or consulting</option>
-                </select>
-                <input type="text" name="timeline" placeholder="Project timeline or urgency" />
-              </div>
-              <textarea name="message" rows="6" placeholder="Share your goals, current setup, and what you want help with."></textarea>
-              <button class="primary-btn" type="submit">Send message</button>
-              <p class="contact-status" id="contactStatus" aria-live="polite"></p>
-            </form>
-          </article>
-        </div>
+      </section>
+
+      <section class="signup-card">
+        <h2>Book your demo</h2>
+        <p class="signup-sub">Tell us a little about your goals and we will tailor the walkthrough.</p>
+        <form class="signup-form" action="#" method="post">
+          <label>
+            Full name
+            <input type="text" name="name" placeholder="Enter your name" required />
+          </label>
+          <label>
+            Work email
+            <input type="email" name="email" placeholder="name@company.com" required />
+          </label>
+          <label>
+            Company
+            <input type="text" name="company" placeholder="Company name" />
+          </label>
+          <label>
+            Phone
+            <input type="tel" name="phone" placeholder="+1 (555) 012-0000" />
+          </label>
+          <label>
+            What are you looking for?
+            <select name="usecase">
+              <option>Industrial IoT</option>
+              <option>Automation</option>
+              <option>Manufacturing</option>
+              <option>Industrial services</option>
+              <option>Renewable automation</option>
+            </select>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" required />
+            I agree to be contacted about the demo and related solutions
+          </label>
+          <button class="primary-btn" type="submit">Request demo</button>
+        </form>
+        <p class="signup-note">Prefer to talk now? <a href="contact.html">Get in touch</a></p>
       </section>
     </main>
 
@@ -105,16 +104,9 @@
         <div>
           <h4>Platform</h4>
           <a href="iot.html">IoT platform</a>
-          <a href="index.html#accelerators">Accelerators</a>
-          <a href="index.html#simple-solutions">Solutions</a>
-          <a href="index.html#whats-in">What's in</a>
-        </div>
-        <div>
-          <h4>Industries</h4>
-          <a href="manufacturing.html">Manufacturing</a>
-          <a href="index.html#industries">Buildings</a>
-          <a href="index.html#industries">Utilities</a>
-          <a href="index.html#industries">Smart cities</a>
+          <a href="#accelerators">Accelerators</a>
+          <a href="#simple-solutions">Solutions</a>
+          <a href="#whats-in">What's in</a>
         </div>
         <div>
           <h4>Services</h4>
@@ -164,7 +156,7 @@
       <p class="copyright">(c) 2026 Srilee Pvt Ltd., All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="../assets/js/script.js"></script>
 
     <a class="floating-btn whatsapp-float" href="https://wa.me/919676974984" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
       <svg class="float-svg" viewBox="0 0 32 32" aria-hidden="true">
@@ -178,3 +170,8 @@
     </a>
   </body>
 </html>
+
+
+
+
+
