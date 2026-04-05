@@ -85,9 +85,35 @@ nav.scrolled { background:rgba(4,5,8,0.97); border-color:var(--b2) }
 .btn-solid { background:var(--blue); color:#fff; box-shadow:0 0 24px rgba(59,130,246,.3) }
 .btn-solid:hover { background:#2563eb; box-shadow:0 0 36px rgba(59,130,246,.45); transform:translateY(-1px) }
 
+.back-to-top {
+  position:fixed;
+  top:92px;
+  right:24px;
+  z-index:650;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  border:1px solid var(--b1);
+  background:rgba(255,255,255,.92);
+  color:var(--text);
+  box-shadow:0 12px 28px rgba(15,23,42,.12);
+  backdrop-filter:blur(14px);
+  cursor:pointer;
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(-10px);
+  transition:opacity .2s ease, transform .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
+}
+.back-to-top svg { width:18px; height:18px }
+.back-to-top:hover { background:var(--blue); color:#fff; border-color:var(--blue) }
+.back-to-top[data-visible="true"] { opacity:1; pointer-events:auto; transform:translateY(0) }
 
 .hero {
-  min-height:100vh; padding-top:0;
+  min-height:auto;
+  padding:18px 0 0;
   display:grid; grid-template-columns:55% 45%;
   position:relative; overflow:hidden;
 }
@@ -111,7 +137,7 @@ nav.scrolled { background:rgba(4,5,8,0.97); border-color:var(--b2) }
 }
 .hero-left {
   display:flex; flex-direction:column; justify-content:center;
-  padding:84px 56px 84px 80px;
+  padding:56px 56px 36px 80px;
   position:relative; z-index:2;
   max-width:640px;
 }
@@ -164,6 +190,7 @@ h1.hero-h {
   grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr;
   gap:3px; overflow:hidden; z-index:1;
   background:var(--s0);
+  min-height:540px;
 }
 .himg { overflow:hidden; position:relative }
 .himg img { width:100%; height:100%; object-fit:cover; transition:transform .7s ease }
@@ -189,7 +216,7 @@ h1.hero-h {
 /* â”€â”€â”€ MARQUEE STRIP â”€â”€â”€ */
 .marquee-strip {
   background:var(--s0); border-top:1px solid var(--b1); border-bottom:1px solid var(--b1);
-  padding:14px 0; overflow:hidden; position:relative; z-index:10;
+  padding:14px 0; margin-top:16px; overflow:hidden; position:relative; z-index:10;
 }
 .marquee-track { display:flex; gap:0; animation:marquee 30s linear infinite }
 .marquee-track:hover { animation-play-state:paused }
@@ -207,6 +234,18 @@ h1.hero-h {
 .sec-alt { background:var(--bg1) }
 .sec-dark { background:var(--bg2) }
 .divider { height:1px; background:linear-gradient(90deg,transparent,var(--b1) 30%,var(--b1) 70%,transparent); margin:0 80px }
+
+#solutions {
+  padding-top:96px;
+  padding-bottom:84px;
+  margin-top:32px;
+}
+#solutions .sec-head {
+  margin-bottom:40px;
+}
+#solutions .bento {
+  margin-top:0;
+}
 
 /* section label */
 .sec-kicker { display:flex; align-items:center; gap:10px; margin-bottom:14px }
@@ -545,16 +584,14 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
   color:rgba(148,163,184,.92);
   border-top:1px solid rgba(255,255,255,.08);
 }
-
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   RESPONSIVE
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 @media(max-width:1100px){
   nav { padding:0 20px } .nav-items { display:none }
   .sec { padding:72px 28px } .divider { margin:0 28px }
   .hero { grid-template-columns:1fr }
+  .hero { padding:14px 0 0 }
   .hero-left { padding:64px 28px 48px }
   .hero-right { height:360px; grid-template-columns:1fr 1fr; grid-template-rows:1fr }
+  #solutions { padding-top:72px; padding-bottom:64px; margin-top:24px; }
   .himg.tall { grid-row:auto } .himg.span2 { grid-column:auto }
   .hero-live { grid-template-columns:1fr 1fr }
   .bento { grid-template-columns:1fr 1fr }
@@ -569,6 +606,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
   .cta-sec { padding:80px 28px }
   .amc-tiers { grid-template-columns:1fr }
   .process-rail { gap:0 }
+  .back-to-top { top:auto; bottom:18px; right:18px }
 }
 @media(max-width:640px){
   .mfg-grid,.pillars,.why-grid,.personas-grid,.vert-grid { grid-template-columns:1fr }
@@ -587,7 +625,6 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
       <img class="brand-logo" src="assets/images/logo.png" alt="Srilee IoT logo" />
     </a>
     <div class="nav-links" id="navLinks">
-      <a class="active" href="index.html">Home</a>
       <a href="pages/iot.html">IoT</a>
       <a href="pages/industrial-automation.html">Automation</a>
       <a href="pages/manufacturing.html">Manufacturing</a>
@@ -604,6 +641,12 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
   </div>
 </header>
 
+<button class="back-to-top" id="backToTop" type="button" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M6 14l6-6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
 <section class="hero">
   <div class="hero-glows"><span></span><span></span><span></span></div>
   <div class="hero-dots"></div>
@@ -619,25 +662,6 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
     <div class="hero-cta">
       <a href="pages/contact.html" class="btn btn-solid btn-hero">Get a Demo</a>
       <a href="#solutions" class="btn btn-outline btn-hero">Explore Solutions</a>
-    </div>
-    <div class="hero-live">
-      <div class="live-item">
-        <div class="live-pulse"></div>
-        <div class="live-val" data-count="98.7" data-suffix="%">98.7%</div>
-        <div class="live-lbl">Asset uptime</div>
-      </div>
-      <div class="live-item">
-        <div class="live-val" data-count="12" data-suffix="s">12s</div>
-        <div class="live-lbl">Alert response</div>
-      </div>
-      <div class="live-item">
-        <div class="live-val" data-count="4.8" data-suffix="M">4.8M</div>
-        <div class="live-lbl">Events/day</div>
-      </div>
-      <div class="live-item">
-        <div class="live-val" data-count="31" data-suffix="%">31%</div>
-        <div class="live-lbl">Energy savings</div>
-      </div>
     </div>
   </div>
 
@@ -666,34 +690,34 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 <!-- MARQUEE -->
 <div class="marquee-strip">
   <div class="marquee-track" id="mTrack">
-    <div class="marquee-item"><span class="marquee-dot"></span>PLC PROGRAMMING Â· IEC 61131-3</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>SCADA Â· IGNITION Â· WINCC Â· WONDERWARE</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>PLC PROGRAMMING · IEC 61131-3</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>SCADA · IGNITION · WINCC · WONDERWARE</div>
     <div class="marquee-item"><span class="marquee-dot"></span>HYDRO GOVERNOR CONTROL</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>SOLAR PLANT SCADA Â· PPC</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>SIEMENS Â· ABB Â· ALLEN BRADLEY Â· SCHNEIDER</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>VFD DRIVE PANELS Â· MCC Â· PCC</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>SOLAR PLANT SCADA · PPC</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>SIEMENS · ABB · ALLEN BRADLEY · SCHNEIDER</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>VFD DRIVE PANELS · MCC · PCC</div>
     <div class="marquee-item"><span class="marquee-dot"></span>IEC 61439 CERTIFIED PANELS</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>REMOTE MONITORING Â· 24/7 SUPPORT</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>HYBRID PLANT EMS Â· BESS INTEGRATION</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>AVR Â· EXCITATION Â· TURBINE PROTECTION</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>REMOTE MONITORING · 24/7 SUPPORT</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>HYBRID PLANT EMS · BESS INTEGRATION</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>AVR . EXCITATION · TURBINE PROTECTION</div>
     <!-- duplicate for seamless loop -->
-    <div class="marquee-item"><span class="marquee-dot"></span>PLC PROGRAMMING Â· IEC 61131-3</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>SCADA Â· IGNITION Â· WINCC Â· WONDERWARE</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>PLC PROGRAMMING · IEC 61131-3</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>SCADA · IGNITION · WINCC · WONDERWARE</div>
     <div class="marquee-item"><span class="marquee-dot"></span>HYDRO GOVERNOR CONTROL</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>SOLAR PLANT SCADA Â· PPC</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>SIEMENS Â· ABB Â· ALLEN BRADLEY Â· SCHNEIDER</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>VFD DRIVE PANELS Â· MCC Â· PCC</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>SOLAR PLANT SCADA · PPC</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>SIEMENS · ABB . ALLEN BRADLEY · SCHNEIDER</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>VFD DRIVE PANELS · MCC · PCC</div>
     <div class="marquee-item"><span class="marquee-dot"></span>IEC 61439 CERTIFIED PANELS</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>REMOTE MONITORING Â· 24/7 SUPPORT</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>HYBRID PLANT EMS Â· BESS INTEGRATION</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>AVR Â· EXCITATION Â· TURBINE PROTECTION</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>REMOTE MONITORING · 24/7 SUPPORT</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>HYBRID PLANT EMS · BESS INTEGRATION</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>AVR · EXCITATION · TURBINE PROTECTION</div>
   </div>
 </div>
 
 <section class="sec" id="solutions" style="background:var(--bg1)">
   <div class="sec-head r">
     <div>
-      <div class="sec-kicker sk-blue"></div><span class="sk-text">Solution Accelerators</span></div>
+      <div class="sec-kicker sk-blue"><div class="sk-line"></div><span class="sk-text">Solution Accelerators</span></div>
       <h2 class="sh">Five Pillars.<br/>One Integrated Platform.</h2>
     </div>
     <p class="sd">IoT connectivity, industrial automation, precision manufacturing, expert engineering services, and renewable SCADA   all designed to work together from day one.</p>
@@ -795,31 +819,10 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
       </div>
     </div>
 
-    <!-- Stat card -->
-    <div class="bento-card bc-stat1" style="justify-content:center;align-items:center;text-align:center;padding:28px;background:linear-gradient(135deg,rgba(59,130,246,.07),rgba(34,211,238,.04))">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:16px">Delivering</div>
-      <div style="font-family:'Familjen Grotesk',sans-serif;font-size:52px;font-weight:700;color:var(--text);line-height:1">50<span style="color:var(--blue)">+</span></div>
-      <div style="font-size:13px;color:var(--muted2);margin-top:6px">Industrial projects<br/>successfully delivered</div>
-      <div style="margin-top:20px;display:flex;flex-direction:column;gap:8px">
-        <div style="font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace;padding:5px 10px;background:var(--s1);border-radius:4px;border:1px solid var(--b1)">IEC 61131-3</div>
-        <div style="font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace;padding:5px 10px;background:var(--s1);border-radius:4px;border:1px solid var(--b1)">IEC 61439</div>
-        <div style="font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace;padding:5px 10px;background:var(--s1);border-radius:4px;border:1px solid var(--b1)">IEC 60870</div>
-      </div>
-    </div>
-
   </div>
 </section>
 
 <div class="divider"></div>
-
-<div class="numbers-strip">
-  <div class="ns-item r"><div class="ns-val"><span class="count" data-t="98.7">98.7</span><span class="ns-unit">%</span></div><div class="ns-label">Asset uptime</div></div>
-  <div class="ns-item r"><div class="ns-val"><span class="count" data-t="500">500</span><span class="ns-unit">+</span></div><div class="ns-label">Panels manufactured</div></div>
-  <div class="ns-item r"><div class="ns-val"><span class="count" data-t="30">30</span><span class="ns-unit">+</span></div><div class="ns-label">Hydro plants automated</div></div>
-  <div class="ns-item r"><div class="ns-val"><span class="count" data-t="200">200</span><span class="ns-unit">+</span></div><div class="ns-label">MW solar monitored</div></div>
-  <div class="ns-item r"><div class="ns-val"><span class="count" data-t="15">15</span><span class="ns-unit">+</span></div><div class="ns-label">Years expertise</div></div>
-  <div class="ns-item r"><div class="ns-val"><span class="count" data-t="4.8">4.8</span><span class="ns-unit">M</span></div><div class="ns-label">Events/day</div></div>
-</div>
 
 <section class="sec" id="iot">
   <div class="sec-head">
@@ -1381,9 +1384,22 @@ if(window.matchMedia('(pointer:fine)').matches){
 
 /* â”€â”€ NAV SCROLL â”€â”€ */
 const nav = document.getElementById('nav');
+const backToTop = document.getElementById('backToTop');
+const syncBackToTop = () => {
+  if (backToTop) {
+    backToTop.dataset.visible = window.scrollY > 300 ? 'true' : 'false';
+  }
+};
+syncBackToTop();
 window.addEventListener('scroll',()=>{
   nav.classList.toggle('scrolled', window.scrollY > 60);
+  syncBackToTop();
 });
+if (backToTop) {
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
 
 /* â”€â”€ SCROLL REVEAL â”€â”€ */
 const revObs = new IntersectionObserver((entries)=>{
