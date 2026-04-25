@@ -6414,13 +6414,27 @@ body.automation-page main {
 .automation-page .sol-icon,
 .automation-page .ind-icon,
 .automation-page .why-icon {
-  width: 46px;
-  height: 46px;
+  width: 52px;
+  height: 52px;
   display: grid;
   place-items: center;
-  border-radius: 14px;
-  background: rgba(232, 69, 45, 0.1);
-  font-size: 1.2rem;
+  border-radius: 16px;
+  background: #fcebea;
+  color: #c7b5d8;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  flex: 0 0 auto;
+  font-size: 1.35rem;
+  line-height: 1;
+  font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+}
+
+.automation-page .sol-icon svg,
+.automation-page .ind-icon svg,
+.automation-page .why-icon svg,
+.automation-page .mosaic-badge .icon svg {
+  width: 22px;
+  height: 22px;
+  display: block;
 }
 
 .automation-page .sol-card h3,
