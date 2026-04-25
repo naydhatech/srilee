@@ -8204,12 +8204,20 @@ body.manufacturing-page .s-desc {
   text-align: center;
 }
 
+.services-page .de-section .section-label,
+.services-page .de-section .section-title,
+.services-page .de-section .section-desc {
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}
+
 .services-page .de-section .section-title {
-  max-width: 18ch;
+  max-width: 100%;
 }
 
 .services-page .de-section .section-desc {
-  max-width: 62ch;
+  max-width: 72ch;
 }
 
 .services-page .de-section .de-grid {
@@ -8518,6 +8526,7 @@ body.manufacturing-page .s-desc {
   }
 
   .services-page .section-title {
+    white-space: normal;
     font-size: clamp(1.6rem, 6vw, 2.4rem);
   }
 }
@@ -8550,7 +8559,15 @@ body.manufacturing-page .s-desc {
 
 .services-page .section-title {
   margin-bottom: 14px;
-  max-width: 14ch;
+  max-width: none;
+  white-space: nowrap;
+  font-size: clamp(1.1rem, 1.35vw, 1.65rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.services-page #services .section-title {
+  white-space: nowrap;
 }
 
 .services-page .section-desc {
