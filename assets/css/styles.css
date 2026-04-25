@@ -9046,6 +9046,13 @@ body.manufacturing-page .s-desc {
   margin-bottom: 10px;
 }
 
+.renewable-page .hydro-section > .s-desc {
+  max-width: 70ch;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}
+
 .renewable-page .divider {
   height: 1px;
   width: auto;
@@ -9703,6 +9710,12 @@ body.manufacturing-page .s-desc {
   .renewable-page .section {
     padding-top: 36px;
     padding-bottom: 36px;
+  }
+
+  .renewable-page .hydro-section > .s-desc {
+    max-width: 70ch;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .renewable-page .cta-section {

@@ -434,7 +434,7 @@ if (renewableRoot) {
             <div class="hv-sm"><img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&q=80" alt="Gate control" /></div>
           </div>
         </div>
-        <div class="hydro-systems reveal">${hydroSystemData.map(([title, desc, chips], index) => `<div class="hsys${index === 0 ? " open" : ""}"><div class="hsys-header" onclick="toggleHsys(this)"><div class="hsys-icon"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#0ea5e9">${index === 0 ? '<circle cx="12" cy="12" r="3"/>' : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>'}</svg></div><div class="hsys-title">${title}</div><div class="hsys-arrow">ï¿½</div></div><div class="hsys-body"><div class="hsys-desc">${desc}</div><div class="hsys-chips">${renderChips(chips, "hchip")}</div></div></div>`).join("")}</div>
+        <div class="hydro-systems reveal">${hydroSystemData.map(([title, desc, chips], index) => `<div class="hsys"><div class="hsys-header" onclick="toggleHsys(this)"><div class="hsys-icon"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#0ea5e9">${index === 0 ? '<circle cx="12" cy="12" r="3"/>' : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>'}</svg></div><div class="hsys-title">${title}</div><div class="hsys-arrow">ï¿½</div></div><div class="hsys-body"><div class="hsys-desc">${desc}</div><div class="hsys-chips">${renderChips(chips, "hchip")}</div></div></div>`).join("")}</div>
       </div>
     </section>
 
