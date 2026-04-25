@@ -1,4 +1,4 @@
-﻿const menuBtn = document.getElementById("menuBtn");
+const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 const navAnchors = document.querySelectorAll("#navLinks a");
 const navItems = document.querySelectorAll(".nav-item.has-mega");
@@ -253,7 +253,7 @@ const renewableRoot = document.getElementById("renewableRoot");
 
 const renewableSolarTabs = {
   monitoring: {
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80",
+    image: assetPath("hmi-scada-dashboard.jpg"),
     title: "Plant Monitoring",
     intro: "Live string, inverter, and plant-level monitoring with alarms and weather inputs.",
     cards: [
@@ -264,7 +264,7 @@ const renewableSolarTabs = {
     ],
   },
   remote: {
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=700&q=80",
+    image: assetPath("remote-monitoring-dashboard.jpg"),
     title: "Remote Monitoring",
     intro: "Secure cloud or VPN access for multi-site visibility and faster O&M response.",
     cards: [
@@ -275,7 +275,7 @@ const renewableSolarTabs = {
     ],
   },
   ppc: {
-    image: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=700&q=80",
+    image: assetPath("marshalling-cabinet.jpg"),
     title: "PPC / Grid Control",
     intro: "Control active power, reactive power, ramp rates, and frequency response.",
     cards: [
@@ -286,7 +286,7 @@ const renewableSolarTabs = {
     ],
   },
   analytics: {
-    image: "https://images.unsplash.com/photo-1556740749-887f6717d7e4?w=700&q=80",
+    image: assetPath("renewable-analytics.jpg"),
     title: "Analytics & Reports",
     intro: "Convert operational data into KPIs, reports, and improvement actions.",
     cards: [
@@ -412,7 +412,7 @@ if (renewableRoot) {
       <div class="hero-right">
         <div class="hi tall hydro-tint"><img src="${assetPath("energy.png")}" alt="Hydro plant" /></div>
         <div class="hi solar-tint"><img src="${assetPath("industrial.png")}" alt="Solar farm" /></div>
-        <div class="hi"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&q=80" alt="SCADA monitoring" /></div>
+        <div class="hi"><img src="${assetPath("hmi-scada-dashboard.jpg")}" alt="SCADA monitoring" /></div>
       </div>
     </section>
 
@@ -428,13 +428,13 @@ if (renewableRoot) {
       <p class="s-desc">From governor controls and excitation systems to turbine protection, gate automation, and full SCADA integration.</p>
       <div class="hydro-grid">
         <div class="hydro-visual reveal">
-          <div class="hv-main"><img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=800&q=80" alt="Hydro plant control room" /></div>
+          <div class="hv-main"><img src="${assetPath("mcc-panel.jpg")}" alt="Hydro plant control room" /></div>
           <div class="hv-row">
-            <div class="hv-sm"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=80" alt="Turbine" /></div>
-            <div class="hv-sm"><img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&q=80" alt="Gate control" /></div>
+            <div class="hv-sm"><img src="${assetPath("vfd-drive-panel.jpg")}" alt="Turbine" /></div>
+            <div class="hv-sm"><img src="${assetPath("hmi-operator-station.jpg")}" alt="Gate control" /></div>
           </div>
         </div>
-        <div class="hydro-systems reveal">${hydroSystemData.map(([title, desc, chips], index) => `<div class="hsys${index === 0 ? " open" : ""}"><div class="hsys-header" onclick="toggleHsys(this)"><div class="hsys-icon"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#0ea5e9">${index === 0 ? '<circle cx="12" cy="12" r="3"/>' : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>'}</svg></div><div class="hsys-title">${title}</div><div class="hsys-arrow">ï¿½</div></div><div class="hsys-body"><div class="hsys-desc">${desc}</div><div class="hsys-chips">${renderChips(chips, "hchip")}</div></div></div>`).join("")}</div>
+        <div class="hydro-systems reveal">${hydroSystemData.map(([title, desc, chips], index) => `<div class="hsys"><div class="hsys-header" onclick="toggleHsys(this)"><div class="hsys-icon"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#0ea5e9">${index === 0 ? '<circle cx="12" cy="12" r="3"/>' : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>'}</svg></div><div class="hsys-title">${title}</div><div class="hsys-arrow">�</div></div><div class="hsys-body"><div class="hsys-desc">${desc}</div><div class="hsys-chips">${renderChips(chips, "hchip")}</div></div></div>`).join("")}</div>
       </div>
     </section>
 
@@ -448,7 +448,7 @@ if (renewableRoot) {
         <div class="solar-img reveal"><img id="solarImg" src="${renewableSolarTabs.monitoring.image}" alt="Solar SCADA" style="width:100%;height:100%;object-fit:cover" /></div>
         <div id="solarFeatureBody" class="solar-features reveal"></div>
       </div>
-      <div class="solar-types">${solarTypes.map(([badge, badgeClass, title, desc, features]) => `<div class="stype-card reveal"><div class="stype-img"><div class="stype-badge ${badgeClass}">${badge}</div><img src="${badgeClass === "utility" ? "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=500&q=80" : badgeClass === "rooftop" ? "https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?w=500&q=80" : "https://images.unsplash.com/photo-1623177628701-3b5e88440d23?w=500&q=80"}" alt="${title}" /></div><div class="stype-body"><div class="stype-title">${title}</div><div class="stype-desc">${desc}</div><div class="stype-features">${renderItems(features, "stf")}</div></div></div>`).join("")}</div>
+      <div class="solar-types">${solarTypes.map(([badge, badgeClass, title, desc, features]) => `<div class="stype-card reveal"><div class="stype-img"><div class="stype-badge ${badgeClass}">${badge}</div><img src="${badgeClass === "utility" ? assetPath("renewable-solar-scada.jpg") : badgeClass === "rooftop" ? assetPath("ac-junction-box.jpg") : assetPath("field-junction-box.jpg")}" alt="${title}" /></div><div class="stype-body"><div class="stype-title">${title}</div><div class="stype-desc">${desc}</div><div class="stype-features">${renderItems(features, "stf")}</div></div></div>`).join("")}</div>
     </section>
 
     <div class="divider"></div>
@@ -461,7 +461,7 @@ if (renewableRoot) {
           <div class="ppc-feats">${ppcFeatures.map(([title, desc]) => `<div class="pf-item"><div class="pf-dot"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#10b981"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div><div><div class="pf-title">${title}</div><div class="pf-desc">${desc}</div></div></div>`).join("")}</div>
         </div>
         <div class="ppc-visual reveal">
-          <div class="ppc-img"><img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=600&q=80" alt="PPC system" style="width:100%;height:100%;object-fit:cover" /></div>
+          <div class="ppc-img"><img src="${assetPath("marshalling-cabinet.jpg")}" alt="PPC system" style="width:100%;height:100%;object-fit:cover" /></div>
           <div class="ppc-stat-row"><div class="ppc-stat"><div class="ppc-stat-val">&lt;1s</div><div class="ppc-stat-lbl">PPC dispatch response</div></div><div class="ppc-stat"><div class="ppc-stat-val">&plusmn;0.5%</div><div class="ppc-stat-lbl">Voltage regulation accuracy</div></div></div>
         </div>
       </div>
@@ -473,7 +473,7 @@ if (renewableRoot) {
       <h2 class="s-title">Solar + Hydro + BESS<br/>Hybrid Plants</h2>
       <p class="s-desc">Unified energy management and control for hybrid renewable plants - coordinating multiple generation sources and storage for optimal dispatch.</p>
       <div class="hybrid-layout">
-        <div class="hybrid-img reveal"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80" alt="Hybrid plant" /></div>
+        <div class="hybrid-img reveal"><img src="${assetPath("vfd-drive-panel.jpg")}" alt="Hybrid plant" /></div>
         <div class="hybrid-features reveal">${hybridCards.map(([title, desc]) => `<div class="hf-card"><div class="hf-icon" style="background:rgba(14,165,233,.1);border:1px solid rgba(14,165,233,.2)"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#0ea5e9"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zm0 8a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zm12 0a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg></div><div class="hf-title">${title}</div><div class="hf-desc">${desc}</div></div>`).join("")}</div>
       </div>
     </section>
@@ -584,7 +584,7 @@ if (industrialTrainingTabs) {
   const trainingPills = document.getElementById("trainingPills");
   const trainingContent = {
     maintenance: {
-      image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&q=80",
+      image: assetPath("hmi-operator-station.jpg"),
       points: [
         ["01", "Fault Diagnosis & Troubleshooting", "Practical techniques to identify root causes quickly using signal tracing and structured fault trees."],
         ["02", "Preventive Maintenance Planning", "Build inspection routines, lubrication schedules, and calibration cycles that extend equipment life."],
@@ -593,7 +593,7 @@ if (industrialTrainingTabs) {
       pills: ["Daily checks", "Fault isolation", "CMMS basics"],
     },
     technical: {
-      image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80",
+      image: assetPath("industrial-training-technical.jpg"),
       points: [
         ["01", "PLC / SCADA Basics", "Strengthen engineering know-how for daily control, logic, and upgrade work."],
         ["02", "System Modification", "Learn safe change handling for upgrades, alarms, and control logic revisions."],
@@ -602,7 +602,7 @@ if (industrialTrainingTabs) {
       pills: ["PLC hands-on", "SCADA logic", "Loop checks"],
     },
     management: {
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
+      image: assetPath("industrial-training-management.jpg"),
       points: [
         ["01", "System Overview", "Understand plant operation, reporting flows, and the operational picture at a glance."],
         ["02", "Data and Reporting", "Use data acquisition outputs and reports to support decisions and escalation."],
@@ -1011,6 +1011,8 @@ if (homeHeroTrack) {
     homeHeroTrack.style.transform = "translateX(0)";
   }
 }
+
+
 
 
 

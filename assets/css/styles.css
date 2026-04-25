@@ -6414,13 +6414,27 @@ body.automation-page main {
 .automation-page .sol-icon,
 .automation-page .ind-icon,
 .automation-page .why-icon {
-  width: 46px;
-  height: 46px;
+  width: 52px;
+  height: 52px;
   display: grid;
   place-items: center;
-  border-radius: 14px;
-  background: rgba(232, 69, 45, 0.1);
-  font-size: 1.2rem;
+  border-radius: 16px;
+  background: #fcebea;
+  color: #c7b5d8;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  flex: 0 0 auto;
+  font-size: 1.35rem;
+  line-height: 1;
+  font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+}
+
+.automation-page .sol-icon svg,
+.automation-page .ind-icon svg,
+.automation-page .why-icon svg,
+.automation-page .mosaic-badge .icon svg {
+  width: 22px;
+  height: 22px;
+  display: block;
 }
 
 .automation-page .sol-card h3,
@@ -8033,7 +8047,8 @@ body.manufacturing-page .s-desc {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
-  padding: 16px 6vw 8px;
+  padding: 28px 6vw 8px;
+  margin-top: 4px;
 }
 
 .services-page .stat-item,
@@ -8085,7 +8100,7 @@ body.manufacturing-page .s-desc {
 
 .services-page .section-desc {
   max-width: 760px;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .services-page .pe-grid,
@@ -8190,12 +8205,20 @@ body.manufacturing-page .s-desc {
   text-align: center;
 }
 
+.services-page .de-section .section-label,
+.services-page .de-section .section-title,
+.services-page .de-section .section-desc {
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}
+
 .services-page .de-section .section-title {
-  max-width: 18ch;
+  max-width: 100%;
 }
 
 .services-page .de-section .section-desc {
-  max-width: 62ch;
+  max-width: 72ch;
 }
 
 .services-page .de-section .de-grid {
@@ -8504,13 +8527,14 @@ body.manufacturing-page .s-desc {
   }
 
   .services-page .section-title {
+    white-space: normal;
     font-size: clamp(1.6rem, 6vw, 2.4rem);
   }
 }
 
 /* Final polish for spacing and alignment */
 .services-page section {
-  padding: 72px 6vw;
+  padding: 68px 6vw;
 }
 
 .services-page section:first-of-type {
@@ -8536,7 +8560,15 @@ body.manufacturing-page .s-desc {
 
 .services-page .section-title {
   margin-bottom: 14px;
-  max-width: 14ch;
+  max-width: none;
+  white-space: nowrap;
+  font-size: clamp(1.1rem, 1.35vw, 1.65rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.services-page #services .section-title {
+  white-space: nowrap;
 }
 
 .services-page .section-desc {
@@ -9044,6 +9076,13 @@ body.manufacturing-page .s-desc {
 .renewable-page .s-desc {
   font-size: 0.95rem;
   margin-bottom: 10px;
+}
+
+.renewable-page .hydro-section > .s-desc {
+  max-width: 70ch;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
 }
 
 .renewable-page .divider {
@@ -9703,6 +9742,12 @@ body.manufacturing-page .s-desc {
   .renewable-page .section {
     padding-top: 36px;
     padding-bottom: 36px;
+  }
+
+  .renewable-page .hydro-section > .s-desc {
+    max-width: 70ch;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .renewable-page .cta-section {

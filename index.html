@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -47,7 +47,17 @@
 
 *, *::before, *::after { box-sizing:border-box; margin:0; padding:0 }
 html { scroll-behavior:smooth }
-body { background:var(--bg); color:var(--text); font-family:'Manrope',sans-serif; font-size:16px; line-height:1.65; overflow-x:hidden }
+body {
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Manrope',sans-serif;
+  font-size:16px;
+  line-height:1.65;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+}
 
 ::selection { background:rgba(59,130,246,.22); color:#fff }
 ::-webkit-scrollbar { width:3px } ::-webkit-scrollbar-track { background:var(--bg1) } ::-webkit-scrollbar-thumb { background:var(--blue); border-radius:2px }
@@ -113,7 +123,7 @@ nav.scrolled { background:rgba(4,5,8,0.97); border-color:var(--b2) }
 
 .hero {
   min-height:auto;
-  padding:18px 0 0;
+  padding:12px 0 0;
   display:grid; grid-template-columns:55% 45%;
   position:relative; overflow:hidden;
 }
@@ -137,7 +147,7 @@ nav.scrolled { background:rgba(4,5,8,0.97); border-color:var(--b2) }
 }
 .hero-left {
   display:flex; flex-direction:column; justify-content:center;
-  padding:56px 56px 36px 80px;
+  padding:44px 56px 28px 80px;
   position:relative; z-index:2;
   max-width:640px;
 }
@@ -184,7 +194,7 @@ h1.hero-h {
 .live-val { font-family:'Familjen Grotesk',sans-serif; font-size:22px; font-weight:700; color:var(--text); line-height:1 }
 .live-lbl { font-size:10px; color:var(--muted); font-family:'JetBrains Mono',monospace; letter-spacing:.5px }
 
-/* hero right â€“ immersive mosaic */
+/* hero right - immersive mosaic */
 .hero-right {
   position:relative; display:grid;
   grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr;
@@ -213,10 +223,10 @@ h1.hero-h {
 /* diagonal stripes on placeholder */
 .ph-img { background:repeating-linear-gradient(45deg,var(--s1),var(--s1) 8px,var(--s2) 8px,var(--s2) 16px) }
 
-/* â”€â”€â”€ MARQUEE STRIP â”€â”€â”€ */
+/* MARQUEE STRIP */
 .marquee-strip {
   background:var(--s0); border-top:1px solid var(--b1); border-bottom:1px solid var(--b1);
-  padding:14px 0; margin-top:16px; overflow:hidden; position:relative; z-index:10;
+  padding:14px 0; margin-top:28px; overflow:hidden; position:relative; z-index:10;
 }
 .marquee-track { display:flex; gap:0; animation:marquee 30s linear infinite }
 .marquee-track:hover { animation-play-state:paused }
@@ -229,19 +239,19 @@ h1.hero-h {
 .marquee-dot { width:5px; height:5px; border-radius:50%; background:var(--blue); flex-shrink:0 }
 @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 
-.sec { padding:104px 80px }
+.sec { padding:48px 80px }
 .sec { background:var(--bg); }
 .sec-alt { background:var(--bg1) }
 .sec-dark { background:var(--bg2) }
 .divider { height:1px; background:linear-gradient(90deg,transparent,var(--b1) 30%,var(--b1) 70%,transparent); margin:0 80px }
 
 #solutions {
-  padding-top:96px;
-  padding-bottom:84px;
-  margin-top:32px;
+  padding-top:40px;
+  padding-bottom:40px;
+  margin-top:20px;
 }
 #solutions .sec-head {
-  margin-bottom:40px;
+  margin-bottom:20px;
 }
 #solutions .bento {
   margin-top:0;
@@ -258,9 +268,42 @@ h1.hero-h {
 .sk-violet .sk-line { background:var(--violet) } .sk-violet .sk-text { color:var(--violet) }
 .sk-amber .sk-line { background:var(--amber) } .sk-amber .sk-text { color:var(--amber) }
 
-h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px); font-weight:700; line-height:1.05; letter-spacing:-1px; color:var(--text); margin-bottom:14px }
-.sd { color:var(--muted2); font-size:15px; max-width:540px; line-height:1.8; font-weight:400 }
-.sec-head { display:grid; grid-template-columns:1fr auto; align-items:end; gap:32px; margin-bottom:56px }
+h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px); font-weight:700; line-height:1.05; letter-spacing:-1px; color:var(--text); margin-bottom:10px }
+.sd { color:var(--muted2); font-size:15px; max-width:540px; line-height:1.72; font-weight:400 }
+.sec-head {
+  display:grid;
+  grid-template-columns:minmax(0, 1fr) auto;
+  align-items:start;
+  gap:24px;
+  margin:0 auto 24px;
+  max-width:1240px;
+  width:100%;
+}
+.sec-head-split {
+  grid-template-columns:minmax(0, 1fr) minmax(260px, 340px);
+  justify-content:start;
+  column-gap:32px;
+  margin-bottom:24px;
+}
+.sec-head-split > .rl,
+.sec-head-split > div:first-child {
+  max-width:620px;
+}
+.sec-head-split > .rr {
+  align-self:start;
+  margin-top:8px;
+}
+.sec-cta-col {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:10px;
+  max-width:340px;
+}
+.sec-cta-col .sd {
+  max-width:none;
+  text-align:left;
+}
 
 
 .bento { display:grid; grid-template-columns:repeat(12,1fr); gap:16px }
@@ -294,12 +337,12 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 .bc-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:12px }
 .bc-tag { font-size:10px; padding:3px 9px; border-radius:var(--r4); font-family:'JetBrains Mono',monospace }
 
-/* Large IoT card â€“ full height stacked layout */
+/* Large IoT card - full height stacked layout */
 .bc-iot { display:grid; grid-template-rows:1fr auto }
 .bc-iot .bc-img { min-height:260px }
 
 
-.iot-layout { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center }
+.iot-layout { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center }
 .iot-screen {
   position:relative; border-radius:var(--r16); overflow:hidden;
   border:1px solid var(--b2); box-shadow:0 0 80px rgba(59,130,246,.1);
@@ -337,7 +380,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 .ifc { font-size:10px; padding:2px 8px; border-radius:var(--r4); font-family:'JetBrains Mono',monospace; background:rgba(59,130,246,.08); border:1px solid rgba(59,130,246,.15); color:var(--blue2) }
 
 
-.auto-layout { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start }
+.auto-layout { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start }
 
 /* stacked image with overlap */
 .img-stack { position:relative; height:560px }
@@ -365,7 +408,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 .tb:hover { border-color:var(--orange); color:var(--orange) }
 
 
-.mfg-showcase { margin-top:52px }
+.mfg-showcase { margin-top:12px }
 .mfg-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px }
 .mfg-card {
   background:var(--s0); border:1px solid var(--b1); border-radius:var(--r16);
@@ -381,22 +424,29 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 .mfg-desc { font-size:12.5px; color:var(--muted2); line-height:1.6; margin-bottom:12px }
 .mfg-spec-list { display:flex; flex-direction:column; gap:5px }
 .mfg-spec { display:flex; gap:7px; font-size:12px; color:var(--muted2) }
-.mfg-spec::before { content:'â†’'; color:var(--orange); font-size:11px; flex-shrink:0; margin-top:1px }
+.mfg-spec::before { content:'-'; color:var(--orange); flex-shrink:0; font-weight:700; width:10px }
 
 /* process rail */
-.process-rail { display:flex; gap:0; position:relative; margin-top:52px; overflow-x:auto; padding-bottom:4px }
+.process-rail {
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:18px;
+  position:relative;
+  margin-top:12px;
+  padding-bottom:4px;
+}
 .process-rail::before { content:''; position:absolute; top:26px; left:26px; right:26px; height:1px; background:linear-gradient(90deg,var(--orange),var(--blue)); z-index:0 }
-.pstep { flex:1; min-width:140px; display:flex; flex-direction:column; align-items:center; text-align:center; position:relative; z-index:1; padding:0 10px }
-.pstep-circle { width:52px; height:52px; border-radius:50%; border:2px solid var(--b2); background:var(--bg); display:flex; align-items:center; justify-content:center; margin-bottom:14px; transition:all .3s; position:relative }
+.pstep { min-width:0; display:flex; flex-direction:column; align-items:center; text-align:center; position:relative; z-index:1; padding:0 6px }
+.pstep-circle { width:52px; height:52px; border-radius:50%; border:2px solid var(--b2); background:var(--bg); display:flex; align-items:center; justify-content:center; margin-bottom:16px; transition:all .3s; position:relative }
 .pstep:hover .pstep-circle { background:var(--orange); border-color:var(--orange); box-shadow:0 0 24px rgba(249,115,22,.4) }
 .pstep:hover .pstep-circle svg { stroke:#fff }
 .pstep-n { position:absolute; top:-6px; right:-6px; width:18px; height:18px; border-radius:50%; background:var(--orange); font-size:9px; font-weight:700; color:#fff; display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono',monospace }
 .pstep-circle svg { transition:stroke .3s }
-.pstep-title { font-weight:700; font-size:12.5px; margin-bottom:4px }
-.pstep-desc { font-size:11px; color:var(--muted); line-height:1.5 }
+.pstep-title { font-weight:700; font-size:12.5px; margin-bottom:6px; min-height:34px; display:flex; align-items:flex-end; justify-content:center }
+.pstep-desc { font-size:11px; color:var(--muted); line-height:1.5; max-width:170px }
 
 
-.svc-layout { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start }
+.svc-layout { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start }
 .svc-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px }
 .svc-card {
   background:var(--s0); border:1px solid var(--b1); border-radius:var(--r12); padding:24px;
@@ -421,10 +471,10 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 .amc-tag { font-size:9px; padding:2px 8px; border-radius:var(--r99); background:var(--green); color:#fff; font-weight:700; display:inline-block; margin-bottom:8px }
 .amc-items { display:flex; flex-direction:column; gap:4px; text-align:left }
 .amc-item { font-size:11px; color:var(--muted2); display:flex; gap:5px }
-.amc-item::before { content:'âœ“'; color:var(--green); flex-shrink:0; font-weight:700 }
+.amc-item::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--green); flex-shrink:0; margin-top:6px }
 
 
-.ren-layout { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start; margin-top:48px }
+.ren-layout { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start; margin-top:12px }
 .ren-tab-group { display:flex; gap:4px; background:var(--s0); border:1px solid var(--b1); border-radius:var(--r12); padding:4px; width:fit-content; margin-bottom:40px; overflow-x:auto }
 .ren-tab {
   padding:8px 22px; border-radius:var(--r8); font-size:13.5px; font-weight:600;
@@ -464,7 +514,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 .ns-label { font-size:12px; color:var(--muted); font-family:'JetBrains Mono',monospace; letter-spacing:.5px }
 
 
-.vert-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:52px }
+.vert-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:12px }
 .vert-card {
   background:var(--s0); border:1px solid var(--b1); border-radius:var(--r16);
   overflow:hidden; transition:all .3s; position:relative;
@@ -481,7 +531,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 .vli::before { content:''; width:4px; height:4px; border-radius:50%; background:var(--blue); flex-shrink:0 }
 
 
-.pillars { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:52px }
+.pillars { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:12px }
 .pillar {
   background:var(--s0); border:1px solid var(--b1); border-radius:var(--r16); padding:36px;
   position:relative; overflow:hidden; transition:all .3s;
@@ -506,7 +556,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 .pi svg { flex-shrink:0; margin-top:2px }
 
 
-.why-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:52px }
+.why-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:12px }
 .why-card {
   background:var(--s0); border:1px solid var(--b1); border-radius:var(--r16); padding:34px;
   position:relative; overflow:hidden; transition:all .3s;
@@ -520,7 +570,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 .wc-desc { font-size:13px; color:var(--muted2); line-height:1.7; position:relative; z-index:1 }
 
 
-.personas-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:52px }
+.personas-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:12px }
 .persona-card {
   background:var(--s0); border:1px solid var(--b1); border-radius:var(--r12); padding:22px;
   transition:all .25s; display:flex; gap:14px; align-items:flex-start;
@@ -586,12 +636,13 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 }
 @media(max-width:1100px){
   nav { padding:0 20px } .nav-items { display:none }
-  .sec { padding:72px 28px } .divider { margin:0 28px }
+  .sec { padding:44px 24px } .divider { margin:0 24px }
   .hero { grid-template-columns:1fr }
   .hero { padding:14px 0 0 }
   .hero-left { padding:64px 28px 48px }
   .hero-right { height:360px; grid-template-columns:1fr 1fr; grid-template-rows:1fr }
-  #solutions { padding-top:72px; padding-bottom:64px; margin-top:24px; }
+  #solutions { padding-top:36px; padding-bottom:36px; margin-top:16px; }
+  .marquee-strip { margin-top:10px; }
   .himg.tall { grid-row:auto } .himg.span2 { grid-column:auto }
   .hero-live { grid-template-columns:1fr 1fr }
   .bento { grid-template-columns:1fr 1fr }
@@ -603,9 +654,9 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
   .vert-grid { grid-template-columns:1fr 1fr }
   .pillars,.why-grid { grid-template-columns:1fr 1fr }
   .personas-grid { grid-template-columns:1fr 1fr }
-  .cta-sec { padding:80px 28px }
+  .cta-sec { padding:72px 28px }
   .amc-tiers { grid-template-columns:1fr }
-  .process-rail { gap:0 }
+  .process-rail { display:flex; gap:0; overflow-x:auto }
   .back-to-top { top:auto; bottom:18px; right:18px }
 }
 @media(max-width:640px){
@@ -690,27 +741,27 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 <!-- MARQUEE -->
 <div class="marquee-strip">
   <div class="marquee-track" id="mTrack">
-    <div class="marquee-item"><span class="marquee-dot"></span>PLC PROGRAMMING · IEC 61131-3</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>SCADA · IGNITION · WINCC · WONDERWARE</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>PLC PROGRAMMING � IEC 61131-3</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>SCADA � IGNITION � WINCC � WONDERWARE</div>
     <div class="marquee-item"><span class="marquee-dot"></span>HYDRO GOVERNOR CONTROL</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>SOLAR PLANT SCADA · PPC</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>SIEMENS · ABB · ALLEN BRADLEY · SCHNEIDER</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>VFD DRIVE PANELS · MCC · PCC</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>SOLAR PLANT SCADA � PPC</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>SIEMENS � ABB � ALLEN BRADLEY � SCHNEIDER</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>VFD DRIVE PANELS � MCC � PCC</div>
     <div class="marquee-item"><span class="marquee-dot"></span>IEC 61439 CERTIFIED PANELS</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>REMOTE MONITORING · 24/7 SUPPORT</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>HYBRID PLANT EMS · BESS INTEGRATION</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>AVR . EXCITATION · TURBINE PROTECTION</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>REMOTE MONITORING � 24/7 SUPPORT</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>HYBRID PLANT EMS � BESS INTEGRATION</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>AVR . EXCITATION � TURBINE PROTECTION</div>
     <!-- duplicate for seamless loop -->
-    <div class="marquee-item"><span class="marquee-dot"></span>PLC PROGRAMMING · IEC 61131-3</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>SCADA · IGNITION · WINCC · WONDERWARE</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>PLC PROGRAMMING � IEC 61131-3</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>SCADA � IGNITION � WINCC � WONDERWARE</div>
     <div class="marquee-item"><span class="marquee-dot"></span>HYDRO GOVERNOR CONTROL</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>SOLAR PLANT SCADA · PPC</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>SIEMENS · ABB . ALLEN BRADLEY · SCHNEIDER</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>VFD DRIVE PANELS · MCC · PCC</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>SOLAR PLANT SCADA � PPC</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>SIEMENS � ABB . ALLEN BRADLEY � SCHNEIDER</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>VFD DRIVE PANELS � MCC � PCC</div>
     <div class="marquee-item"><span class="marquee-dot"></span>IEC 61439 CERTIFIED PANELS</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>REMOTE MONITORING · 24/7 SUPPORT</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>HYBRID PLANT EMS · BESS INTEGRATION</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>AVR · EXCITATION · TURBINE PROTECTION</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>REMOTE MONITORING � 24/7 SUPPORT</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>HYBRID PLANT EMS � BESS INTEGRATION</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>AVR � EXCITATION � TURBINE PROTECTION</div>
   </div>
 </div>
 
@@ -724,7 +775,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
   </div>
   <div class="bento r">
 
-    <!-- IoT â€“ large -->
+    <!-- IoT large -->
     <div class="bento-card bc-iot">
       <div class="bc-img">
         <img src="assets/images/hero.png" alt="IoT"
@@ -825,13 +876,15 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 <div class="divider"></div>
 
 <section class="sec" id="iot">
-  <div class="sec-head">
+  <div class="sec-head sec-head-split">
     <div class="rl">
-      <div class="sec-kicker sk-blue"></div><span class="sk-text">IoT Platform</span></div>
+      <div class="sec-kicker sk-blue"><div class="sk-line"></div><span class="sk-text">IoT Platform</span></div>
       <h2 class="sh">Connect Every Asset.<br/>Act on Every Signal.</h2>
-      <p class="sd">A low-code IoT platform that connects any device, builds custom applications, and surfaces real-time intelligence for any industry, any scale.</p>
     </div>
-    <a href="pages/iot.html" class="btn btn-outline rr" style="align-self:flex-end">Explore platform</a>
+    <div class="sec-cta-col rr">
+      <p class="sd">A low-code IoT platform that connects any device, builds custom applications, and surfaces real-time intelligence for any industry, any scale.</p>
+      <a href="pages/iot.html" class="btn btn-outline">Explore platform</a>
+    </div>
   </div>
   <div class="iot-layout">
     <div class="iot-screen rl">
@@ -879,15 +932,17 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 
 <div class="divider"></div>
 
-<!-- â•â•â•â•â•â• AUTOMATION â•â•â•â•â•â• -->
+<!-- AUTOMATION -->
 <section class="sec sec-alt" id="automation">
-  <div class="sec-head">
+  <div class="sec-head sec-head-split">
     <div class="rl">
-      <div class="sec-kicker sk-orange"></div><span class="sk-text">Industrial Automation</span></div>
+      <div class="sec-kicker sk-orange"><div class="sk-line"></div><span class="sk-text">Industrial Automation</span></div>
       <h2 class="sh">PLC. SCADA. HMI.<br/>Built for the Real World.</h2>
-      <p class="sd">Seamless control system design and integration for process industries, power plants, and utilities   every deliverable to IEC 61131-3 and ISA 101 standards.</p>
     </div>
-    <a href="pages/industrial-automation.html" class="btn btn-outline rr" style="align-self:flex-end">View automation â†’</a>
+    <div class="sec-cta-col rr">
+      <p class="sd">Seamless control system design and integration for process industries, power plants, and utilities   every deliverable to IEC 61131-3 and ISA 101 standards.</p>
+      <a href="pages/industrial-automation.html" class="btn btn-outline">View automation &rarr;</a>
+    </div>
   </div>
   <div class="auto-layout">
     <div class="img-stack rl">
@@ -896,7 +951,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
           onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:100%\'><span>Control Room SCADA</span></div>'"/>
       </div>
       <div class="img-pip">
-        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&q=80" alt="PLC panel"
+        <img src="assets/images/plc-control-panel.jpg" alt="PLC panel"
           onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:100%\'><span>PLC Panel</span></div>'"/>
       </div>
     </div>
@@ -933,20 +988,22 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 <div class="divider"></div>
 
 <section class="sec" id="manufacturing">
-  <div class="sec-head">
+  <div class="sec-head sec-head-split">
     <div class="rl">
-      <div class="sec-kicker sk-violet"></div><span class="sk-text">Panel Manufacturing</span></div>
+      <div class="sec-kicker sk-violet"><div class="sk-line"></div><span class="sk-text">Panel Manufacturing</span></div>
       <h2 class="sh">Precision Panels.<br/>Every Single Time.</h2>
-      <p class="sd">Custom-engineered LV switchgear, automation panels, and field enclosures   designed, fabricated, wired, and factory acceptance tested to IEC 61439 in our facility.</p>
     </div>
-    <a href="pages/manufacturing.html" class="btn btn-outline rr" style="align-self:flex-end">View all panels â†’</a>
+    <div class="sec-cta-col rr">
+      <p class="sd">Custom-engineered LV switchgear, automation panels, and field enclosures   designed, fabricated, wired, and factory acceptance tested to IEC 61439 in our facility.</p>
+      <a href="pages/manufacturing.html" class="btn btn-outline">View all panels &rarr;</a>
+    </div>
   </div>
   <div class="mfg-showcase">
     <div class="mfg-grid">
 
       <div class="mfg-card r">
         <div class="mfg-card-img">
-          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80" alt="PLC Panel"
+          <img src="assets/images/plc-control-panel.jpg" alt="PLC Panel"
             onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:180px\'><span>PLC Control Panel</span></div>'"/>
           <div class="mfg-badge" style="background:rgba(139,92,246,.9);color:#fff">PLC Panels</div>
         </div>
@@ -963,7 +1020,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 
       <div class="mfg-card r">
         <div class="mfg-card-img">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="HMI Station"
+          <img src="assets/images/hmi-scada-dashboard.jpg" alt="HMI Station"
             onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:180px\'><span>HMI Operator Station</span></div>'"/>
           <div class="mfg-badge" style="background:rgba(249,115,22,.9);color:#fff">HMI Stations</div>
         </div>
@@ -980,7 +1037,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 
       <div class="mfg-card r">
         <div class="mfg-card-img">
-          <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=600&q=80" alt="MCC Panel"
+          <img src="assets/images/mcc-panel.jpg" alt="MCC Panel"
             onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:180px\'><span>MCC / PCC Panel</span></div>'"/>
           <div class="mfg-badge" style="background:rgba(59,130,246,.9);color:#fff">MCC / PCC</div>
         </div>
@@ -997,13 +1054,13 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 
       <div class="mfg-card r">
         <div class="mfg-card-img">
-          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="VFD Panel"
+          <img src="assets/images/vfd-drive-panel.jpg" alt="VFD Panel"
             onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:180px\'><span>VFD Drive Panel</span></div>'"/>
           <div class="mfg-badge" style="background:rgba(16,185,129,.9);color:#fff">VFD Panels</div>
         </div>
         <div class="mfg-body">
           <div class="mfg-title">VFD Drive Panels</div>
-          <div class="mfg-desc">Single and multi-drive enclosures 0.37â€“500 kW with bypass, EMC filters, input/output reactors   fully commissioned.</div>
+          <div class="mfg-desc">Single and multi-drive enclosures 0.37-500 kW with bypass, EMC filters, input/output reactors   fully commissioned.</div>
           <div class="mfg-spec-list">
             <div class="mfg-spec">ABB ACS, Siemens SINAMICS, Danfoss FC</div>
             <div class="mfg-spec">DOL/Star-Delta bypass arrangements</div>
@@ -1014,13 +1071,13 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 
       <div class="mfg-card r">
         <div class="mfg-card-img">
-          <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=600&q=80" alt="Solar SMB"
+          <img src="assets/images/renewable-solar-scada.jpg" alt="Solar SMB"
             onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:180px\'><span>Solar String Monitoring Box</span></div>'"/>
           <div class="mfg-badge" style="background:rgba(234,179,8,.9);color:#000">Solar SMBs</div>
         </div>
         <div class="mfg-body">
           <div class="mfg-title">Solar String Monitoring Boxes</div>
-          <div class="mfg-desc">4â€“24 string DC combiners with fuse protection, SPD Class II, isolation switch, and optional IoT string monitoring. IP65.</div>
+          <div class="mfg-desc">4-24 string DC combiners with fuse protection, SPD Class II, isolation switch, and optional IoT string monitoring. IP65.</div>
           <div class="mfg-spec-list">
             <div class="mfg-spec">Surge protection, polarity reversal protection</div>
             <div class="mfg-spec">Arc fault detection, IoT-enabled monitoring</div>
@@ -1031,7 +1088,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 
       <div class="mfg-card r">
         <div class="mfg-card-img">
-          <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=600&q=80" alt="Marshalling Box"
+          <img src="assets/images/marshalling-cabinet.jpg" alt="Marshalling Box"
             onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:180px\'><span>Marshalling / Junction Box</span></div>'"/>
           <div class="mfg-badge" style="background:rgba(34,211,238,.9);color:#000">Field Boxes</div>
         </div>
@@ -1079,15 +1136,17 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 
 <div class="divider"></div>
 
-<!-- â•â•â•â•â•â• SERVICES â•â•â•â•â•â• -->
+<!-- SERVICES -->
 <section class="sec sec-alt" id="services">
-  <div class="sec-head">
+  <div class="sec-head sec-head-split">
     <div class="rl">
       <div class="sec-kicker sk-green"><div class="sk-line"></div><span class="sk-text">Industrial Services</span></div>
       <h2 class="sh">End-to-End Engineering<br/>&amp; Field Support</h2>
-      <p class="sd">Project engineering, detail design, commissioning, 24/7 remote support, training, and annual maintenance   one team for your entire project lifecycle.</p>
     </div>
-    <a href="pages/industrial-services.html" class="btn btn-outline rr" style="align-self:flex-end">All services</a>
+    <div class="sec-cta-col rr">
+      <p class="sd">Project engineering, detail design, commissioning, 24/7 remote support, training, and annual maintenance   one team for your entire project lifecycle.</p>
+      <a href="pages/industrial-services.html" class="btn btn-outline">All services</a>
+    </div>
   </div>
   <div class="svc-layout">
     <div class="svc-grid rl">
@@ -1124,12 +1183,14 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 
 <div class="divider"></div>
 
-<!-- â•â•â•â•â•â• RENEWABLE â•â•â•â•â•â• -->
+<!-- RENEWABLE -->
 <section class="sec" id="renewable">
-  <div class="sec-head">
+  <div class="sec-head sec-head-split">
     <div class="rl">
-      <div class="sec-kicker sk-cyan"></div><span class="sk-text">Renewable Automation &amp; SCADA</span></div>
+      <div class="sec-kicker sk-cyan"><div class="sk-line"></div><span class="sk-text">Renewable Automation &amp; SCADA</span></div>
       <h2 class="sh">Hydro &amp; Solar.<br/>Automated. Monitored. Optimised.</h2>
+    </div>
+    <div class="sec-cta-col rr">
       <p class="sd">Governor control, AVR/excitation, gate automation, solar PPC, remote monitoring, and hybrid plant EMS   complete renewable automation from one specialist team.</p>
     </div>
   </div>
@@ -1156,26 +1217,26 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 <section class="sec sec-alt">
   <div class="sec-head r">
     <div>
-      <div class="sec-kicker sk-blue"></div><span class="sk-text">Industry Verticals</span></div>
+      <div class="sec-kicker sk-blue"><div class="sk-line"></div><span class="sk-text">Industry Verticals</span></div>
       <h2 class="sh">Serving Every<br/>Industrial Sector</h2>
     </div>
     <p class="sd" style="max-width:360px">Proven across manufacturing, power utilities, buildings, renewable energy, and smart infrastructure.</p>
   </div>
   <div class="vert-grid">
     <div class="vert-card r">
-      <div class="vert-img"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&q=80" alt="Manufacturing" onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:170px\'></div>'"/><div class="vert-gradient"></div><div class="vert-name">Manufacturing</div></div>
+      <div class="vert-img"><img src="assets/images/manufacturing-facility.jpg" alt="Manufacturing" onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:170px\'></div>'"/><div class="vert-gradient"></div><div class="vert-name">Manufacturing</div></div>
       <div class="vert-body"><div class="vert-list"><div class="vli">OEE monitoring &amp; predictive maintenance</div><div class="vli">Energy efficiency &amp; machine monitoring</div><div class="vli">Supply chain &amp; quality management</div></div></div>
     </div>
     <div class="vert-card r">
-      <div class="vert-img"><img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=400&q=80" alt="Utilities" onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:170px\'></div>'"/><div class="vert-gradient"></div><div class="vert-name">Power &amp; Utilities</div></div>
+      <div class="vert-img"><img src="assets/images/renewable-solar-scada.jpg" alt="Utilities" onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:170px\'></div>'"/><div class="vert-gradient"></div><div class="vert-name">Power &amp; Utilities</div></div>
       <div class="vert-body"><div class="vert-list"><div class="vli">Smart grid &amp; power line monitoring</div><div class="vli">Water &amp; wastewater automation</div><div class="vli">Electrical grid management</div></div></div>
     </div>
     <div class="vert-card r">
-      <div class="vert-img"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=80" alt="Buildings" onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:170px\'></div>'"/><div class="vert-gradient"></div><div class="vert-name">Buildings &amp; Facilities</div></div>
+      <div class="vert-img"><img src="assets/images/vfd-drive-panel.jpg" alt="Buildings" onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:170px\'></div>'"/><div class="vert-gradient"></div><div class="vert-name">Buildings &amp; Facilities</div></div>
       <div class="vert-body"><div class="vert-list"><div class="vli">HVAC control &amp; energy efficiency</div><div class="vli">Occupancy &amp; access monitoring</div><div class="vli">Operations &amp; maintenance</div></div></div>
     </div>
     <div class="vert-card r">
-      <div class="vert-img"><img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=400&q=80" alt="Renewable" onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:170px\'></div>'"/><div class="vert-gradient"></div><div class="vert-name">Renewable Energy</div></div>
+      <div class="vert-img"><img src="assets/images/marshalling-cabinet.jpg" alt="Renewable" onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:170px\'></div>'"/><div class="vert-gradient"></div><div class="vert-name">Renewable Energy</div></div>
       <div class="vert-body"><div class="vert-list"><div class="vli">Hydro &amp; solar plant SCADA</div><div class="vli">PPC, plant monitoring &amp; analytics</div><div class="vli">Hybrid plant energy management</div></div></div>
     </div>
   </div>
@@ -1183,11 +1244,11 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 
 <div class="divider"></div>
 
-<!-- â•â•â•â•â•â• PILLARS â•â•â•â•â•â• -->
+<!-- PILLARS -->
 <section class="sec">
   <div class="sec-head r">
     <div>
-      <div class="sec-kicker sk-blue"></div><span class="sk-text">Platform Pillars</span></div>
+      <div class="sec-kicker sk-blue"><div class="sk-line"></div><span class="sk-text">Platform Pillars</span></div>
       <h2 class="sh">Robust. Reliable.<br/>Secure by Default.</h2>
     </div>
     <p class="sd" style="max-width:360px">Three non-negotiable properties underpinning every deployment   from a single plant to a multi-GW portfolio.</p>
@@ -1240,11 +1301,11 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 
 <div class="divider"></div>
 
-<!-- â•â•â•â•â•â• WHY SRILEE â•â•â•â•â•â• -->
+<!-- WHY SRILEE -->
 <section class="sec sec-alt">
   <div class="sec-head r">
     <div>
-      <div class="sec-kicker sk-blue"></div><span class="sk-text">Why Srilee IoT</span></div>
+      <div class="sec-kicker sk-blue"><div class="sk-line"></div><span class="sk-text">Why Srilee IoT</span></div>
       <h2 class="sh">Purpose-Built for<br/>Industrial Operations</h2>
     </div>
     <p class="sd" style="max-width:360px">Not a generic platform   a focused, field-tested partner with 15+ years of real industrial delivery experience.</p>
@@ -1253,7 +1314,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
     <div class="why-card r"><div class="wc-n"></div><div class="wc-ico" style="background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.18)"><svg width="21" height="21" fill="none" viewBox="0 0 24 24" stroke="#3b82f6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg></div><div class="wc-title">Tech-Agnostic Connectivity</div><div class="wc-desc">Works with any brand   Siemens, ABB, Schneider, Allen Bradley   and any protocol: Modbus, OPC-UA, IEC 60870, Profinet, DNP3, IEC 61850.</div></div>
     <div class="why-card r"><div class="wc-n"></div><div class="wc-ico" style="background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.18)"><svg width="21" height="21" fill="none" viewBox="0 0 24 24" stroke="#10b981"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div><div class="wc-title">Standards-Aligned Engineering</div><div class="wc-desc">Every design to IEC 61131-3, IEC 61439, ISA 101, IEC 60870, IEC 61850   reducing rework, certification risk, and compliance overhead.</div></div>
     <div class="why-card r"><div class="wc-n"></div><div class="wc-ico" style="background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.18)"><svg width="21" height="21" fill="none" viewBox="0 0 24 24" stroke="#f97316"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div class="wc-title">Faster Time to Market</div><div class="wc-desc">Solution accelerators, pre-tested panel templates, and proven engineering playbooks cut deployment time and upfront cost dramatically.</div></div>
-    <div class="why-card r"><div class="wc-n"></div><div class="wc-ico" style="background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.18)"><svg width="21" height="21" fill="none" viewBox="0 0 24 24" stroke="#22d3ee"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zm0 8a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zm12 0a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg></div><div class="wc-title">One Partner. Full Lifecycle.</div><div class="wc-desc">Design â†’ manufacturing â†’ commissioning â†’ 24/7 AMC. A single accountable team across your entire project lifecycle   no gaps, no handoffs.</div></div>
+    <div class="why-card r"><div class="wc-n"></div><div class="wc-ico" style="background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.18)"><svg width="21" height="21" fill="none" viewBox="0 0 24 24" stroke="#22d3ee"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zm0 8a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zm12 0a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg></div><div class="wc-title">One Partner. Full Lifecycle.</div><div class="wc-desc">Design &rarr; manufacturing &rarr; commissioning &rarr; 24/7 AMC. A single accountable team across your entire project lifecycle   no gaps, no handoffs.</div></div>
     <div class="why-card r"><div class="wc-n"></div><div class="wc-ico" style="background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.18)"><svg width="21" height="21" fill="none" viewBox="0 0 24 24" stroke="#8b5cf6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg></div><div class="wc-title">Scalable &amp; Future-Ready</div><div class="wc-desc">Single plant to multi-GW portfolio   open APIs, cloud-native architecture, and standard protocol integration mean no re-engineering as you grow.</div></div>
     <div class="why-card r"><div class="wc-n"></div><div class="wc-ico" style="background:rgba(234,179,8,.1);border:1px solid rgba(234,179,8,.18)"><svg width="21" height="21" fill="none" viewBox="0 0 24 24" stroke="#eab308"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div><div class="wc-title">In-House Expert Team</div><div class="wc-desc">Hydro automation specialists, solar SCADA engineers, panel manufacturers, and IoT developers   all in-house, all accountable, zero subcontracting.</div></div>
   </div>
@@ -1261,11 +1322,11 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 
 <div class="divider"></div>
 
-<!-- â•â•â•â•â•â• PERSONAS â•â•â•â•â•â• -->
+<!-- PERSONAS -->
 <section class="sec">
   <div class="sec-head r">
     <div>
-      <div class="sec-kicker sk-amber"></div><span class="sk-text">Business Personas</span></div>
+      <div class="sec-kicker sk-amber"><div class="sk-line"></div><span class="sk-text">Business Personas</span></div>
       <h2 class="sh">Built for Every<br/>Role in Your Team</h2>
     </div>
     <p class="sd" style="max-width:360px">From plant owner to field engineer   Srilee IoT gives every persona the right visibility and control.</p>
@@ -1280,7 +1341,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
   </div>
 </section>
 
-<!-- â•â•â•â•â•â• CTA â•â•â•â•â•â• -->
+<!-- CTA -->
 <section class="cta-sec">
   <div class="cta-orb"></div>
   <div class="cta-title r">Start Your<br/><span class="grad">Digital Transformation</span></div>
@@ -1291,7 +1352,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
   </div>
 </section>
 
-<!-- â•â•â•â•â•â• FOOTER â•â•â•â•â•â• -->
+<!-- FOOTER -->
 <footer class="footer" role="contentinfo">
   <div class="footer-grid">
     <div>
@@ -1310,7 +1371,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
       <a href="pages/industrial-automation.html">Automation</a>
       <a href="pages/industrial-services.html">Industrial services</a>
       <a href="pages/manufacturing.html">Manufacturing</a>
-      <a href="pages/renewable-automation-scada.html">Renewable automation</a>
+      <a href="pages/renewable-automation.html">Renewable automation</a>
     </div>
     <div>
       <h4>GET IN TOUCH</h4>
@@ -1354,7 +1415,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 </footer>
 
 <script>
-/* â”€â”€ MOBILE NAV â”€â”€ */
+/* MOBILE NAV */
 const menuBtn = document.getElementById('menuBtn');
 const navLinks = document.getElementById('navLinks');
 if (menuBtn && navLinks) {
@@ -1368,7 +1429,7 @@ if (menuBtn && navLinks) {
   });
 }
 
-/* â”€â”€ CUSTOM CURSOR â”€â”€ */
+/* CUSTOM CURSOR */
 const cur = document.getElementById('cur');
 const ring = document.getElementById('curRing');
 if(window.matchMedia('(pointer:fine)').matches){
@@ -1382,7 +1443,7 @@ if(window.matchMedia('(pointer:fine)').matches){
   });
 } else { cur.style.display='none'; ring.style.display='none'; }
 
-/* â”€â”€ NAV SCROLL â”€â”€ */
+/* NAV SCROLL */
 const nav = document.getElementById('nav');
 const backToTop = document.getElementById('backToTop');
 const syncBackToTop = () => {
@@ -1401,7 +1462,7 @@ if (backToTop) {
   });
 }
 
-/* â”€â”€ SCROLL REVEAL â”€â”€ */
+/* SCROLL REVEAL */
 const revObs = new IntersectionObserver((entries)=>{
   entries.forEach((e,i)=>{
     if(e.isIntersecting){
@@ -1412,7 +1473,7 @@ const revObs = new IntersectionObserver((entries)=>{
 },{threshold:0.07});
 document.querySelectorAll('.r,.rl,.rr').forEach(el=>revObs.observe(el));
 
-/* â”€â”€ COUNTER ANIMATION â”€â”€ */
+/* COUNTER ANIMATION */
 function animateCount(el){
   const target = parseFloat(el.dataset.t);
   const suffix = el.dataset.s || '';
@@ -1439,49 +1500,64 @@ const countObs = new IntersectionObserver((entries)=>{
 },{threshold:0.3});
 document.querySelectorAll('.numbers-strip').forEach(el=>countObs.observe(el));
 
-/* â”€â”€ RENEWABLE TABS â”€â”€ */
+/* RENEWABLE TABS */
 const renData = {
-  hydro:{
+  hydro: {
     img: 'assets/images/energy.png',
     archColor: 'rgba(34,211,238,.15)',
     archBorder: 'rgba(34,211,238,.3)',
     archText: '#22d3ee',
-    chips:['Field Layer','Unit Control Board','Governor PLC','AVR/Excitation','Station SCADA','Grid Comms IEC 60870'],
-    features:[
-      {c:'#22d3ee',t:'Governor Control System',d:'PLC-based digital governor for turbine speed and load regulation   droop, isochronous, load sharing, guide vane/needle actuator control, and auto start/stop sequences.',tags:['Speed regulation','Droop control','Isochronous','Auto start/stop']},
-      {c:'#22d3ee',t:'AVR & Excitation System',d:'Static excitation with digital AVR for generator voltage, reactive power (VAR), power factor regulation, and power system stabiliser (PSS) function.',tags:['Voltage regulation','Reactive power','PSS function','Field current limit']},
-      {c:'#22d3ee',t:'Turbine-Generator Protection',d:'Numerical relays for differential, over-speed, earth fault, loss-of-field, reverse power, and thermal monitoring   all interlocked with the governor and excitation.',tags:['Over-speed trip','Differential','Earth fault','Reverse power']},
-      {c:'#22d3ee',t:'Gate & Valve Automation',d:'Remote/local control of intake gates, penstock butterfly valves, radial gates, and spillway gates   position feedback, interlock logic, and emergency flood sequences from SCADA.',tags:['Intake gates','Penstock valve','Spillway','Flood emergency']},
-      {c:'#22d3ee',t:'Hydro Plant SCADA',d:'Full mimic SCADA with alarm management, event logging, generation historian, shift reports, and secure remote access via VPN per IEC 60870-5-104.',tags:['Plant mimic','Historian','IEC 60870','Remote VPN']},
-    ]
+    chips: ['Field Layer', 'Unit Control Board', 'Governor PLC', 'AVR/Excitation', 'Station SCADA', 'Grid Comms IEC 60870'],
+    features: [
+      { c: '#22d3ee', t: 'Governor Control System', d: 'PLC-based digital governor for turbine speed and load regulation, droop, isochronous, load sharing, guide vane/needle actuator control, and auto start/stop sequences.', tags: ['Speed regulation', 'Droop control', 'Isochronous', 'Auto start/stop'] },
+      { c: '#22d3ee', t: 'AVR & Excitation System', d: 'Static excitation with digital AVR for generator voltage, reactive power (VAR), power factor regulation, and power system stabiliser (PSS) function.', tags: ['Voltage regulation', 'Reactive power', 'PSS function', 'Field current limit'] },
+      { c: '#22d3ee', t: 'Turbine-Generator Protection', d: 'Numerical relays for differential, over-speed, earth fault, loss-of-field, reverse power, and thermal monitoring, all interlocked with the governor and excitation.', tags: ['Over-speed trip', 'Differential', 'Earth fault', 'Reverse power'] },
+      { c: '#22d3ee', t: 'Gate & Valve Automation', d: 'Remote/local control of intake gates, penstock butterfly valves, radial gates, and spillway gates, position feedback, interlock logic, and emergency flood sequences from SCADA.', tags: ['Intake gates', 'Penstock valve', 'Spillway', 'Flood emergency'] },
+      { c: '#22d3ee', t: 'Hydro Plant SCADA', d: 'Full mimic SCADA with alarm management, event logging, generation historian, shift reports, and secure remote access via VPN per IEC 60870-5-104.', tags: ['Plant mimic', 'Historian', 'IEC 60870', 'Remote VPN'] },
+    ],
   },
-  solar:{
-    img: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=700&q=80',
-    archColor: 'rgba(234,179,8,.12)',
+  solar: {
+    img: 'assets/images/renewable-solar-scada.jpg',
+    archColor: 'rgba(234,179,8,.15)',
     archBorder: 'rgba(234,179,8,.3)',
     archText: '#eab308',
-    chips:['String / SMB','Inverter Fleet','Plant SCADA','PPC','Cloud Historian','Grid Metering'],
-    features:[
-      {c:'#eab308',t:'Plant & String Monitoring',d:'Real-time DC string current, inverter performance, plant-level PR, CUF, and specific yield updated every 30 seconds   with weather station integration for accurate benchmarking.',tags:['String monitoring','PR & CUF','Specific yield','Weather station']},
-      {c:'#eab308',t:'Power Plant Controller (PPC)',d:'Active power curtailment, reactive power Q/V control, ramp rate limiting, and frequency response (LFSM/FSM)   all dispatched to the inverter fleet in under 1 second.',tags:['APC <1s','Q/V control','Ramp rate','LFSM/FSM']},
-      {c:'#eab308',t:'Remote Monitoring',d:'Cloud-based SCADA with 24/7 alarm monitoring, SMS/email notifications, remote inverter diagnostics, and guided corrective action   minimising site visits.',tags:['Cloud SCADA','Mobile alerts','VPN access','Remote diagnosis']},
-      {c:'#eab308',t:'Hybrid Plant EMS',d:'Coordinated Solar + Hydro + BESS dispatch   SOC management, ramp smoothing, and grid code compliance in one energy management system.',tags:['Hybrid dispatch','BESS SOC','Ramp smoothing','Grid code']},
-      {c:'#eab308',t:'Analytics & Reports',d:'Performance ratio trends, loss waterfall analysis, clipping estimates, soiling detection   with auto-emailed shift/daily/monthly reports for plant owners and operators.',tags:['PR trends','Loss waterfall','Soiling','Auto-reports']},
-    ]
-  }
+    chips: ['String Monitoring', 'Inverter Fleet SCADA', 'PPC Control', 'Weather Station', 'Remote O&M', 'Analytics'],
+    features: [
+      { c: '#eab308', t: 'Plant Monitoring', d: 'Live string, inverter, and plant-level monitoring with alarms and weather inputs.', tags: ['String current', 'Inverter fleet', 'Weather data', 'Alarm feed'] },
+      { c: '#eab308', t: 'PPC / Grid Control', d: 'Control active power, reactive power, ramp rates, and frequency response for grid compliance.', tags: ['Active power', 'Reactive power', 'Ramp rate', 'Grid compliance'] },
+      { c: '#eab308', t: 'Remote Monitoring', d: 'Secure cloud or VPN access for multi-site visibility and faster O&M response.', tags: ['VPN access', 'Mobile alerts', 'Multi-site', 'Remote diagnostics'] },
+      { c: '#eab308', t: 'Analytics & Reports', d: 'Convert operational data into KPIs, reports, and improvement actions.', tags: ['Performance ratio', 'Loss analysis', 'Reporting', 'Forecast support'] },
+      { c: '#eab308', t: 'Hybrid Ready', d: 'Support solar plants that operate alongside hydro and storage assets.', tags: ['Hybrid EMS', 'BESS ready', 'Site visibility', 'Portfolio control'] },
+    ],
+  },
 };
 
-function renderRen(key){
-  const d = renData[key];
+function renderRen(key) {
+  const d = renData[key] || renData.hydro;
   const img = document.getElementById('renImg');
-  if(img){ img.style.opacity='0'; setTimeout(()=>{img.src=d.img;img.style.opacity='1'},350); }
-  // arch chips
-  const ac = document.getElementById('renArchChips');
-  if(ac) ac.innerHTML = d.chips.map(c=>`<span class="ren-arch-chip" style="background:${d.archColor};border-color:${d.archBorder};color:${d.archText}">${c}</span>`).join('');
-  // features
+  if (img) {
+    img.style.opacity = '0';
+    setTimeout(() => {
+      img.src = d.img;
+      img.style.opacity = '1';
+    }, 160);
+  }
+
+  const arch = document.getElementById('renArchOverlay');
+  if (arch) {
+    arch.style.background = d.archColor;
+    arch.style.borderColor = d.archBorder;
+    arch.style.color = d.archText;
+  }
+
+  const chips = document.getElementById('renArchChips');
+  if (chips) {
+    chips.innerHTML = d.chips.map(c => `<span class="ren-arch-chip" style="background:${d.archColor};border-color:${d.archBorder};color:${d.archText}">${c}</span>`).join('');
+  }
+
   const fb = document.getElementById('renFeatBody');
-  if(!fb) return;
-  fb.innerHTML = `<div class="ren-feats">${d.features.map(f=>`
+  if (!fb) return;
+  fb.innerHTML = `<div class="ren-feats">${d.features.map(f => `
     <div class="rf-item">
       <div class="rf-ico" style="background:${f.c}14;border:1px solid ${f.c}28">
         <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="${f.c}"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -1489,10 +1565,9 @@ function renderRen(key){
       <div>
         <div class="rf-title">${f.t}</div>
         <div class="rf-desc">${f.d}</div>
-        <div class="rf-tags">${f.tags.map(t=>`<span class="rft" style="background:${f.c}10;border:1px solid ${f.c}22;color:${f.c}">${t}</span>`).join('')}</div>
+        <div class="rf-tags">${f.tags.map(t => `<span class="rft" style="background:${f.c}10;border:1px solid ${f.c}22;color:${f.c}">${t}</span>`).join('')}</div>
       </div>
-    </div>`).join('')}
-  </div>`;
+    </div>`).join('')}</div>`;
 }
 
 renderRen('hydro');
@@ -1512,7 +1587,7 @@ document.querySelectorAll('.ren-tab').forEach(tab=>{
   });
 });
 
-/* â”€â”€ ACTIVE NAV ON SCROLL â”€â”€ */
+/* ACTIVE NAV ON SCROLL */
 const sections = document.querySelectorAll('section[id]');
 const legacyNavLinks = document.querySelectorAll('.nav-items a');
 const scrollSpy = new IntersectionObserver((entries)=>{
@@ -1529,6 +1604,9 @@ sections.forEach(s=>scrollSpy.observe(s));
 </script>
 </body>
 </html>
+
+
+
 
 
 
