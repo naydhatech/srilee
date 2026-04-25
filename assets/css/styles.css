@@ -8047,7 +8047,8 @@ body.manufacturing-page .s-desc {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
-  padding: 16px 6vw 8px;
+  padding: 28px 6vw 8px;
+  margin-top: 4px;
 }
 
 .services-page .stat-item,
@@ -8099,7 +8100,7 @@ body.manufacturing-page .s-desc {
 
 .services-page .section-desc {
   max-width: 760px;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .services-page .pe-grid,
@@ -8533,7 +8534,7 @@ body.manufacturing-page .s-desc {
 
 /* Final polish for spacing and alignment */
 .services-page section {
-  padding: 72px 6vw;
+  padding: 68px 6vw;
 }
 
 .services-page section:first-of-type {
