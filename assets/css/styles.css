@@ -5471,6 +5471,14 @@ body.industrial-iot-page .section-header p {
     justify-content: center;
   }
 
+  .iot-showcase-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .iot-hero-art {
+    min-height: min(72vw, 440px);
+  }
+
   .iot-art-card-alert {
     width: min(220px, 46%);
   }
@@ -5481,6 +5489,10 @@ body.industrial-iot-page .section-header p {
 
   .iot-art-card-online {
     width: min(220px, 46%);
+  }
+
+  .iot-art-card {
+    max-width: calc(100% - 20px);
   }
 
   .iot-stage {
@@ -5560,6 +5572,18 @@ body.industrial-iot-page .section-header p {
     width: min(196px, 56%);
   }
 
+  .iot-art-card h3 {
+    font-size: 0.8rem;
+  }
+
+  .iot-art-card strong {
+    font-size: 1.05rem;
+  }
+
+  .iot-art-card span {
+    font-size: 0.66rem;
+  }
+
   .iot-art-performance {
     width: 112px;
     height: 48px;
@@ -5570,24 +5594,36 @@ body.industrial-iot-page .section-header p {
   }
 
   .iot-top-card {
-    padding: 22px 20px 24px;
+    padding: 20px 18px 22px;
     border-radius: 22px;
   }
 
   .iot-card-visual {
-    width: 150px;
-    height: 108px;
-    right: 16px;
-    bottom: 10px;
+    width: 132px;
+    height: 96px;
+    right: 12px;
+    bottom: 8px;
   }
 
   .iot-card-kicker {
-    font-size: 1rem;
+    font-size: 0.96rem;
   }
 
   .iot-top-card ul,
   .iot-callout p {
     font-size: 0.88rem;
+  }
+
+  .iot-top-card li {
+    max-width: none;
+  }
+
+  .iot-dashboard-shell {
+    width: min(100%, 520px);
+  }
+
+  .iot-callout {
+    width: min(100%, 260px);
   }
 }
 
@@ -5633,17 +5669,17 @@ body.industrial-iot-page .section-header p {
   }
 
   .iot-hero-art {
-    min-height: 320px;
+    min-height: 290px;
   }
 
   .iot-art-card-alert,
   .iot-art-card-oee,
   .iot-art-card-online {
-    width: auto;
+    width: min(186px, calc(100% - 20px));
   }
 
   .iot-art-card-online {
-    bottom: 64px;
+    bottom: 58px;
     right: 10px;
   }
 
@@ -5652,11 +5688,28 @@ body.industrial-iot-page .section-header p {
   }
 
   .iot-top-card {
+    padding: 18px 16px 20px;
+  }
+
+  .iot-card-visual {
+    width: 118px;
+    height: 84px;
+    right: 10px;
+    bottom: 6px;
+  }
+
+  .iot-top-card {
     min-height: auto;
   }
 
   .iot-callout {
     border-radius: 16px;
+    width: 100%;
+    position: static;
+  }
+
+  .iot-dashboard-area {
+    gap: 12px;
   }
 }
 
@@ -6866,6 +6919,143 @@ body.automation-page main {
   }
 }
 
+@media (max-width: 540px) {
+  .automation-page .hero {
+    gap: 20px;
+    padding-top: 20px;
+    padding-bottom: 8px;
+  }
+
+  .automation-page .hero-left {
+    max-width: none;
+  }
+
+  .automation-page .hero h1 {
+    font-size: clamp(1.75rem, 10vw, 2.3rem);
+    line-height: 1.08;
+  }
+
+  .automation-page .hero-desc,
+  .automation-page .section-sub {
+    font-size: 0.9rem;
+  }
+
+  .automation-page .hero-badges,
+  .automation-page .hero-cta,
+  .automation-page .cta-actions {
+    gap: 8px;
+  }
+
+  .automation-page .badge {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .automation-page .tech-strip {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .automation-page .tech-logos {
+    gap: 8px;
+  }
+
+  .automation-page .tech-chip {
+    flex: 1 1 calc(50% - 8px);
+    min-width: 0;
+    padding: 9px 11px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .automation-page .section {
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+
+  .automation-page .section-title {
+    font-size: clamp(1.45rem, 7vw, 2rem);
+    line-height: 1.08;
+  }
+
+  .automation-page .solutions-grid,
+  .automation-page .industries-grid,
+  .automation-page .why-grid,
+  .automation-page .testimonials-grid {
+    gap: 12px;
+  }
+
+  .automation-page .sol-card,
+  .automation-page .ind-card,
+  .automation-page .why-card,
+  .automation-page .testi-card {
+    padding: 10px;
+    border-radius: 18px;
+  }
+
+  .automation-page .sol-img,
+  .automation-page .ind-img {
+    height: 160px;
+  }
+
+  .automation-page .hero-mosaic {
+    gap: 10px;
+    padding: 10px;
+    border-radius: 16px;
+  }
+
+  .automation-page .hero-mosaic .img-main {
+    min-height: 190px;
+  }
+
+  .automation-page .hero-mosaic img:nth-child(2),
+  .automation-page .hero-mosaic img:nth-child(3) {
+    min-height: 140px;
+  }
+
+  .automation-page .mosaic-badge {
+    margin-top: 10px;
+    padding: 10px 12px;
+  }
+
+  .automation-page .process-grid {
+    gap: 14px;
+  }
+
+  .automation-page .process-img {
+    aspect-ratio: 1 / 1;
+    max-height: none;
+  }
+
+  .automation-page .process-img-badge {
+    right: 12px;
+    bottom: 12px;
+    padding: 12px 14px;
+  }
+
+  .automation-page .step {
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .automation-page .step-num {
+    width: 48px;
+    height: 48px;
+  }
+
+  .automation-page .industries-section .section {
+    padding-top: 54px;
+    padding-bottom: 54px;
+  }
+
+  .automation-page .why-card h4,
+  .automation-page .sol-card h3,
+  .automation-page .ind-body h4,
+  .automation-page .step-body h4 {
+    font-size: 0.94rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .automation-page .fade-up,
   .automation-page .fade-up-2,
@@ -7848,6 +8038,156 @@ body.manufacturing-page .s-desc {
   max-width: 58ch;
 }
 
+@media (max-width: 640px) {
+  body.manufacturing-page {
+    font-size: 13px;
+  }
+
+  body.manufacturing-page .hero,
+  body.manufacturing-page .stats,
+  body.manufacturing-page #products,
+  body.manufacturing-page main > section:not(.hero):not(.cta),
+  body.manufacturing-page .cta {
+    padding-left: 4.5vw;
+    padding-right: 4.5vw;
+  }
+
+  body.manufacturing-page .hero {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding-top: 40px;
+    padding-bottom: 28px;
+  }
+
+  body.manufacturing-page .hero-right,
+  body.manufacturing-page .products-intro,
+  body.manufacturing-page .detail-layout,
+  body.manufacturing-page .ap-grid,
+  body.manufacturing-page .stats,
+  body.manufacturing-page .product-grid,
+  body.manufacturing-page .ap-cards,
+  body.manufacturing-page .solar-grid,
+  body.manufacturing-page .process-steps,
+  body.manufacturing-page .why-section .why-grid,
+  body.manufacturing-page .ap-img-row {
+    grid-template-columns: 1fr;
+  }
+
+  body.manufacturing-page .hero-left,
+  body.manufacturing-page .hero-right,
+  body.manufacturing-page .product-card,
+  body.manufacturing-page .wcard,
+  body.manufacturing-page .ap-card {
+    min-width: 0;
+  }
+
+  body.manufacturing-page .hero-left {
+    max-width: none;
+  }
+
+  body.manufacturing-page .hero-title {
+    font-size: clamp(1.9rem, 11vw, 2.6rem);
+    line-height: 1;
+    margin: 10px 0 14px;
+  }
+
+  body.manufacturing-page .s-title,
+  body.manufacturing-page .cta-title {
+    font-size: clamp(1.5rem, 7.2vw, 2.1rem);
+  }
+
+  body.manufacturing-page .hero-desc,
+  body.manufacturing-page .s-desc,
+  body.manufacturing-page .cta-desc {
+    max-width: none;
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+
+  body.manufacturing-page .hero-tags,
+  body.manufacturing-page .hero-acts,
+  body.manufacturing-page .cta-acts,
+  body.manufacturing-page .spec-tags,
+  body.manufacturing-page .ap-card-chips {
+    gap: 8px;
+  }
+
+  body.manufacturing-page .hero-acts,
+  body.manufacturing-page .cta-acts {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  body.manufacturing-page .btn {
+    width: 100%;
+  }
+
+  body.manufacturing-page .hero-right {
+    gap: 10px;
+  }
+
+  body.manufacturing-page .hi,
+  body.manufacturing-page .pc-img,
+  body.manufacturing-page .ap-img-main,
+  body.manufacturing-page .ap-img-sm,
+  body.manufacturing-page .dim {
+    min-height: 0;
+  }
+
+  body.manufacturing-page .hi {
+    min-height: 160px;
+  }
+
+  body.manufacturing-page .hi.tall {
+    min-height: 240px;
+  }
+
+  body.manufacturing-page .pc-img {
+    height: 170px;
+  }
+
+  body.manufacturing-page .dim-main {
+    min-height: 260px;
+  }
+
+  body.manufacturing-page .dim-sub {
+    min-height: 160px;
+  }
+
+  body.manufacturing-page .ap-img-main {
+    min-height: 260px;
+  }
+
+  body.manufacturing-page .ap-img-sm {
+    min-height: 140px;
+  }
+
+  body.manufacturing-page .stat {
+    padding: 14px 14px 12px;
+  }
+
+  body.manufacturing-page .stat-n {
+    font-size: 1.35rem;
+  }
+
+  body.manufacturing-page .pc-body,
+  body.manufacturing-page .ap-card,
+  body.manufacturing-page .feat-item,
+  body.manufacturing-page .wcard,
+  body.manufacturing-page .solar-card,
+  body.manufacturing-page .ps,
+  body.manufacturing-page .comm-step {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  body.manufacturing-page .cta {
+    margin-top: 18px;
+    padding-top: 36px;
+    padding-bottom: 40px;
+  }
+}
+
 /* Industrial services refresh */
 .services-page main {
   display: block;
@@ -8561,14 +8901,16 @@ body.manufacturing-page .s-desc {
 .services-page .section-title {
   margin-bottom: 14px;
   max-width: none;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
   font-size: clamp(1.1rem, 1.35vw, 1.65rem);
   line-height: 1.05;
   letter-spacing: -0.03em;
 }
 
 .services-page #services .section-title {
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .services-page .section-desc {
@@ -8742,7 +9084,7 @@ body.manufacturing-page .s-desc {
 
 @media (max-width: 1100px) {
   .services-page section {
-    padding: 60px 0;
+    padding: 60px 6vw;
   }
 
   .services-page .section-title {
@@ -8756,7 +9098,7 @@ body.manufacturing-page .s-desc {
 
 @media (max-width: 720px) {
   .services-page section {
-    padding: 48px 0;
+    padding: 48px 5vw;
   }
 
   .services-page .cta-section {
@@ -8771,6 +9113,17 @@ body.manufacturing-page .s-desc {
 
   .services-page .section-desc {
     margin-bottom: 22px;
+  }
+
+  .services-page .training-img,
+  .services-page .remote-img,
+  .services-page .amc-img,
+  .services-page .de-main-img {
+    min-height: 260px;
+  }
+
+  .services-page .cig {
+    min-height: 180px;
   }
 }
 
@@ -9726,13 +10079,53 @@ body.manufacturing-page .s-desc {
     grid-template-columns: 1fr;
   }
 
+  .renewable-page .hero-left,
+  .renewable-page .hero-right,
+  .renewable-page .ppc-content,
+  .renewable-page .hybrid-features,
+  .renewable-page .solar-features,
+  .renewable-page .stype-card,
+  .renewable-page .plat-card,
+  .renewable-page .tech-card,
+  .renewable-page .wy-card {
+    min-width: 0;
+  }
+
+  .renewable-page .hero-left {
+    max-width: none;
+  }
+
+  .renewable-page .hero-acts,
+  .renewable-page .cta-acts {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .renewable-page .hero-acts .btn,
+  .renewable-page .cta-acts .btn {
+    width: 100%;
+  }
+
+  .renewable-page .solar-tab-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .renewable-page .stab {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
   .renewable-page .hero-title {
     font-size: clamp(2.3rem, 9vw, 3.2rem);
   }
 
   .renewable-page .hero {
-    padding-top: 24px;
-    padding-bottom: 18px;
+    gap: 18px;
+    padding-top: 20px;
+    padding-bottom: 14px;
   }
 
   .renewable-page .hero-stack {
@@ -9782,6 +10175,78 @@ body.manufacturing-page .s-desc {
 
   .renewable-page .hsys-body {
     padding-left: 18px;
+  }
+}
+
+@media (max-width: 520px) {
+  .renewable-page .hero,
+  .renewable-page .section,
+  .renewable-page .cta-section {
+    padding-left: 4.5vw;
+    padding-right: 4.5vw;
+  }
+
+  .renewable-page .hero-title,
+  .renewable-page .s-title,
+  .renewable-page .cta-title {
+    text-wrap: balance;
+  }
+
+  .renewable-page .hero-desc,
+  .renewable-page .s-desc,
+  .renewable-page .cta-desc {
+    max-width: none;
+  }
+
+  .renewable-page .hero-right {
+    gap: 10px;
+  }
+
+  .renewable-page .hi {
+    min-height: 128px;
+  }
+
+  .renewable-page .hi.tall {
+    min-height: 190px;
+  }
+
+  .renewable-page .hv-main,
+  .renewable-page .ppc-img,
+  .renewable-page .hybrid-img,
+  .renewable-page .stype-img,
+  .renewable-page .solar-img {
+    height: 160px;
+  }
+
+  .renewable-page .stats {
+    gap: 10px;
+  }
+
+  .renewable-page .stat {
+    padding: 13px 14px;
+  }
+
+  .renewable-page .stat-n {
+    font-size: 1.45rem;
+  }
+
+  .renewable-page .solar-feature-shell,
+  .renewable-page .ppc-content,
+  .renewable-page .stype-body,
+  .renewable-page .plat-card,
+  .renewable-page .tech-card,
+  .renewable-page .wy-card,
+  .renewable-page .hf-card {
+    padding: 12px;
+  }
+
+  .renewable-page .ppc-stat-val {
+    font-size: 1.2rem;
+  }
+
+  .renewable-page .cta-section {
+    padding-top: 32px;
+    padding-bottom: 32px;
   }
 }
 
