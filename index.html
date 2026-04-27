@@ -659,8 +659,67 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
   .process-rail { display:flex; gap:0; overflow-x:auto }
   .back-to-top { top:auto; bottom:18px; right:18px }
 }
+@media(max-width:920px){
+  .sec-head,
+  .sec-head-split {
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  .sec-head-split > .rl,
+  .sec-head-split > div:first-child,
+  .sec-head-split > .rr {
+    max-width:none;
+    margin-top:0;
+  }
+  .sec-cta-col {
+    max-width:none;
+  }
+  .sec-cta-col .sd {
+    text-align:left;
+  }
+}
 @media(max-width:640px){
   .mfg-grid,.pillars,.why-grid,.personas-grid,.vert-grid { grid-template-columns:1fr }
+  .sec { padding-left:18px; padding-right:18px }
+  .divider { margin:0 18px }
+  .hero-left { padding:44px 18px 28px }
+  .hero-right {
+    height:auto;
+    grid-template-columns:1fr;
+    grid-template-rows:none;
+    overflow:visible;
+  }
+  .himg.tall,
+  .himg.span2 {
+    grid-column:auto;
+    grid-row:auto;
+  }
+  .hero-live {
+    grid-template-columns:1fr;
+  }
+  .hero-live .live-item {
+    border-right:none;
+    border-bottom:1px solid var(--b1);
+  }
+  .hero-live .live-item:last-child {
+    border-bottom:none;
+  }
+  .sec-head,
+  .sec-head-split {
+    margin-bottom:18px;
+  }
+  .sec-head .sd,
+  .sec-head-split .sd {
+    font-size:14px;
+  }
+  .sec-cta-col .btn,
+  .cta-acts .btn {
+    width:100%;
+  }
+  .sec-cta-col,
+  .cta-acts {
+    width:100%;
+  }
 }
 </style>
 </head>
