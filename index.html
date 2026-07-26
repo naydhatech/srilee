@@ -576,7 +576,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 .vert-img img { width:100%; height:100%; object-fit:cover; transition:transform .55s }
 .vert-card:hover .vert-img img { transform:scale(1.08) }
 .vert-gradient { position:absolute; inset:0; background:linear-gradient(transparent 30%,rgba(4,5,8,.9)) }
-.vert-name { position:absolute; bottom:14px; left:16px; font-family:'Familjen Grotesk',sans-serif; font-weight:700; font-size:17px }
+.vert-name { position:absolute; bottom:14px; left:16px; color:#ffffff; font-family:'Familjen Grotesk',sans-serif; font-weight:700; font-size:17px , }
 .vert-body { padding:18px }
 .vert-list { display:flex; flex-direction:column; gap:6px }
 .vli { font-size:12px; color:var(--muted2); display:flex; gap:8px; align-items:center }
@@ -930,7 +930,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
     <!-- Manufacturing -->
     <div class="bento-card bc-mfg">
       <div class="bc-img" style="min-height:120px">
-        <img src="assets/images/manufacturing-1.jpeg" alt="Manufacturing"
+        <img src="assets/images/manifacturing-hero-1.jpg" alt="Manufacturing"
           onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'min-height:120px\'><span>Panel Manufacturing</span></div>'"/>
         <div class="bc-grad"></div>
         <div class="bc-accent" style="background:linear-gradient(135deg,rgba(139,92,246,.25),transparent)"></div>
@@ -966,7 +966,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
     <!-- Renewable -->
     <div class="bento-card bc-ren">
       <div class="bc-img" style="min-height:120px">
-        <img src="assets/images/energy.jpg" alt="Renewable"
+        <img src="assets/images/renewable-energy.jpg" alt="Renewable"
           onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'min-height:120px\'><span>Renewable SCADA</span></div>'"/>
         <div class="bc-grad"></div>
         <div class="bc-accent" style="background:linear-gradient(135deg,rgba(34,211,238,.25),transparent)"></div>
@@ -999,9 +999,8 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
   </div>
   <div class="iot-layout">
     <div class="iot-screen rl">
-      <img src="assets/images/hero.jpg" alt="IoT Dashboard"
-        style="width:100%;max-height:440px;object-fit:cover;display:block"
-        onerror="this.parentElement.innerHTML+='<div class=\'iot-screen-ph\'><svg width=\'52\' height=\'52\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1\' d=\'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z\'/></svg><span style=\'font-family:JetBrains Mono,monospace;font-size:11px;opacity:.4\'>IoT Platform Dashboard</span></div>'"/>
+      <img src="assets/images/solar-scada.png" 
+      alt="IoT Dashboard" style="width:100%;object-fit:cover;display:block" onerror="this.parentElement.innerHTML+='&lt;div class=\'iot-screen-ph\'&gt;&lt;svg width=\'52\' height=\'52\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'&gt;&lt;path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1\' d=\'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z\'/&gt;&lt;/svg&gt;&lt;span style=\'font-family:JetBrains Mono,monospace;font-size:11px;opacity:.4\'&gt;IoT Platform Dashboard&lt;/span&gt;&lt;/div&gt;'">
       <!-- floating metric badges -->
       <div class="iot-badge" style="bottom:24px;left:-24px">
         <div class="ib-dot" style="background:var(--green)"></div>
@@ -1058,12 +1057,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
   <div class="auto-layout">
     <div class="img-stack rl">
       <div class="img-main">
-        <img src="assets/images/industrial.jpg" alt="Control room"
-          onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:100%\'><span>Control Room SCADA</span></div>'"/>
-      </div>
-      <div class="img-pip">
-        <img src="assets/images/plc-control-panel.jpg" alt="PLC panel"
-          onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:100%\'><span>PLC Panel</span></div>'"/>
+        <img src="assets/images/PLC. SCADA. HMI. portrait.png" alt="Industrial Automation Control Room" style="width:100%; height:100%; object-fit:cover; display:block; border-radius:20px;" onerror="this.parentElement.innerHTML='&lt;div class=\'ph-img\' style=\'height:100%;display:grid;place-items:center;background:#f1f5f9;border-radius:20px\'&gt;&lt;span&gt;Automation Control Systems&lt;/span&gt;&lt;/div&gt;'">
       </div>
     </div>
     <div class="rr">
@@ -1131,7 +1125,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 
       <div class="mfg-card r">
         <div class="mfg-card-img">
-          <img src="assets/images/hmi-scada-dashboard.jpg" alt="HMI Station"
+          <img src="assets/images/hmi-operator-station.png" alt="HMI Station"
             onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:180px\'><span>HMI Operator Station</span></div>'"/>
           <div class="mfg-badge" style="background:rgba(249,115,22,.9);color:#fff">HMI Stations</div>
         </div>
@@ -1148,7 +1142,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 
       <div class="mfg-card r">
         <div class="mfg-card-img">
-          <img src="assets/images/mcc-panel.jpg" alt="MCC Panel"
+          <img src="assets/images/MCC & PCC Panels.png" alt="MCC Panel"
             onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:180px\'><span>MCC / PCC Panel</span></div>'"/>
           <div class="mfg-badge" style="background:rgba(59,130,246,.9);color:#fff">MCC / PCC</div>
         </div>
@@ -1165,7 +1159,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 
       <div class="mfg-card r">
         <div class="mfg-card-img">
-          <img src="assets/images/vfd-drive-panel.jpg" alt="VFD Panel"
+          <img src="assets/images/vfd-drive-panel.png" alt="VFD Panel"
             onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:180px\'><span>VFD Drive Panel</span></div>'"/>
           <div class="mfg-badge" style="background:rgba(16,185,129,.9);color:#fff">VFD Panels</div>
         </div>
@@ -1199,7 +1193,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 
       <div class="mfg-card r">
         <div class="mfg-card-img">
-          <img src="assets/images/marshalling-cabinet.jpg" alt="Marshalling Box"
+          <img src="assets/images/marshalling-cabinet.png" alt="Marshalling Box"
             onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:180px\'><span>Marshalling / Junction Box</span></div>'"/>
           <div class="mfg-badge" style="background:rgba(34,211,238,.9);color:#000">Field Boxes</div>
         </div>
@@ -1270,9 +1264,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
     </div>
     <div class="svc-visual rr">
       <div class="svc-img">
-        <img src="assets/images/industrial-services-2.jpeg" alt="Engineering team"
-          onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:320px\'><span>Engineering Team On-Site</span></div>'"/>
-      </div>
+        <img id="renImg" src="assets/images/energy.jpg" alt="Renewable plant" style="width: 100%; height: 100%; object-fit: cover; transition: opacity 0.4s; opacity: 1;" onerror="this.parentElement.innerHTML='&lt;div class=\'ph-img\' style=\'height:520px\'&gt;&lt;span&gt;Renewable Plant&lt;/span&gt;&lt;/div&gt;'"> </div>
       <!-- AMC tiers -->
       <div style="background:var(--s0);border:1px solid var(--b1);border-radius:var(--r12);padding:22px">
         <div style="font-weight:700;font-size:15px;margin-bottom:16px;color:var(--text)">AMC Service Tiers</div>
@@ -1335,15 +1327,20 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
   </div>
   <div class="vert-grid">
     <div class="vert-card r">
-      <div class="vert-img"><img src="assets/images/manufacturing-facility.jpg" alt="Manufacturing" onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:170px\'></div>'"/><div class="vert-gradient"></div><div class="vert-name">Manufacturing</div></div>
+      <div class="vert-img"><img src="assets/images/manufacturing-facility.jpg" alt="Manufacturing" onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:170px\'></div>'"/>
+      <div class="vert-gradient"></div>
+      <div class="vert-name">Manufacturing</div></div>
       <div class="vert-body"><div class="vert-list"><div class="vli">OEE monitoring &amp; predictive maintenance</div><div class="vli">Energy efficiency &amp; machine monitoring</div><div class="vli">Supply chain &amp; quality management</div></div></div>
     </div>
     <div class="vert-card r">
-      <div class="vert-img"><img src="assets/images/renewable-solar-scada.jpg" alt="Utilities" onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:170px\'></div>'"/><div class="vert-gradient"></div><div class="vert-name">Power &amp; Utilities</div></div>
+      <div class="vert-img"><img src="assets/images/renewable-solar-scada.jpg" alt="Utilities" onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:170px\'></div>'"/>
+      <div class="vert-gradient"></div>
+      <div class="vert-name">Power &amp; Utilities</div></div>
       <div class="vert-body"><div class="vert-list"><div class="vli">Smart grid &amp; power line monitoring</div><div class="vli">Water &amp; wastewater automation</div><div class="vli">Electrical grid management</div></div></div>
     </div>
     <div class="vert-card r">
-      <div class="vert-img"><img src="assets/images/vfd-drive-panel.jpg" alt="Buildings" onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:170px\'></div>'"/><div class="vert-gradient"></div><div class="vert-name">Buildings &amp; Facilities</div></div>
+      <div class="vert-img"><img src="assets/images/vfd-drive-panel.jpg" alt="Buildings" onerror="this.parentElement.innerHTML='<div class=\'ph-img\' style=\'height:170px\'></div>'"/><div class="vert-gradient"></div>
+      <div class="vert-name">Buildings &amp; Facilities</div></div>
       <div class="vert-body"><div class="vert-list"><div class="vli">HVAC control &amp; energy efficiency</div><div class="vli">Occupancy &amp; access monitoring</div><div class="vli">Operations &amp; maintenance</div></div></div>
     </div>
     <div class="vert-card r">
