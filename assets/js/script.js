@@ -161,7 +161,7 @@ if (homeCounterTargets.length) {
 
 const renewableHomeTabs = {
   hydro: {
-    image: assetPath("energy.png"),
+    image: assetPath("energy.jpg"),
     chips: ["Governor control", "AVR / excitation", "Gate automation", "Hydro SCADA"],
     title: "Hydro Power Automation",
     intro: "Control turbine speed, excitation, gates, alarms, and station-level SCADA with a compact, reliable architecture.",
@@ -173,7 +173,7 @@ const renewableHomeTabs = {
     ],
   },
   solar: {
-    image: assetPath("industrial.png"),
+    image: assetPath("industrial.jpg"),
     chips: ["Plant SCADA", "PPC control", "Weather station", "Remote O&M"],
     title: "Solar Plant SCADA",
     intro: "Monitor string data, inverters, alarms, and performance with clear plant and portfolio visibility.",
@@ -410,8 +410,8 @@ if (renewableRoot) {
         <div class="hero-acts"><a href="contact.html" class="btn btn-hydro">Discuss your project</a><a href="#hydro" class="btn btn-ghost">Explore solutions ?</a></div>
       </div>
       <div class="hero-right">
-        <div class="hi tall hydro-tint"><img src="${assetPath("energy.png")}" alt="Hydro plant" /></div>
-        <div class="hi solar-tint"><img src="${assetPath("industrial.png")}" alt="Solar farm" /></div>
+        <div class="hi tall hydro-tint"><img src="${assetPath("energy.jpg")}" alt="Hydro plant" /></div>
+        <div class="hi solar-tint"><img src="${assetPath("industrial.jpg")}" alt="Solar farm" /></div>
         <div class="hi"><img src="${assetPath("hmi-scada-dashboard.jpg")}" alt="SCADA monitoring" /></div>
       </div>
     </section>
@@ -750,9 +750,9 @@ if (homeHeroTrack) {
       href: "demo.html",
       header: "IoT command center",
       images: [
-        { src: assetPath("hero.png"), alt: "Srilee IoT overview" },
-        { src: assetPath("industrial.png"), alt: "Industrial IoT dashboard overview" },
-        { src: assetPath("energy.png"), alt: "Energy management overview" },
+        { src: assetPath("hero.jpg"), alt: "Srilee IoT overview" },
+        { src: assetPath("industrial.jpg"), alt: "Industrial IoT dashboard overview" },
+        { src: assetPath("energy.jpg"), alt: "Energy management overview" },
       ],
       stats: [
         ["98.7%", "asset uptime"],
@@ -770,9 +770,9 @@ if (homeHeroTrack) {
       href: "industrial-automation.html",
       header: "Automation overview",
       images: [
-        { src: assetPath("industrial.png"), alt: "Automation dashboard overview" },
-        { src: assetPath("hero.png"), alt: "Automation operations overview" },
-        { src: assetPath("energy.png"), alt: "Automation monitoring overview" },
+        { src: assetPath("industrial.jpg"), alt: "Automation dashboard overview" },
+        { src: assetPath("hero.jpg"), alt: "Automation operations overview" },
+        { src: assetPath("energy.jpg"), alt: "Automation monitoring overview" },
       ],
       stats: [
         ["64%", "faster cycles"],
@@ -830,9 +830,9 @@ if (homeHeroTrack) {
       href: "renewable-automation.html",
       header: "Renewable monitoring",
       images: [
-        { src: assetPath("energy.png"), alt: "Renewable automation preview" },
-        { src: assetPath("industrial.png"), alt: "Renewable monitoring preview" },
-        { src: assetPath("hero.png"), alt: "Renewable operations preview" },
+        { src: assetPath("energy.jpg"), alt: "Renewable automation preview" },
+        { src: assetPath("industrial.jpg"), alt: "Renewable monitoring preview" },
+        { src: assetPath("hero.jpg"), alt: "Renewable operations preview" },
       ],
       stats: [
         ["154.5", "kWh per module"],
