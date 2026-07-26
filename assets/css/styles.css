@@ -3685,7 +3685,7 @@ button {
     height: 160px;
     background:
       linear-gradient(rgba(12, 18, 28, 0.22), rgba(12, 18, 28, 0.22)),
-      url("../images/hero.png") center/cover no-repeat,
+      url("../images/hero.jpg") center/cover no-repeat,
       rgba(12, 18, 28, 0.92);
   }
 
@@ -3919,7 +3919,7 @@ button {
     height: 150px;
     background:
       linear-gradient(rgba(12, 18, 28, 0.22), rgba(12, 18, 28, 0.22)),
-      url("../images/hero.png") center/cover no-repeat,
+      url("../images/hero.jpg") center/cover no-repeat,
       rgba(12, 18, 28, 0.92);
   }
 
