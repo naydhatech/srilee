@@ -3,33 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Request a Demo | Srilee IoT</title>
+    <title>Renewable Automation &amp; SCADA | Srilee</title>
     <meta
       name="description"
-      content="Request a demo of Srilee IoT to see connected operations, automation, and analytics in action."
+      content="Automation and SCADA solutions for solar and hydro power plants, with centralized monitoring, remote diagnostics, and energy optimization."
     />
-    <meta name="author" content="Srilee Pvt Ltd." />
-    <meta name="theme-color" content="#0f172a" />
-    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
-    <link rel="canonical" href="https://srilee.com/pages/demo.html" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="en_IN" />
-    <meta property="og:site_name" content="Srilee IoT" />
-    <meta property="og:title" content="Request a Demo | Srilee IoT" />
-    <meta
-      property="og:description"
-      content="Request a demo of Srilee IoT to see connected operations, automation, and analytics in action."
-    />
-    <meta property="og:url" content="https://srilee.com/pages/demo.html" />
-    <meta property="og:image" content="https://srilee.com/assets/images/personas.png" />
-    <meta property="og:image:alt" content="Srilee IoT demo and solutions preview" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Request a Demo | Srilee IoT" />
-    <meta
-      name="twitter:description"
-      content="Request a demo of Srilee IoT to see connected operations, automation, and analytics in action."
-    />
-    <meta name="twitter:image" content="https://srilee.com/assets/images/personas.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -39,41 +17,20 @@
     <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../assets/css/styles.css" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Srilee Pvt Ltd.",
-        "url": "https://srilee.com/",
-        "logo": "https://srilee.com/assets/images/logo.png",
-        "email": "sales@srilee.com",
-        "telephone": "+91 96769 74984",
-        "sameAs": [
-          "https://linkedin.com/company/sri-lee-technologies"
-        ],
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Flat No: 3201, SLV Pearl, Road No 1, Matrusrinagar, Miyapur",
-          "addressLocality": "Hyderabad",
-          "postalCode": "500049",
-          "addressCountry": "IN"
-        },
-        "areaServed": "IN"
-      }
-    </script>
   </head>
-  <body class="signup-body iot-theme">
+  <body class="iot-theme renewable-page">
     <header class="site-header">
       <nav class="nav">
         <a class="brand" href="../index.html">
           <img class="brand-logo" src="../assets/images/logo.png" alt="Srilee IoT logo" />
         </a>
         <div class="nav-links" id="navLinks">
+          <a href="../index.html">Home</a>
           <a href="iot.html">IoT</a>
           <a href="industrial-automation.html">Automation</a>
           <a href="manufacturing.html">Manufacturing</a>
           <a href="industrial-services.html">Industrial service</a>
-          <a href="renewable-automation.html">Renewable</a>
+          <a class="active" href="renewable-automation.html">Renewable</a>
         </div>
         <div class="nav-actions">
           <a class="ghost-btn" href="contact.html">Talk to an expert</a>
@@ -85,60 +42,7 @@
       </nav>
     </header>
 
-    <main class="signup-main">
-      <section class="signup-hero">
-        <div class="signup-hero-text">
-          <span class="section-kicker">Srilee IoT Demo</span>
-          <h1>See the platform in action before you decide.</h1>
-          <ul class="feature-list">
-            <li>Walk through live dashboards and device controls</li>
-            <li>Review the right solution for your industry</li>
-            <li>Discuss integration, deployment, and scale plans</li>
-            <li>Explore automation, analytics, and remote monitoring</li>
-            <li>Get answers from the team that builds the platform</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="signup-card">
-        <h2>Book your demo</h2>
-        <p class="signup-sub">Tell us a little about your goals and we will tailor the walkthrough.</p>
-        <form class="signup-form" action="#" method="post">
-          <label>
-            Full name
-            <input type="text" name="name" placeholder="Enter your name" required />
-          </label>
-          <label>
-            Work email
-            <input type="email" name="email" placeholder="name@company.com" required />
-          </label>
-          <label>
-            Company
-            <input type="text" name="company" placeholder="Company name" />
-          </label>
-          <label>
-            Phone
-            <input type="tel" name="phone" placeholder="+1 (555) 012-0000" />
-          </label>
-          <label>
-            What are you looking for?
-            <select name="usecase">
-              <option>Industrial IoT</option>
-              <option>Automation</option>
-              <option>Manufacturing</option>
-              <option>Industrial services</option>
-              <option>Renewable automation</option>
-            </select>
-          </label>
-          <label class="checkbox">
-            <input type="checkbox" required />
-            I agree to be contacted about the demo and related solutions
-          </label>
-          <button class="primary-btn" type="submit">Request demo</button>
-        </form>
-        <p class="signup-note">Prefer to talk now? <a href="contact.html">Get in touch</a></p>
-      </section>
-    </main>
+    <main id="renewableRoot"></main>
 
     <footer class="footer">
       <div class="footer-grid">
@@ -149,16 +53,16 @@
         <div>
           <h4>Platform</h4>
           <a href="iot.html">IoT platform</a>
-          <a href="#accelerators">Accelerators</a>
-          <a href="#simple-solutions">Solutions</a>
-          <a href="#whats-in">What's in</a>
+          <a href="industrial-automation.html">Automation</a>
+          <a href="industrial-services.html">Industrial services</a>
+          <a href="renewable-automation.html">Renewable</a>
         </div>
         <div>
           <h4>Services</h4>
           <a href="industrial-automation.html">Automation</a>
           <a href="industrial-services.html">Industrial services</a>
           <a href="manufacturing.html">Manufacturing</a>
-          <a href="renewable-automation.html">Renewable automation</a>
+          <a href="renewable-automation-scada.html">Renewable automation</a>
         </div>
         <div>
           <h4>GET IN TOUCH</h4>
