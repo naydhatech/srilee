@@ -4655,12 +4655,13 @@ body.industrial-iot-page .section-header h2 {
   display: grid;
   grid-template-columns: minmax(280px, 0.92fr) minmax(320px, 1.08fr);
   gap: 24px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .platform-preview {
   position: relative;
   min-height: 680px;
+  height: 100%;
   overflow: hidden;
   background: linear-gradient(180deg, #0f1624, #16243b);
 }
@@ -4714,23 +4715,62 @@ body.industrial-iot-page .section-header h2 {
 
 .platform-stack {
   display: grid;
-  gap: 18px;
+  gap: 12px;
 }
 
 .platform-card {
   display: grid;
-  gap: 12px;
+  gap: 8px;
+  padding: 16px 18px;
+}
+
+.platform-card .platform-title {
+  margin-bottom: 6px;
+}
+
+.platform-card h3 {
+  margin-bottom: 4px;
+  font-size: 1.02rem;
+  line-height: 1.25;
+}
+
+.platform-card p {
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.platform-card .feature-list {
+  margin: 10px 0 0;
+  gap: 6px;
+}
+
+.platform-card .feature-list li {
+  line-height: 1.45;
 }
 
 .capability-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
 }
 
 .capability-card {
   display: grid;
   gap: 10px;
+  height: 100%;
+}
+
+@media (max-width: 1180px) {
+  .capability-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .capability-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .section-outcomes {
@@ -4941,7 +4981,7 @@ body.industrial-iot-page {
 }
 
 body.industrial-iot-page .section {
-  padding-block: 84px;
+  padding-block: 34px;
 }
 
 body.industrial-iot-page .section-alt {
@@ -5054,7 +5094,7 @@ body.industrial-iot-page .section-header p {
   align-items: center;
   width: min(1480px, 100%);
   margin: 0 auto;
-  padding: 0 5vw;
+  padding: 0 6vw;
 }
 
 .iot-showcase-layout .iot-showcase-intro {
@@ -6409,6 +6449,10 @@ body.automation-page main {
   padding: 32px 6vw;
 }
 
+.automation-page .process-section .section {
+  padding-left: 4vw;
+}
+
 .automation-page .section-header {
   margin-bottom: 14px;
 }
@@ -6428,7 +6472,7 @@ body.automation-page main {
 
 .automation-page .solutions-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
   margin-top: 12px;
 }
@@ -6521,13 +6565,15 @@ body.automation-page main {
 
 .automation-page .process-grid {
   display: grid;
-  grid-template-columns: minmax(300px, 0.88fr) minmax(360px, 1.12fr);
-  gap: 12px;
-  align-items: start;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(420px, 1.05fr);
+  gap: 24px;
+  align-items: stretch;
 }
 
 .automation-page .process-grid > div:last-child {
-  padding-top: 0;
+  display: grid;
+  align-content: start;
+  padding-top: 6px;
 }
 
 .automation-page .process-section .section-title,
@@ -6546,6 +6592,7 @@ body.automation-page main {
   object-fit: cover;
   aspect-ratio: 4 / 5;
   max-height: 620px;
+  min-height: 760px;
   box-shadow: 0 18px 38px rgba(12, 20, 32, 0.12);
 }
 
@@ -6573,41 +6620,44 @@ body.automation-page main {
 
 .automation-page .steps {
   display: grid;
-  gap: 6px;
+  gap: 10px;
 }
 
 .automation-page .step {
   display: grid;
-  grid-template-columns: 68px 1fr;
-  gap: 8px;
-  padding: 10px;
+  grid-template-columns: 58px 1fr;
+  gap: 12px;
+  padding: 12px 14px;
   border-radius: 18px;
   border: 1px solid var(--line);
   background: #fff;
   box-shadow: 0 10px 20px rgba(12, 20, 32, 0.05);
+  align-items: start;
 }
 
 .automation-page .step-num {
-  width: 52px;
-  height: 52px;
+  width: 48px;
+  height: 48px;
   display: grid;
   place-items: center;
-  border-radius: 16px;
+  border-radius: 14px;
   background: rgba(232, 69, 45, 0.1);
   color: var(--accent);
   font-family: "Poppins", sans-serif;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.94rem;
+  letter-spacing: 0.02em;
 }
 
 .automation-page .step-body h4 {
-  margin-bottom: 3px;
+  margin-bottom: 4px;
   font-size: 0.96rem;
 }
 
 .automation-page .step-body p {
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.86rem;
+  line-height: 1.55;
   margin: 0;
 }
 
@@ -6835,6 +6885,10 @@ body.automation-page main {
     grid-template-columns: 1fr;
   }
 
+  .automation-page .process-img {
+    min-height: 0;
+  }
+
   .automation-page .process-section .section-title,
   .automation-page .process-section .section-sub {
     max-width: none;
@@ -6907,11 +6961,13 @@ body.automation-page main {
 
   .automation-page .step {
     grid-template-columns: 1fr;
+    gap: 8px;
+    align-items: start;
   }
 
   .automation-page .step-num {
-    width: 52px;
-    height: 52px;
+    width: 46px;
+    height: 46px;
   }
 
   .automation-page .cta-section {
@@ -7092,8 +7148,8 @@ body.automation-page main {
 
 .manufacturing-page main > section:not(.hero):not(.cta),
 .manufacturing-page #products {
-  padding-top: 72px;
-  padding-bottom: 72px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .manufacturing-page .stats {
@@ -7143,7 +7199,7 @@ body.automation-page main {
 .manufacturing-page .hero-title {
   font-size: clamp(2.4rem, 4vw, 4.55rem);
   line-height: 0.98;
-  margin: 14px 0 18px;
+  margin: 12px 0 15px;
 }
 
 .manufacturing-page .hero-title em {
@@ -7163,15 +7219,15 @@ body.automation-page main {
 .manufacturing-page .chip {
   display: inline-flex;
   align-items: center;
-  padding: 8px 14px;
-  border-radius: 999px;
+  padding: 8px 12px;
+  border-radius: 988px;
   background: rgba(232, 69, 45, 0.1);
   color: var(--accent-dark);
   border: 1px solid rgba(232, 69, 45, 0.18);
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  font-weight: 00;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
-  font-size: 0.78rem;
+  font-size: 0.58rem;
 }
 
 .manufacturing-page .hero-tags,
@@ -7478,6 +7534,7 @@ body.automation-page main {
 .manufacturing-page .detail-img-wrap {
   display: grid;
   gap: 14px;
+  align-self: stretch;
 }
 
 .manufacturing-page .dim {
@@ -7489,11 +7546,11 @@ body.automation-page main {
 }
 
 .manufacturing-page .dim-main {
-  min-height: 420px;
+  height: 500px;
 }
 
 .manufacturing-page .dim-sub {
-  min-height: 220px;
+  height: 260px;
 }
 
 .manufacturing-page .feat-list {
@@ -7753,7 +7810,8 @@ body.automation-page main {
   }
 
   .manufacturing-page .hero-right {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
+    grid-template-rows: repeat(2, minmax(0, 1fr));
   }
 
   .manufacturing-page .stats,
@@ -7789,6 +7847,12 @@ body.automation-page main {
 
   .manufacturing-page .hero-right {
     grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .manufacturing-page .hi {
+    min-height: 170px;
+    height: auto;
   }
 
   .manufacturing-page .hi.tall,
@@ -7829,10 +7893,10 @@ body.automation-page main {
 }
 
 .manufacturing-page .hero-title {
-  font-size: clamp(2.2rem, 3.6vw, 4.15rem);
+  font-size: clamp(2.1rem, 3.5vw, 4.05rem);
   line-height: 1.01;
   letter-spacing: -0.03em;
-  margin: 12px 0 16px;
+  margin: 10px 0 14px;
 }
 
 .manufacturing-page .hero-desc {
@@ -7851,18 +7915,24 @@ body.automation-page main {
 
 .manufacturing-page .hero-right {
   grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
+  grid-template-rows: repeat(2, minmax(0, 1fr));
   gap: 12px;
-  align-items: start;
+  align-items: stretch;
   max-width: 760px;
   margin-left: auto;
+  height: clamp(340px, 32vw, 500px);
 }
 
 .manufacturing-page .hi {
-  min-height: 170px;
+  min-height: 0;
+  height: 100%;
+  align-self: stretch;
+  justify-self: stretch;
 }
 
 .manufacturing-page .hi.tall {
   min-height: 380px;
+  height: auto;
 }
 
 .manufacturing-page .stats {
@@ -7968,10 +8038,6 @@ body.automation-page main {
 @media (max-width: 640px) {
   .manufacturing-page .hero-title {
     font-size: clamp(2rem, 9vw, 2.8rem);
-  }
-
-  .manufacturing-page .hero-right {
-    grid-template-columns: 1fr;
   }
 
   .manufacturing-page .hi.tall {
@@ -8088,7 +8154,7 @@ body.manufacturing-page .s-desc {
   body.manufacturing-page .hero-title {
     font-size: clamp(1.9rem, 11vw, 2.6rem);
     line-height: 1;
-    margin: 10px 0 14px;
+    margin: 10px 0 12px;
   }
 
   body.manufacturing-page .s-title,
@@ -8147,11 +8213,11 @@ body.manufacturing-page .s-desc {
   }
 
   body.manufacturing-page .dim-main {
-    min-height: 260px;
+    height: 320px;
   }
 
   body.manufacturing-page .dim-sub {
-    min-height: 160px;
+    height: 180px;
   }
 
   body.manufacturing-page .ap-img-main {
@@ -8435,12 +8501,12 @@ body.manufacturing-page .s-desc {
 .services-page .section-title {
   font-size: clamp(1.3rem, 2.1vw, 2.1rem);
   line-height: 1.08;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .services-page .section-desc {
-  max-width: 760px;
-  margin-bottom: 22px;
+  max-width: 660px;
+  margin-bottom: 5px;
 }
 
 .services-page .pe-grid,
@@ -8452,9 +8518,16 @@ body.manufacturing-page .s-desc {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 }
 
+.services-page #services .pe-grid {
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  align-items: stretch;
+  gap: 20px;
+}
+
 .services-page .pe-image-stack {
   display: grid;
   gap: 14px;
+  align-self: stretch;
 }
 
 .services-page .pe-img-main,
@@ -8475,8 +8548,8 @@ body.manufacturing-page .s-desc {
 }
 
 .services-page .pe-img-accent {
-  height: 180px;
-  max-width: 58%;
+  height: 200px;
+  max-width: 100%;
 }
 
 .services-page .capability-list,
@@ -8498,6 +8571,20 @@ body.manufacturing-page .s-desc {
 .services-page .capability-item {
   display: grid;
   gap: 6px;
+}
+
+.services-page #services .capability-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: start;
+}
+
+.services-page #services .capability-item:last-child {
+  grid-column: 1 / -1;
+}
+
+.services-page #services .capability-item {
+  padding: 26px 26px 24px;
+  min-height: 132px;
 }
 
 .services-page .cap-title,
@@ -8532,9 +8619,16 @@ body.manufacturing-page .s-desc {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.services-page .de-cards .de-card:last-child {
+  grid-column: 1 / -1;
+  grid-row: auto;
+}
+
 .services-page .de-visual {
-  display: grid;
-  gap: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
 }
 
 .services-page .de-section .section-label,
@@ -8562,17 +8656,19 @@ body.manufacturing-page .s-desc {
 }
 
 .services-page .de-section .de-grid {
-  align-items: center;
+  align-items: stretch;
 }
 
 .services-page .de-main-img {
   min-height: 360px;
+  flex: 1 1 auto;
 }
 
 .services-page .de-badges {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin-top: auto;
 }
 
 .services-page .de-badge.highlight {
@@ -8668,19 +8764,23 @@ body.manufacturing-page .s-desc {
 
 .services-page .remote-visual {
   display: grid;
-  gap: 14px;
+  gap: 10px;
+  align-content: start;
 }
 
 .services-page .remote-img {
-  min-height: 360px;
+  height: 350px;
+  min-height: 350px;
 }
 
 .services-page .remote-status {
+  height: 120px;
+  min-height: 120px;
   display: grid;
   grid-template-columns: auto 1fr auto;
-  gap: 12px;
+  gap: 10px;
   align-items: center;
-  padding: 16px 18px;
+  padding: 12px 14px;
   border-radius: 18px;
   background: #fff;
   border: 1px solid var(--line);
@@ -8841,6 +8941,24 @@ body.manufacturing-page .s-desc {
   .services-page .de-cards {
     grid-template-columns: 1fr;
   }
+
+  .services-page .de-cards .de-card:last-child {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .services-page #services .capability-list {
+    grid-template-columns: 1fr;
+  }
+
+  .services-page #services .capability-item:last-child {
+    grid-column: auto;
+  }
+
+  .services-page #services .capability-item {
+    min-height: 0;
+    padding: 18px;
+  }
 }
 
 @media (max-width: 720px) {
@@ -8874,15 +8992,15 @@ body.manufacturing-page .s-desc {
 
 /* Final polish for spacing and alignment */
 .services-page section {
-  padding: 68px 6vw;
+  padding: 10px 6vw;
 }
 
 .services-page section:first-of-type {
-  padding-top: 36px;
+  padding-top: 10px;
 }
 
 .services-page section:last-of-type {
-  padding-bottom: 40px;
+  padding-bottom: 10px;
 }
 
 .services-page .section-label,
@@ -8981,7 +9099,7 @@ body.manufacturing-page .s-desc {
 .services-page .plan-name,
 .services-page .tp-title,
 .services-page .rs-text {
-  font-size: 1rem;
+  font-size: 0.92rem;
   line-height: 1.35;
 }
 
@@ -8997,6 +9115,15 @@ body.manufacturing-page .s-desc {
   line-height: 1.7;
 }
 
+.services-page .rs-sub,
+.services-page .rs-lbl {
+  font-size: 0.8rem;
+}
+
+.services-page .rs-val {
+  font-size: 1rem;
+}
+
 .services-page .training-content {
   gap: 22px;
   align-items: start;
@@ -9006,6 +9133,10 @@ body.manufacturing-page .s-desc {
 .services-page .remote-img,
 .services-page .amc-img {
   min-height: 380px;
+}
+
+.services-page .remote-section .remote-img {
+  min-height: 350px;
 }
 
 .services-page .training-points {
@@ -9084,7 +9215,7 @@ body.manufacturing-page .s-desc {
 
 @media (max-width: 1100px) {
   .services-page section {
-    padding: 60px 6vw;
+    padding: 10px 6vw;
   }
 
   .services-page .section-title {
@@ -9122,6 +9253,11 @@ body.manufacturing-page .s-desc {
     min-height: 260px;
   }
 
+  .services-page .remote-status {
+    height: auto;
+    min-height: 0;
+  }
+
   .services-page .cig {
     min-height: 180px;
   }
@@ -9148,8 +9284,8 @@ body.manufacturing-page .s-desc {
 .renewable-page .hero {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(360px, 1fr) minmax(360px, 0.95fr);
-  gap: clamp(16px, 1.8vw, 24px);
+  grid-template-columns: minmax(340px, 1.22fr) minmax(220px, 0.78fr);
+  gap: clamp(22px, 2.5vw, 36px);
   padding-top: 26px;
   padding-bottom: 24px;
   align-items: start;
@@ -9190,7 +9326,7 @@ body.manufacturing-page .s-desc {
 .renewable-page .hero-left {
   display: grid;
   gap: 14px;
-  max-width: 580px;
+  max-width: 620px;
 }
 
 .renewable-page .hero-eyebrow {
@@ -9333,7 +9469,7 @@ body.manufacturing-page .s-desc {
   grid-template-rows: auto auto;
   gap: 10px;
   align-items: stretch;
-  max-width: 560px;
+  max-width: 520px;
   justify-self: end;
   width: 100%;
   padding-top: 0;
