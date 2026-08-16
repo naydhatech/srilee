@@ -8283,8 +8283,8 @@ body.manufacturing-page .s-desc {
 .services-page .hero {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.95fr);
-  gap: 34px;
+  grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
+  gap: 26px;
   padding: 76px 6vw 28px;
 }
 
@@ -8341,23 +8341,23 @@ body.manufacturing-page .s-desc {
 .services-page .cta-desc {
   color: var(--muted);
   font-size: 0.9rem;
-  line-height: 1.7;
+  line-height: 1.9;
 }
 
 .services-page .hero-sub {
   max-width: 58ch;
-  margin-top: 18px;
+  margin-top: 68px;
 }
 
 .services-page .hero-tags,
 .services-page .cta-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
 }
 
 .services-page .hero-tags {
-  margin: 20px 0 24px;
+  margin: 40px 5px 44px;
 }
 
 .services-page .tag,
@@ -8416,9 +8416,11 @@ body.manufacturing-page .s-desc {
 
 .services-page .hero-right {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 0.82fr);
+  gap: 12px;
   align-content: start;
+  max-width: 640px;
+  justify-self: end;
 }
 
 .services-page .hero-img {
@@ -8427,12 +8429,26 @@ body.manufacturing-page .s-desc {
   border: 1px solid var(--line);
   background: #fff;
   box-shadow: var(--shadow);
-  min-height: 180px;
+  min-height: 136px;
+  margin: 0;
+  padding: 0;
 }
 
 .services-page .hero-img.span2 {
   grid-column: 1 / -1;
-  min-height: 240px;
+  min-height: 210px;
+}
+
+.services-page .hero-img-photo {
+  min-height: 226px;
+}
+
+.services-page .hero-img-panel {
+  min-height: 226px;
+}
+
+.services-page .hero-img-illustration {
+  min-height: 210px;
 }
 
 .services-page .hero-img img,
@@ -8454,7 +8470,7 @@ body.manufacturing-page .s-desc {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
   padding: 28px 6vw 8px;
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
 .services-page .stat-item,
@@ -8831,7 +8847,7 @@ body.manufacturing-page .s-desc {
 .services-page .amc-overlay {
   position: absolute;
   inset: auto 18px 18px;
-  padding: 16px;
+  padding: 14px;
   border-radius: 16px;
   background: rgba(255,255,255,0.88);
   backdrop-filter: blur(8px);
@@ -8842,7 +8858,7 @@ body.manufacturing-page .s-desc {
 }
 
 .services-page .amc-plan {
-  padding: 18px;
+  padding: 14px 16px;
 }
 
 .services-page .amc-plan.featured {
@@ -8938,6 +8954,12 @@ body.manufacturing-page .s-desc {
     grid-template-columns: 1fr 1fr;
   }
 
+  .services-page .hero-img-photo,
+  .services-page .hero-img-panel,
+  .services-page .hero-img-illustration {
+    min-height: 210px;
+  }
+
   .services-page .de-cards {
     grid-template-columns: 1fr;
   }
@@ -8978,6 +9000,13 @@ body.manufacturing-page .s-desc {
 
   .services-page .hero-right {
     grid-template-columns: 1fr;
+  }
+
+  .services-page .hero-img-photo,
+  .services-page .hero-img-panel,
+  .services-page .hero-img-illustration,
+  .services-page .hero-img.span2 {
+    min-height: 180px;
   }
 
   .services-page .pe-img-accent {
@@ -9037,7 +9066,7 @@ body.manufacturing-page .s-desc {
 }
 
 .services-page .hero-sub {
-  margin-bottom: 0;
+  margin-bottom: 15px;
 }
 
 .services-page .hero-actions,
@@ -9047,6 +9076,22 @@ body.manufacturing-page .s-desc {
 
 .services-page .hero-right {
   align-items: stretch;
+}
+
+.services-page .hero-img img {
+  margin: 0;
+  padding: 0;
+}
+
+.services-page .hero-img-photo img {
+  object-position: center center;
+}
+
+.services-page .hero-img-panel img,
+.services-page .hero-img-illustration img {
+  object-fit: contain;
+  background: #fff;
+  padding: 14px;
 }
 
 .services-page .pe-grid,
@@ -9173,12 +9218,13 @@ body.manufacturing-page .s-desc {
 }
 
 .services-page .amc-grid {
-  gap: 22px;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  gap: 16px;
 }
 
 .services-page .amc-plan {
   display: grid;
-  gap: 12px;
+  gap: 8px;
 }
 
 .services-page .plan-header {
@@ -9186,13 +9232,15 @@ body.manufacturing-page .s-desc {
 }
 
 .services-page .plan-features {
-  gap: 12px;
+  gap: 8px;
 }
 
 .services-page .pf {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   align-items: flex-start;
+  font-size: 0.88rem;
+  line-height: 1.45;
 }
 
 .services-page .why-grid {
