@@ -11427,10 +11427,10 @@ body.home-page main {
   position: relative;
   z-index: 1;
   font-family: "Poppins", sans-serif;
-  font-size: clamp(2rem, 4vw, 3.8rem);
-  font-weight: 700;
+  font-size: clamp(1rem, 3vw, 2.8rem);
+  font-weight: 00;
   line-height: 1.05;
-  margin-bottom: 14px;
+  margin-bottom: 1px;
 }
 
 .home-page .grad {
