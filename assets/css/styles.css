@@ -14,8 +14,8 @@
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  margin: 2px;
+  padding: 1px;
 }
 
 html,
@@ -9148,10 +9148,10 @@ body.manufacturing-page .s-desc {
 .renewable-page .hero {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(320px, 1.06fr) minmax(280px, 0.94fr);
-  gap: 28px;
-  padding-top: 34px;
-  padding-bottom: 28px;
+  grid-template-columns: minmax(360px, 1fr) minmax(360px, 0.95fr);
+  gap: clamp(16px, 1.8vw, 24px);
+  padding-top: 26px;
+  padding-bottom: 24px;
   align-items: start;
 }
 
@@ -9188,7 +9188,9 @@ body.manufacturing-page .s-desc {
 }
 
 .renewable-page .hero-left {
-  max-width: 620px;
+  display: grid;
+  gap: 14px;
+  max-width: 580px;
 }
 
 .renewable-page .hero-eyebrow {
@@ -9327,28 +9329,44 @@ body.manufacturing-page .s-desc {
 
 .renewable-page .hero-right {
   display: grid;
-  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: auto auto;
+  gap: 10px;
   align-items: stretch;
-  max-width: 460px;
+  max-width: 560px;
   justify-self: end;
   width: 100%;
-}
-
-.renewable-page .hero-stack {
-  display: block;
+  padding-top: 0;
 }
 
 .renewable-page .hi {
   overflow: hidden;
-  border-radius: 18px;
+  border-radius: 20px;
   border: 1px solid rgba(219, 226, 234, 0.9);
   background: rgba(255, 255, 255, 0.8);
   box-shadow: var(--shadow);
-  min-height: 150px;
+  min-height: 0;
 }
 
-.renewable-page .hi.tall {
+.renewable-page .hi-bridge,
+.renewable-page .hi-wind {
   min-height: 250px;
+}
+
+.renewable-page .hi-bridge {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.renewable-page .hi-wind {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.renewable-page .hi-scada {
+  min-height: 164px;
+  grid-column: 1 / -1;
+  grid-row: 2;
 }
 
 .renewable-page .hi img,
@@ -9368,8 +9386,8 @@ body.manufacturing-page .s-desc {
 .renewable-page .stats {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 8px;
-  padding: 0 6vw 0;
+  gap: 18px;
+  padding: 16px 6vw 0;
   width: auto;
   margin-left: 0;
   margin-right: 0;
@@ -9405,8 +9423,8 @@ body.manufacturing-page .s-desc {
 
 .renewable-page .section {
   position: relative;
-  padding-top: 56px;
-  padding-bottom: 56px;
+  padding-top: 36px;
+  padding-bottom: 18px;
 }
 
 .renewable-page .s-label {
@@ -9421,13 +9439,39 @@ body.manufacturing-page .s-desc {
 .renewable-page .s-label.s { color: #eab308; }
 .renewable-page .s-label.g { color: #10b981; }
 
+.renewable-page .section-head,
+.renewable-page .hydro-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.renewable-page .section-head .s-title,
+.renewable-page .hydro-head .s-title {
+  font-size: clamp(1.4rem, 3.8vw, 2.5rem);
+  line-height: 1.1;
+  margin-bottom: 0;
+}
+
+.renewable-page .section-head .s-desc,
+.renewable-page .hydro-head .s-desc {
+  font-size: 1.33rem;
+  line-height: 1.9;
+  margin-bottom: 1px;
+  font-weight: bold;
+}
+
 .renewable-page .s-title {
-  font-size: clamp(1.9rem, 2.8vw, 3rem);
-  margin-bottom: 8px;
+  font-size: clamp(2.2rem, 4.6vw, 3.1rem);
+  line-height: 1.1;
+  margin-bottom: 7px;
 }
 
 .renewable-page .s-desc {
-  font-size: 0.95rem;
+  font-size: 1.13rem;
+  line-height: 1.6;
   margin-bottom: 10px;
 }
 
@@ -9449,14 +9493,14 @@ body.manufacturing-page .s-desc {
 .renewable-page .ppc-grid,
 .renewable-page .hybrid-layout {
   display: grid;
-  gap: 18px;
-  align-items: start;
+  gap: 14px;
+  align-items: stretch;
 }
 
 .renewable-page .hydro-grid,
 .renewable-page .ppc-grid {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  align-items: start;
+  align-items: stretch;
 }
 
 .renewable-page .hydro-visual,
@@ -9468,24 +9512,32 @@ body.manufacturing-page .s-desc {
   border: 1px solid rgba(219, 226, 234, 0.92);
   background: rgba(255, 255, 255, 0.78);
   box-shadow: var(--shadow);
-  height: auto;
+  height: 100%;
+}
+
+.renewable-page .hydro-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
 }
 
 .renewable-page .hv-main {
-  height: 260px;
+  flex: 2;
+  overflow: hidden;
+  border-radius: 20px;
 }
 
 .renewable-page .hv-row {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 12px;
+  gap: 16px;
+  flex: 1;
 }
 
 .renewable-page .hv-sm {
-  height: 128px;
+  border-radius: 16px;
   overflow: hidden;
-  border-radius: 18px;
 }
 
 .renewable-page .hydro-systems {
@@ -9652,56 +9704,20 @@ body.manufacturing-page .s-desc {
   border: 1px solid rgba(219, 226, 234, 0.95);
 }
 
-.renewable-page .hydro-arch {
-  margin-top: 18px;
-  padding: 18px;
-  border-radius: 22px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(245, 250, 255, 0.92));
-  border: 1px solid rgba(219, 226, 234, 0.92);
-}
-
-.renewable-page .ha-title {
-  font-size: 1.18rem;
-}
-
-.renewable-page .ha-sub {
-  color: var(--muted);
-  margin-top: 6px;
-  margin-bottom: 16px;
-}
-
 .renewable-page .ha-layers,
 .renewable-page .solar-types,
 .renewable-page .platform-grid,
 .renewable-page .tech-grid,
 .renewable-page .why-grid {
   display: grid;
-  gap: 12px;
-}
-
-.renewable-page .ha-layers {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  align-items: stretch;
-}
-
-.renewable-page .ha-layer,
-.renewable-page .solar-feature-card {
-  padding: 14px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.86);
-  border: 1px solid rgba(219, 226, 234, 0.92);
-}
-
-.renewable-page .ha-layer-title {
-  font-weight: 700;
-  margin-bottom: 12px;
+  gap: 15px;
 }
 
 .renewable-page .solar-tab-nav {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .renewable-page .stab {
@@ -9722,7 +9738,7 @@ body.manufacturing-page .s-desc {
 .renewable-page .solar-content {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 14px;
+  gap: 18px;
   align-items: stretch;
 }
 
@@ -9735,14 +9751,14 @@ body.manufacturing-page .s-desc {
 .renewable-page .solar-feature-shell {
   padding: 14px;
   display: grid;
-  gap: 12px;
+  gap: 10px;
   height: 100%;
 }
 
 .renewable-page .solar-feature-media {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 16px;
 }
 
 .renewable-page .solar-shot-1,
@@ -9765,13 +9781,13 @@ body.manufacturing-page .s-desc {
 .renewable-page .solar-feature-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: 10px;
   grid-auto-rows: 1fr;
   align-items: stretch;
 }
 
 .renewable-page .solar-feature-intro {
-  margin: 0;
+  margin: 1;
 }
 
 .renewable-page .solar-feature-title {
@@ -9798,7 +9814,7 @@ body.manufacturing-page .s-desc {
 .renewable-page .solar-types,
 .renewable-page .platform-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  align-items: start;
+  align-items: stretch;
 }
 
 .renewable-page .tech-grid {
@@ -9850,6 +9866,13 @@ body.manufacturing-page .s-desc {
   padding: 14px;
 }
 
+.renewable-page .plat-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 240px;
+  height: 100%;
+}
+
 .renewable-page .stype-title,
 .renewable-page .plat-title,
 .renewable-page .wy-title,
@@ -9864,14 +9887,41 @@ body.manufacturing-page .s-desc {
   margin-top: 14px;
 }
 
+.renewable-page .plat-chips {
+  margin-top: auto;
+}
+
 .renewable-page .ppc-img {
-  height: 280px;
+  flex: 1 1 auto;
+  min-height: 280px;
 }
 
 .renewable-page .ppc-feats,
 .renewable-page .hybrid-features {
   display: grid;
-  gap: 10px;
+  gap: 1px;
+}
+
+.renewable-page .hybrid-layout > .hybrid-img {
+  min-height: 100%;
+}
+
+.renewable-page .hybrid-layout > .hybrid-features {
+  align-content: start;
+}
+
+.renewable-page .ppc-content,
+.renewable-page .ppc-visual {
+  height: 100%;
+}
+
+.renewable-page .ppc-visual {
+  display: flex;
+  flex-direction: column;
+}
+
+.renewable-page .ppc-stat-row {
+  margin-top: 14px;
 }
 
 .renewable-page .pf-item,
@@ -9914,7 +9964,7 @@ body.manufacturing-page .s-desc {
 .renewable-page .ppc-stat-row {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: 10px;
   margin-top: 10px;
 }
 
@@ -9967,12 +10017,12 @@ body.manufacturing-page .s-desc {
 .renewable-page .cta-section {
   position: relative;
   display: grid;
-  gap: 14px;
+  gap: 12px;
   background: #101318;
   color: #f7f7f7;
   overflow: hidden;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 56px;
+  padding-bottom: 56px;
 }
 
 .renewable-page .cta-glow,
@@ -9996,6 +10046,7 @@ body.manufacturing-page .s-desc {
 
 .renewable-page .cta-title {
   font-size: clamp(2rem, 3vw, 3.3rem);
+  line-height: 1.02;
 }
 
 .renewable-page .ch { color: #0ea5e9; }
@@ -10041,18 +10092,31 @@ body.manufacturing-page .s-desc {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .renewable-page .solar-types {
+    gap: 18px;
+  }
+
   .renewable-page .hero-right {
     max-width: 100%;
     justify-self: stretch;
-    justify-self: start;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .renewable-page .section-head {
+    grid-template-columns: 1fr;
   }
 
   .renewable-page .hi {
-    min-height: 170px;
+    min-height: 150px;
   }
 
-  .renewable-page .hi.tall {
-    min-height: 290px;
+  .renewable-page .hi-bridge,
+  .renewable-page .hi-wind {
+    min-height: 220px;
+  }
+
+  .renewable-page .hi-scada {
+    min-height: 150px;
   }
 
   .renewable-page .solar-img {
@@ -10119,13 +10183,13 @@ body.manufacturing-page .s-desc {
   }
 
   .renewable-page .hero-title {
-    font-size: clamp(2.3rem, 9vw, 3.2rem);
+    font-size: clamp(1.3rem, 8vw, 2.2rem);
   }
 
   .renewable-page .hero {
-    gap: 18px;
-    padding-top: 20px;
-    padding-bottom: 14px;
+    gap: 14px;
+    padding-top: 18px;
+    padding-bottom: 12px;
   }
 
   .renewable-page .hero-stack {
@@ -10133,8 +10197,8 @@ body.manufacturing-page .s-desc {
   }
 
   .renewable-page .section {
-    padding-top: 36px;
-    padding-bottom: 36px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 
   .renewable-page .hydro-section > .s-desc {
@@ -10144,8 +10208,8 @@ body.manufacturing-page .s-desc {
   }
 
   .renewable-page .cta-section {
-    padding-top: 36px;
-    padding-bottom: 36px;
+    padding-top: 32px;
+    padding-bottom: 32px;
   }
 
   .renewable-page .hv-main,
@@ -10157,11 +10221,16 @@ body.manufacturing-page .s-desc {
   }
 
   .renewable-page .hi {
-    min-height: 140px;
+    min-height: 128px;
   }
 
-  .renewable-page .hi.tall {
-    min-height: 220px;
+  .renewable-page .hi-bridge,
+  .renewable-page .hi-wind {
+    min-height: 190px;
+  }
+
+  .renewable-page .hi-scada {
+    min-height: 140px;
   }
 
   .renewable-page .solar-feature-media {
@@ -10199,15 +10268,20 @@ body.manufacturing-page .s-desc {
   }
 
   .renewable-page .hero-right {
-    gap: 10px;
+    gap: 12px;
   }
 
   .renewable-page .hi {
-    min-height: 128px;
+    min-height: 116px;
   }
 
-  .renewable-page .hi.tall {
-    min-height: 190px;
+  .renewable-page .hi-bridge,
+  .renewable-page .hi-wind {
+    min-height: 168px;
+  }
+
+  .renewable-page .hi-scada {
+    min-height: 130px;
   }
 
   .renewable-page .hv-main,
@@ -10220,6 +10294,10 @@ body.manufacturing-page .s-desc {
 
   .renewable-page .stats {
     gap: 10px;
+  }
+
+  .renewable-page .solar-types {
+    gap: 14px;
   }
 
   .renewable-page .stat {

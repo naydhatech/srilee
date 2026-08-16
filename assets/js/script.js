@@ -210,7 +210,7 @@ const renderRenewableTab = (tabName) => {
       <div class="feature-card reveal">
         <p class="section-kicker">Renewable automation</p>
         <h3>${data.title}</h3>
-        <p>${data.intro}</p>
+        <p style="font-weight:bold">${data.intro}</p>
         <div class="grid-2" style="margin-top:16px">
           ${data.cards
             .map(
@@ -436,15 +436,15 @@ if (renewableRoot) {
           <span class="badge badge-hydro"><span class="badge-dot"></span>Hydro Automation</span>
           <span class="badge badge-solar"><span class="badge-dot"></span>Solar SCADA</span>
         </div>
-        <h1 class="hero-title">Intelligent<br/><span class="th">Hydro</span> &amp;<br/><span class="ts">Solar</span><br/>Automation</h1>
+        <h1 class="hero-title">Intelligent <span class="th"> Hydro </span> &amp; <span class="ts"> Solar</span><br/>Automation</h1>
         <p class="hero-desc">End-to-end SCADA, control, and monitoring for hydro power plants, solar farms, and hybrid renewable projects - from governor controls to plant performance controllers.</p>
         <div class="hero-pills">${["Governor Control","Excitation System","Gate Automation","Plant PPC","Remote Monitoring","Hybrid Plants"].map((pill) => `<span class="hpill">${pill}</span>`).join("")}</div>
-        <div class="hero-acts"><a href="contact.html" class="btn btn-hydro">Discuss your project</a><a href="#hydro" class="btn btn-ghost">Explore solutions ?</a></div>
+        <div class="hero-acts"><a href="contact.html" class="btn btn-hydro">Discuss your project</a><a href="#hydro" class="btn btn-ghost">Explore solutions &rarr;</a></div>
       </div>
       <div class="hero-right">
-        <div class="hi tall hydro-tint"><img src="${assetPath("hydro-power-automation.jpg")}" alt="Hydro plant" /></div>
-        <div class="hi solar-tint"><img src="${assetPath("energy.jpg")}" alt="Solar farm" /></div>
-        <div class="hi"><img src="${assetPath("SCADAimsges.jpg")}" alt="SCADA monitoring" /></div>
+        <div class="hi hi-bridge hydro-tint"><img src="${assetPath("hydro-power-automation.jpg")}" alt="Hydro plant" /></div>
+        <div class="hi hi-wind solar-tint"><img src="${assetPath("energy.jpg")}" alt="Wind and solar plant" /></div>
+        <div class="hi hi-scada"><img src="${assetPath("SCADAimsges.jpg")}" alt="SCADA monitoring" /></div>
       </div>
     </section>
 
@@ -556,17 +556,21 @@ if (renewableRoot) {
         <div class="solar-img reveal"><img id="solarImg" src="${assetPath("industrial-services-10.jpeg")}" alt="Solar SCADA" style="width:100%;height:100%;object-fit:cover" /></div>
         <div id="solarFeatureBody" class="solar-features reveal"></div>
       </div>
-      <div class="solar-types">${solarTypes.map(([badge, badgeClass, title, desc, features]) => `<div class="stype-card reveal"><div class="stype-img"><div class="stype-badge ${badgeClass}">${badge}</div><img src="${badgeClass === "utility" ? "../assets/images/SCADAimsges.jpg" : badgeClass === "rooftop" ? "../assets/images/industrial-services-10.jpeg" : "../assets/images/Project Engineering.jpg"}" alt="${title}" /></div><div class="stype-body"><div class="stype-title">${title}</div><div class="stype-desc">${desc}</div><div class="stype-features">${renderItems(features, "stf")}</div></div></div>`).join("")}</div>
+      <div class="solar-types">${solarTypes.map(([badge, badgeClass, title, desc, features]) => `<div class="stype-card reveal">
+        <div class="stype-img"><div class="stype-badge ${badgeClass}">${badge}</div>
+      <img src="${badgeClass === "utility" ? "../assets/images/SCADAimsges.jpg" : badgeClass === "rooftop" ? "../assets/images/industrial-services-10.jpeg" : "../assets/images/Project Engineering.jpg"}" alt="${title}" /></div>
+      <div class="stype-body"><div class="stype-title">${title}</div><div class="stype-desc">${desc}</div>
+      <div class="stype-features">${renderItems(features, "stf")}</div></div></div>`).join("")}</div>
     </section>
 
     <div class="divider"></div>
 
     <section class="section ppc-section">
-      <h2 class="s-title">PPC - Active Power,<br/>Reactive Power &amp; Grid Compliance</h2>
+      <h4 class="s-title">PPC - Active Power,<br/>Reactive Power &amp; Grid Compliance</h4>
       <div class="ppc-grid">
         <div class="ppc-content reveal">
           <p class="ppc-intro">Our Power Plant Controller (PPC) enables solar and hydro plants to meet grid operator requirements for active power curtailment, reactive power regulation, ramp rate control, and frequency response.</p>
-          <div class="ppc-feats">${ppcFeatures.map(([title, desc]) => `<div class="pf-item"><div class="pf-dot"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#10b981"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div><div><div class="pf-title">${title}</div><div class="pf-desc">${desc}</div></div></div>`).join("")}</div>
+          <div class="ppc-feats">${ppcFeatures.map(([title, desc]) => `<div class="pf-item"><div class="pf-dot"><svg width="18" height="16" fill="none" viewBox="0 0 24 24" stroke="#10b981"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div><div><div class="pf-title">${title}</div><div class="pf-desc">${desc}</div></div></div>`).join("")}</div>
         </div>
         <div class="ppc-visual reveal">
           <div class="ppc-img"><img src="${assetPath("industrial-services-10.jpeg")}" alt="PPC system" style="width:100%;height:100%;object-fit:cover" /></div>
@@ -599,7 +603,11 @@ if (renewableRoot) {
       </div>
       <p class="s-desc">Centralised monitoring and control across solar farms, hydro plants, and hybrid assets on a single, scalable SCADA and IoT platform.</p>
       </div>
-      <div class="platform-grid">${platformCards.map(([num, tone, title, desc, chips]) => `<div class="plat-card ${tone === "s" ? "solar-card-v" : ""} reveal"><div class="plat-num ${tone}">${num}</div><div class="plat-icon" style="background:${tone === "s" ? "rgba(234,179,8,.1);border:1px solid rgba(234,179,8,.2)" : tone === "g" ? "rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2)" : "rgba(14,165,233,.1);border:1px solid rgba(14,165,233,.2)"}"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="${tone === "s" ? "#eab308" : tone === "g" ? "#10b981" : "#0ea5e9"}">${num === "01" ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>' : num === "02" ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>' : num === "03" ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/>' : num === "04" ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>' : num === "05" ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>' : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>'}</svg></div><div class="plat-title">${title}</div><div class="plat-desc">${desc}</div><div class="plat-chips">${chips.map((chip) => `<span class="pc-${tone}">${chip}</span>`).join("")}</div></div>`).join("")}</div>
+      <div class="platform-grid">${platformCards.map(([num, tone, title, desc, chips]) => `<div class="plat-card ${tone === "s" ? "solar-card-v" : ""} reveal">
+      <div class="plat-num ${tone}">${num}</div>
+      <div class="plat-icon" style="background:${tone === "s" ? "rgba(234,179,8,.1);border:1px solid rgba(234,179,8,.2)" : tone === "g" ? "rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2)" : "rgba(14,165,233,.1);border:1px solid rgba(14,165,233,.2)"}">
+      <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="${tone === "s" ? "#eab308" : tone === "g" ? "#10b981" : "#0ea5e9"}">${num === "01" ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>' : num === "02" ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>' : num === "03" ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/>' : num === "04" ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>' : num === "05" ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>' : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>'}</svg></div><div class="plat-title">${title}</div><div class="plat-desc">${desc}</div><div class="plat-chips">${chips.map((chip) => `<span class="pc-${tone}">${chip}</span>`).join("")}</div>
+      </div>`).join("")}</div>
     </section>
 
     <div class="divider"></div>
