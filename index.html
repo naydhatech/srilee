@@ -98,6 +98,7 @@
 }
 
 *, *::before, *::after { box-sizing:border-box; margin:0; padding:0 }
+img { display:block; max-width:100% }
 html { scroll-behavior:smooth }
 body {
   background:var(--bg);
@@ -250,12 +251,26 @@ h1.hero-h {
 .hero-right {
   position:relative; display:grid;
   grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr;
-  gap:3px; overflow:hidden; z-index:1;
+  gap:10px; overflow:hidden; z-index:1;
   background:var(--s0);
-  min-height:540px;
+  min-height:420px;
+  border-radius:var(--r16);
+  box-shadow:10px 44px 50px rgba(15,23,42,.10);
 }
-.himg { overflow:hidden; position:relative }
-.himg img { width:100%; height:100%; object-fit:cover; transition:transform .7s ease }
+.himg {
+  overflow:hidden;
+  position:relative;
+  min-width:0;
+  min-height:0;
+  background:var(--s1);
+}
+.himg img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  transition:transform .7s ease;
+}
 .himg:hover img { transform:scale(1.06) }
 .himg.span2 { grid-column:span 2 }
 .himg.tall   { grid-row:span 2 }
@@ -267,7 +282,7 @@ h1.hero-h {
   border:1px solid rgba(255,255,255,.15); padding:4px 10px; border-radius:var(--r4);
 }
 .ph-img {
-  width:100%; height:100%; min-height:160px; background:var(--s1);
+  width:100%; height:100%; min-height:130px; background:var(--s1);
   display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; color:var(--muted)
 }
 .ph-img svg { opacity:.25 }
@@ -350,7 +365,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
   flex-direction:column;
   align-items:flex-start;
   gap:10px;
-  max-width:340px;
+  max-width:300px;
 }
 .sec-cta-col .sd {
   max-width:none;
@@ -373,7 +388,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 .bc-ren    { grid-column:span 4; min-height:220px }
 .bc-stat1  { grid-column:span 2; min-height:220px }
 
-.bc-img { position:relative; flex:1; overflow:hidden; min-height:140px }
+.bc-img { position:relative; flex:1; overflow:hidden; min-height:110px }
 .bc-img img { width:100%; height:100%; object-fit:cover; transition:transform .6s }
 .bento-card:hover .bc-img img { transform:scale(1.07) }
 .bc-grad { position:absolute; inset:0; background:linear-gradient(to bottom,transparent 30%,rgba(6,8,16,.9)) }
@@ -391,7 +406,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 
 /* Large IoT card - full height stacked layout */
 .bc-iot { display:grid; grid-template-rows:1fr auto }
-.bc-iot .bc-img { min-height:260px }
+.bc-iot .bc-img { min-height:200px }
 
 
 .iot-layout { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center }
@@ -432,10 +447,10 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 .ifc { font-size:10px; padding:2px 8px; border-radius:var(--r4); font-family:'JetBrains Mono',monospace; background:rgba(59,130,246,.08); border:1px solid rgba(59,130,246,.15); color:var(--blue2) }
 
 
-.auto-layout { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start }
+.auto-layout { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(360px,0.85fr); gap:40px; align-items:start }
 
 /* stacked image with overlap */
-.img-stack { position:relative; height:560px }
+.img-stack { position:relative; height:460px }
 .img-main { position:absolute; top:0; left:0; right:64px; bottom:64px; border-radius:var(--r16); overflow:hidden; border:1px solid var(--b1) }
 .img-main img { width:100%; height:100%; object-fit:cover }
 .img-pip { position:absolute; bottom:0; right:0; width:52%; height:48%; border-radius:var(--r12); overflow:hidden; border:2px solid var(--orange); box-shadow:0 0 40px rgba(249,115,22,.2) }
@@ -444,18 +459,18 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 .img-main::after { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,rgba(249,115,22,.7),transparent); animation:scan 3s ease-in-out infinite }
 @keyframes scan { 0%{top:0;opacity:0} 10%{opacity:1} 90%{opacity:1} 100%{top:100%;opacity:0} }
 
-.auto-cards { display:flex; flex-direction:column; gap:12px }
+.auto-cards { display:flex; flex-direction:column; gap:10px }
 .acard {
-  background:var(--s0); border:1px solid var(--b1); border-radius:var(--r12); padding:20px 22px;
-  display:flex; gap:14px; align-items:flex-start; transition:all .22s; position:relative; overflow:hidden;
+  background:var(--s0); border:1px solid var(--b1); border-radius:var(--r12); padding:10px 12px;
+  display:flex; gap:12px; align-items:flex-start; transition:all .22s; position:relative; overflow:hidden;
 }
 .acard::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--orange); transform:scaleY(0); transform-origin:bottom; transition:transform .25s }
 .acard:hover::before { transform:scaleY(1) }
 .acard:hover { border-color:rgba(249,115,22,.25); transform:translateX(6px); background:var(--s1) }
-.ac-ico { width:38px; height:38px; min-width:38px; border-radius:var(--r8); display:flex; align-items:center; justify-content:center }
-.ac-title { font-weight:700; font-size:14px; margin-bottom:3px }
-.ac-desc { font-size:13px; color:var(--muted2); line-height:1.55 }
-.tech-bar { display:flex; flex-wrap:wrap; gap:7px; margin-top:28px }
+.ac-ico { width:44px; height:18px; min-width:34px; border-radius:var(--r8); display:flex; align-items:center; justify-content:center }
+.ac-title { font-weight:700; font-size:13.5px; margin-bottom:1px }
+.ac-desc { font-size:12.5px; color:var(--muted2); line-height:1.45 }
+.tech-bar { display:flex; flex-wrap:wrap; gap:7px; margin-top:20px }
 .tb { background:var(--s1); border:1px solid var(--b1); color:var(--muted2); font-size:11px; padding:4px 11px; border-radius:var(--r4); font-family:'JetBrains Mono',monospace; transition:all .2s }
 .tb:hover { border-color:var(--orange); color:var(--orange) }
 
@@ -467,7 +482,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
   overflow:hidden; transition:all .3s; position:relative;
 }
 .mfg-card:hover { border-color:var(--b2); transform:translateY(-4px); box-shadow:0 20px 50px rgba(0,0,0,.4) }
-.mfg-card-img { height:180px; overflow:hidden; position:relative }
+.mfg-card-img { height:145px; overflow:hidden; position:relative }
 .mfg-card-img img { width:100%; height:100%; object-fit:cover; transition:transform .55s }
 .mfg-card:hover .mfg-card-img img { transform:scale(1.07) }
 .mfg-badge { position:absolute; top:12px; left:12px; font-size:10px; font-weight:700; padding:3px 10px; border-radius:var(--r99); letter-spacing:.5px }
@@ -512,7 +527,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 .svc-title { font-weight:700; font-size:14px; margin-bottom:5px }
 .svc-desc { font-size:12.5px; color:var(--muted2); line-height:1.6 }
 .svc-visual { display:flex; flex-direction:column; gap:16px }
-.svc-img { border-radius:var(--r16); overflow:hidden; height:320px; border:1px solid var(--b1) }
+.svc-img { border-radius:var(--r16); overflow:hidden; height:250px; border:1px solid var(--b1) }
 .svc-img img { width:100%; height:100%; object-fit:cover }
 /* AMC tier cards */
 .amc-tiers { display:grid; grid-template-columns:repeat(3,1fr); gap:10px }
@@ -535,7 +550,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
 }
 .ren-tab[data-active="hydro"] { background:var(--cyan); color:#000 }
 .ren-tab[data-active="solar"] { background:var(--yellow); color:#000 }
-.ren-vis { border-radius:var(--r16); overflow:hidden; height:520px; border:1px solid var(--b1); position:relative }
+.ren-vis { border-radius:var(--r16); overflow:hidden; height:420px; border:1px solid var(--b1); position:relative }
 .ren-vis img { width:100%; height:100%; object-fit:cover; transition:opacity .4s }
 /* overlay architecture diagram */
 .ren-arch-overlay {
@@ -572,7 +587,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
   overflow:hidden; transition:all .3s; position:relative;
 }
 .vert-card:hover { border-color:var(--b2); transform:translateY(-4px) }
-.vert-img { height:170px; overflow:hidden; position:relative }
+.vert-img { height:135px; overflow:hidden; position:relative }
 .vert-img img { width:100%; height:100%; object-fit:cover; transition:transform .55s }
 .vert-card:hover .vert-img img { transform:scale(1.08) }
 .vert-gradient { position:absolute; inset:0; background:linear-gradient(transparent 30%,rgba(4,5,8,.9)) }
@@ -692,7 +707,7 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
   .hero { grid-template-columns:1fr }
   .hero { padding:14px 0 0 }
   .hero-left { padding:64px 28px 48px }
-  .hero-right { height:360px; grid-template-columns:1fr 1fr; grid-template-rows:1fr }
+  .hero-right { height:270px; grid-template-columns:1fr 1fr; grid-template-rows:1fr }
   #solutions { padding-top:32px; padding-bottom:36px; margin-top:28px; }
   .marquee-strip { margin-top:10px; }
   .himg.tall { grid-row:auto } .himg.span2 { grid-column:auto }
@@ -816,8 +831,8 @@ h2.sh { font-family:'Familjen Grotesk',sans-serif; font-size:clamp(32px,4vw,54px
   <div class="hero-left">
     <div class="hero-kicker"><span class="kicker-dot"></span>Industrial IoT &amp; Automation Platform</div>
     <h1 class="hero-h">
-      Smarter <span class="word-iot">IoT</span><br/>
-      Sharper <span class="word-auto">Automation</span><br/>
+      Smarter <span class="word-iot">IoT</span>
+      Sharper <span class="word-auto">Automation</span>
       Cleaner <span class="word-ren">Renewables</span>
     </h1>
     <p class="hero-desc">One platform connecting assets, automating operations, and powering intelligent control across industrial, manufacturing, and renewable energy environments   from field sensor to boardroom dashboard.</p>

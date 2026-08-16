@@ -2854,7 +2854,7 @@ button {
   font-size: 0.72rem;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 16px;
+  margin-bottom: 86px;
 }
 
 .iot-hero h1 {
@@ -10593,7 +10593,7 @@ body.home-page main {
 
 .home-page .sh {
   font-family: "Poppins", sans-serif;
-  font-size: clamp(1.9rem, 2.8vw, 3.25rem);
+  font-size: clamp(1.rem, 2.2vw, 2.25rem);
   line-height: 1.08;
   letter-spacing: -0.03em;
 }
@@ -10675,7 +10675,7 @@ body.home-page main {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 18px;
+  margin-bottom: 48px;
   padding: 8px 14px;
   border-radius: 999px;
   border: 1px solid rgba(148, 163, 184, 0.2);
@@ -10717,13 +10717,14 @@ body.home-page main {
   color: var(--muted);
   font-size: 1.02rem;
   line-height: 1.7;
+  margin-bottom: 80px;
 }
 
 .home-page .hero-cta {
   display: flex;
-  gap: 12px;
+  gap: 18px;
   flex-wrap: wrap;
-  margin: 24px 0 28px;
+  margin: 44px 10px 48px;
 }
 
 .home-page .btn {
@@ -11526,7 +11527,7 @@ body.home-page main {
   }
 
   .home-page .hero {
-    padding-top: 48px;
+    padding-top: 98px;
     padding-bottom: 24px;
   }
 
